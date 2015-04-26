@@ -1,0 +1,13 @@
+{
+	"name" : "PayPal Adaptive",
+	"description" : "This allows the user to pay fees like signup, post contests etc. through PayPal. This method is based on adaptive payment. Contribution goes to participant and site admin in single transaction.",
+	"author" : "author",
+	"authorEmail" : "yourid@email.com",
+	"authorUrl" : "http://www.yoururl.com",
+	"settings" : {
+		"setting_category_id" : "",
+		"controller" : "payment_gateways",
+		"action" : "",
+		"hashValue" : ""
+	}
+}

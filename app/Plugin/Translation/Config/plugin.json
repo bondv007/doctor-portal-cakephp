@@ -1,0 +1,13 @@
+{
+	"name" : "Translation",
+	"description" : "This allows the multi language support for the site",
+	"author" : "author",
+	"authorEmail" : "yourid@email.com",
+	"authorUrl" : "http://www.yoururl.com",
+	"settings" : {
+		"setting_category_id" : "15",
+		"controller" : "settings",
+		"action" : "edit",
+		"hashValue" : "GoogleTranslations"
+	}
+}

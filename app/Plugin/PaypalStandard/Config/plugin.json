@@ -1,0 +1,13 @@
+{
+	"name" : "PayPal Standard",
+	"description" : "This allows user to pay fees like signup, post contests etc. through PayPal standard",
+	"author" : "author",
+	"authorEmail" : "yourid@email.com",
+	"authorUrl" : "http://www.yoururl.com",
+	"settings" : {
+		"setting_category_id" : "",
+		"controller" : "payment_gateways",
+		"action" : "",
+		"hashValue" : ""
+	}
+}

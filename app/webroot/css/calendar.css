@@ -1,0 +1,312 @@
+table.calendar, table.timeslot {
+	width:100%;
+	border-collapse:collapse;
+	margin:0px;
+	padding:0px;
+	background:#fff;
+	color:#000;
+}
+table.calendar th, table.timeslot th, table.app-calendar th {
+	color: #0080c6;
+	font-size: 17px;
+	font-weight: 700;
+	padding: 8px 4px;
+	text-align: center;
+	text-transform: none;
+	vertical-align: middle;
+}
+table.app-calendar th{
+	text-align:left;}
+table.calendar th.cell-prev {
+	width:3%;
+}
+/*table.calendar th.cell-prev a {
+	display:block;
+	margin:10px;
+	width:16px;
+	height:14px;
+	text-indent:-99999px;
+	background: url(../img/common-sprite.png) left -6006px no-repeat;
+}
+
+table.calendar th.cell-next a {
+	display:block;
+	margin:10px 0 10px 50px;
+	width:16px;
+	height:14px;
+	text-indent:-99999px;
+	background: url(../img/common-sprite.png) left -6047px no-repeat;
+}
+*/
+table.calendar th.cell-next {
+	width:3%;
+}
+table.calendar th.cell-next a:hover, table.calendar th.cell-prev a:hover {
+	text-decoration:underline;
+	color:#1E759E;
+}
+table.calendar th.cell-header, table.timeslot th {
+	background:url("../img/calendar-menu-active.png") repeat-x scroll left -12px #F7F7F7;
+    border: 1px solid #CCCCCC;
+    color: #777;
+    font-size: 12px;
+    width: 70px;
+}
+table.calendar td.cell-today {
+	background:#FFFFCC;
+	color:#000;
+	font-weight: bold;
+}
+table.calendar td.cell-today div.month-cell-number {
+	background:#e7f0f6;
+	border-bottom:1px solid #ccc;
+	position:relative;
+}
+/* today in the current month */
+table.calendar td, table.timeslot td {
+	border:1px solid #DCE4EB;
+	text-align:center;
+	font-weight:normal;
+	height:90px;
+	width:170px;
+	vertical-align:top;
+	background:#fcfcfc;
+}
+table.calendar a {
+	text-decoration:none;
+}
+table.calendar a:hover {
+	color:#FFF;
+}
+table.calendar td div.cell-number {
+	text-align:right;
+	font-size:8px;
+	color:#FFF;
+	display:block;
+	background:#f9f9f9;
+	border-bottom:1px solid #CCC;
+}
+table.calendar td div.month-cell-number, table.calendar td div.week-cell-number, table.calendar td .daily-cell-number {
+	background:#f9f9f9;
+	border-bottom:1px solid #ddd;
+	padding:2px 5px;
+}
+table.calendar td div.daily-cell-number {
+	background: #E4EEFA;
+	border: medium none;
+	margin: 1px 0;
+}
+table.calendar td div.cell-data {
+	color: #9b8e5b;
+	float:right;
+	width:130px;
+	position:relative;
+}
+table.calendar td a.add, table.calendar td a.delete, table.calendar td a.edit {
+	text-indent:-9999em;
+	width:16px;
+	height:16px;
+	float:left;
+	padding:0;
+	margin:0;
+}
+table.calendar td div.todo div.todo-content:hover p.actions a.edit {
+	margin-left:7px;
+}
+table.calendar td div.todo-content {
+	position:relative;
+	color:#999999;
+	font-weight:normal;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #fff;
+	padding:2px 5px;
+	font-size:11px;
+	margin:2px;
+	line-height:15px;
+}
+table.calendar td div.line-through span {
+	text-decoration:line-through;
+}
+table.calendar td div.todo-content p.actions {
+	position:absolute;
+	border:1px solid #ddd;
+	background:#f9f9f9;
+	width:45px;
+	right:-45px;
+	top:-1px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-left:none;
+	z-index:2000;
+}
+table.calendar td a.add, table.calendar td p.actions {
+	display:none;
+}
+table.calendar td a.edit, table.calendar td a.delete {
+	opacity:0.50;
+	filter:alpha(opacity=50);
+}
+table.calendar td a.edit:hover, table.calendar td a.delete:hover {
+	opacity:1;
+	filter:alpha(opacity=100);
+}
+table.calendar td div.todo div.todo-content:hover {
+	border:1px solid #ddd;
+	background-color:#f9f9f9;
+}
+table.calendar td:hover a.add, table.calendar td div.todo div.todo-content:hover p.actions {
+	display:block;
+	z-index:1000;
+}
+table.calendar tr.time-cell td {
+	height:auto;
+	text-align:right;
+}
+table.calendar td div.checkbox {
+	float:left;
+	width:20px;
+	position:absolute;
+	z-index:1;
+	padding:1px;
+	margin:3px 0 0 0;
+}
+table.calendar td div.checkbox input {
+	margin:0px 0 0 0;
+	z-index:1;
+	position:relative;
+}
+table.calendar td a.add {
+	position:absolute;
+	left:0px;
+	top:4px;
+}
+table.calendar td span.cal-add {
+	position:relative;
+	float:left;
+	z-index:1000;
+}
+table.calendar td div.cal-user {
+	width:830px;
+}
+table.calendar td div.todo-content span {
+	padding-left:20px;
+}
+table.calendar th.cell-header span.day {
+	padding:0 5px 0 0;
+}
+div.app-approved-block {
+	float:right;
+	padding:6px 0 0;
+}
+div.app-approved-block span {
+	display: block;
+	float: right;
+	font-size: 11px;
+	line-height: 12px;
+	margin: 0 0 0 10px;
+	padding: 0 0 0 16px;
+}
+span.app-pending {
+	background:url(../img/common-sprite.png) left -6077px;
+	color:#009cde;
+}
+span.app-approved {
+	background:url(../img/common-sprite.png) left -6089px;
+	color:#41b649;
+}
+span.app-closed {
+	background:url(../img/common-sprite.png) left -6101px;
+	color:#760000;
+}
+span.app-cancelled {
+	background:url(../img/common-sprite.png) left -6113px;
+	color:#e90000;
+}
+span.app-expired {
+	background:url(../img/common-sprite.png) left -6125px;
+	color:#525151;
+}
+span.app-rejected {
+	background:url(../img/common-sprite.png) left -6137px;
+	color:#dd7302;
+}
+table.calendar td span.monthly-date, table.timeslot td span.monthly-date {
+	background:#f1f2f2;
+	color: #666;
+	display: block;
+	font-weight: 700;
+	padding: 2px 5px;
+	text-align: left;
+}
+table.calendar div.app-fixed-block, table.timeslot div.app-fixed-block {
+	padding:4px;
+	text-align: center;
+	border:1px solid #FFF;
+	min-height:57px;
+}
+table.calendar td p, table.timeslot td p {
+	border-bottom: 1px solid #FFFFFF;
+	background: none repeat scroll 0 0 #E4EEFA;
+	color: #333333;
+	padding: 2px;
+}
+div.app-inner-block {
+	border:1px solid #cedced;
+}
+div.app-fixed-block p.app-pending, div.app-fixed-block p.app-approved, div.app-fixed-block p.app-closed, div.app-fixed-block p.app-cancelled, div.app-fixed-block p.app-expired, div.app-fixed-block p.app-rejected {
+	color:#FFF;
+}
+div.app-fixed-block p.app-pending {
+	background:#009cde;
+}
+div.app-fixed-block p.app-approved {
+	background:#41b649;
+}
+div.app-fixed-block p.app-closed {
+	background:#760000;
+}
+div.app-fixed-block p.app-cancelled {
+	background:#e90000;
+}
+div.app-fixed-block p.app-expired {
+	background:#525151;
+}
+div.app-fixed-block p.app-rejected {
+	background:#dd7302;
+}
+table.calendar td.today span.monthly-date, table.timeslot td.today span.monthly-date {
+	background:#41B649;
+	color:#FFF;
+}
+table.calendar td.today div.app-fixed-block, table.timeslot td.today div.app-fixed-block {
+	border:1px solid #41B649;
+}
+table.app-calendar td.title {
+	font-size:16px;
+	text-align:center;
+}
+table.app-calendar td {
+	background: url("../img/plan-list-bg.png") repeat-x left bottom;
+	border-top: 1px dashed #9f9e9e;
+	padding: 20px 10px;
+	vertical-align:middle;
+	color:#5c5b5b;
+	font-size:13px;
+	width:75%;
+}
+table.app-calendar td:first-child {
+	font-weight:bold;
+	width:25%;
+}
+table.app-calendar td span.date-style {
+	display: inline-block;
+	font-size: 20px;
+	padding: 0 5px 0 0;
+	text-align: right;
+	width: 30px;
+}
+table.app-calendar div.input {
+	margin:0px;
+	padding:0px;
+}

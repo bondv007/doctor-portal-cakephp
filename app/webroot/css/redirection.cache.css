@@ -1,0 +1,39 @@
+/* reset.css*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+/* redirection.css*/
+body{background:#E0E3E4;font-family:Verdana;font-size:12px;color:#000;line-height:18px;}
+a{color:#1b7ee3;text-decoration:none;}
+a:focus{outline:none;}
+a:hover,button:hover{text-decoration:underline;}
+h2{color:#1787b0;font-size:23px;line-height:25px;text-transform:capitalize;font-weight:400;padding:10px;}
+button{border:none;color:#afafaf;background:none;}
+div.authorize-page{width:667px;margin:150px auto;padding:10px;}
+#header .openid-block{width:725px;}
+#main div.openid-block{padding:15px 0 0;}
+.openid-container div.authorize-page{margin:150px auto 150px 500px;}
+div#colorbox div.authorize-page{width:auto;margin:10px auto;}
+#theme span{float:left;text-indent:-99999px;}
+#theme span.site-logo{background:url(../img/logo.png) no-repeat scroll left top;height:82px;width:319px;}
+#theme span.openid-logo{float:left;height:130px;width:150px;}
+div.authorize-head h2{float:left;padding:0 0 10px;}
+span.openid-to{background:url(../img/redircet-sprite.png) no-repeat 0 -1273px;height:50px;width:50px;margin:40px 26px 0 27px;}
+div#colorbox #theme h1{width:120px;}
+#twitter-authorizecontainer #theme span.openid-logo{background:url(../img/redircet-sprite.png) no-repeat 0 -684px;}
+#facebook-authorizecontainer #theme span.openid-logo{background:url(../img/redircet-sprite.png) no-repeat 0 0;}
+#yahoo_openid_message #theme span.openid-logo{background:url(../img/redircet-sprite.png) no-repeat 0 -912px;}
+#google_openid_message #theme span.openid-logo{background:url(../img/redircet-sprite.png) no-repeat 0 -228px;}
+div.openid-authorizecontainer #theme span.openid-logo{background:url(../img/redircet-sprite.png) no-repeat 0 -457px;}
+.loading{width:20px;height:20px;text-indent:-99999em;background:url(../img/loading.gif) no-repeat left top;float:left;margin:0!important;padding:0!important;}
+div.message-content input{background:none repeat scroll 0 0 transparent;border:medium none;color:#3ea8d0;padding:0;}
+div.message-content input:hover{text-decoration:underline;}
+.clearfix:after{clear:both;content:'.';display:block;visibility:hidden;height:0;}
+.clearfix{display:block;}
+* html .clearfix{height:1%;}
+*+html .clearfix{display:inline-block;}

@@ -1,0 +1,84 @@
+---
+affiliate.is_enabled: 1
+affiliate.referral_cookie_expire_time: 1
+cdn.css: 
+cdn.images: 
+cdn.js: 
+ContestUser.is_handle_aspect: 1
+EmailTemplate.admin_email: info@tatkalcare.com
+EmailTemplate.from_email: admin@tatkalcare.com
+EmailTemplate.reply_to_email: info@tatkalcare.com
+EmailTemplate.service_email: bookings@tatkalcare.com
+EmailTemplate.service_phone: 9580022122
+facebook.fb_access_token: 
+facebook.fb_api_key: 
+facebook.fb_app_id: 
+facebook.fb_secrect_key: 
+facebook.fb_user_id: 
+facebook.site_facebook_url: https://www.facebook.com
+google.translation_api_key: 
+Hook.bootstraps: Tinymce
+messages.content_length: 40
+messages.page_size: 50
+meta.description: tatkal care
+meta.keywords: tatkal care
+site.currency: INR
+site.currency_code: ILS
+site.currency_symbol_place: left
+site.date.format: %b %d, %Y
+site.date.tooltip: %b %d, %Y %I:%M %p
+site.datetime.format: %b %d, %Y %I:%M %p
+site.datetime.tooltip: %B %d, %Y %I:%M:%S %p (%A) %Z
+site.datetimehighlight.tooltip: %B %d, %Y %I:%M:%S %p (%A) %Z
+site.language: en
+site.look_up_url: http://whois.sc/
+site.maintenance_mode: 0
+site.name: Tatkal Care
+site.robots: 
+site.theme: 
+site.time.format: %I:%M %p
+site.time.tooltip: %B %d, %Y (%A) %Z
+site.tracking_script: 
+site.version: v1.0b1
+thumb_size.big_thumb.height: 160
+thumb_size.big_thumb.width: 160
+thumb_size.discusion_thumb.height: 60
+thumb_size.discusion_thumb.width: 60
+thumb_size.doctor_small_thumb.height: 85
+thumb_size.doctor_small_thumb.width: 74
+thumb_size.entry_big_thumb.height: 400
+thumb_size.entry_big_thumb.width: 350
+thumb_size.medium_big_thumb.height: 121
+thumb_size.medium_big_thumb.width: 152
+thumb_size.medium_thumb.height: 50
+thumb_size.medium_thumb.width: 50
+thumb_size.micro_thumb.height: 18
+thumb_size.micro_thumb.width: 18
+thumb_size.normal_thumb.height: 75
+thumb_size.normal_thumb.width: 67
+thumb_size.slider_thumb.height: 80
+thumb_size.slider_thumb.width: 80
+thumb_size.small_big_thumb.height: 160
+thumb_size.small_big_thumb.width: 160
+thumb_size.small_thumb.height: 30
+thumb_size.small_thumb.width: 30
+thumb_size.very_big_thumb.height: 600
+thumb_size.very_big_thumb.width: 600
+twitter.consumer_key: 
+twitter.consumer_secret: 
+twitter.site_twitter_url: https://twitter.com/
+twitter.site_user_access_key: 
+twitter.site_user_access_token: 
+twitter.username: 
+user.is_admin_activate_after_register: 0
+user.is_admin_mail_after_register: 1
+user.is_allow_user_to_switch_language: 0
+user.is_auto_login_after_register: 1
+user.is_email_verification_for_register: 0
+user.is_logout_after_change_password: 1
+user.is_welcome_mail_after_register: 1
+user.maximum_withdraw_amount: 100
+user.minimum_withdraw_amount: 2
+user.signup_fee: 0
+user.signup_fee_payer: User
+user.using_to_login: username

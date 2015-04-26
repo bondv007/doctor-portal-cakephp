@@ -1,0 +1,13 @@
+{
+	"name" : "360Contest Bluish",
+	"description" : "360Contest Bluish Theme",
+	"screenshot" : "screenshot.png",
+
+	"author" : "author",
+	"authorEmail" : "yourid@email.com",
+	"authorUrl" : "http://www.yoururl.com",
+	"menus" : [
+		"footer1",
+		"footer2"
+	]
+}

@@ -1,0 +1,169 @@
+360Contest - 1.0a7 (Not Yet Released) [ View Issues ]
+===================================================
+- 0155747: [-Bug PHP] Follow contest should be completed (antonishanth_168at11) - resolved.
+- 0155746: [-Bug PHP] Need to display user favorite (antonishanth_168at11) - resolved.
+- 0155745: [-Bug PHP] Add as a favorite link should be changed as like and unlike (antonishanth_168at11) - resolved.
+- 0155744: [-Bug PHP] User view page should have more information about user (antonishanth_168at11) - resolved.
+- 0155743: [-Bug PHP] User should able to flag other user id necessary (antonishanth_168at11) - resolved.
+- 0155742: [-Bug PHP] User should able to flag contest comments (antonishanth_168at11) - resolved.
+- 0155741: [-Bug PHP] Contest user rating, contest user, flags links not included in menu (antonishanth_168at11) - resolved.
+- 0155740: [-Bug PHP] Star rating needs to be displayed in admin index (antonishanth_168at11) - resolved.
+- 0155739: [-Bug PHP] Contest user search is not working (antonishanth_168at11) - resolved.
+- 0155738: [-Bug PHP] Contest user filter is not working (antonishanth_168at11) - resolved.
+- 0155737: [-Bug PHP] Contest user rating index leads to error (antonishanth_168at11) - resolved.
+- 0155733: [-Bug PHP] Contest Add - Dynamic form validation for check box and multi select box (jayashree_028ac09) - resolved.
+- 0155732: [+Feature Core] PayPal enabled, - add_to_wallet/signup (jayashree_028ac09) - resolved.
+- 0155730: [+Feature Core] wallet enabled (jayashree_028ac09) - resolved.
+- 0155729: [+Feature Core] Contest Flow chages (jayashree_028ac09) - resolved.
+- 0155720: [+Feature Core] Moved basic admin side links to the admin side menus (babu_156act10) - resolved.
+- 0155722: [+Feature Core] Moved plugin related links to the admin side menus (babu_156act10) - resolved.
+- 0155723: [+Feature Core] Add the admin side title class dynamically (babu_156act10) - resolved.
+- 0155724: [+Feature Core] Move the contest related files as a plugin (babu_156act10) - resolved.
+- 0155725: [+Feature Core] Move the Acl related files as a plugin (babu_156act10) - resolved.
+- 0155726: [+Feature Core] Move the Withdrawals related files as a plugin (babu_156act10) - resolved.
+[21 issues]
+
+360Contest - 1.0a6 (Released 2012-03-09) [ View Issues ]
+======================================================
+
+Sixth alpha version released on Oct 28, 2011 (rev 22495)
+
+- 0155419: [-Bug PHP] contest view error page - related to core (jayashree_028ac09) - resolved.
+- 0155417: [+Feature Core] code added for displaying contest type (beautlin_108ac10) - resolved.
+- 0155420: [+Feature Core] displaying menues in home page (beautlin_108ac10) - resolved.
+- 0155423: [+Feature Core] displaying avator image for contest (beautlin_108ac10) - resolved.
+- 0155424: [+Feature Core] routing - home page (beautlin_108ac10) - resolved.
+- 0155425: [+Enhancement] unwanted side bar removed (beautlin_108ac10) - resolved.
+- 0155426: [+Feature Core] for contest user attachment displayed dynamically (beautlin_108ac10) - resolved.
+- 0155427: [+Feature Core] entry images displayed as per the total rating count (beautlin_108ac10) - resolved.
+- 0155439: [-Bug CSS] Add basic style for inde and listing pages (jayashree_028ac09) - resolved.
+- 0155428: [+Enhancement] dashboard - balance amount displayed (beautlin_108ac10) - resolved.
+- 0155411: [+Feature Core] core 2.1 (current core 2.0.0-dev) (jayashree_028ac09) - resolved.
+- 0155413: [+Feature Core] croogo to cms change (jayashree_028ac09) - resolved.
+- 0155415: [+Feature Core] our core file merge (jayashree_028ac09) - resolved.
+- 0155418: [-Bug PHP] after login fatal error displays - related to core (jayashree_028ac09) - resolved.
+- 0155422: [-Bug Coding Standard->Other] Contest & Contest Types as different plugins? (jayashree_028ac09) - resolved.
+- 0155434: [-Bug PHP] dynamic forms (jayashree_028ac09) - resolved.
+- 0155435: [-Bug PHP] enter contest not working (jayashree_028ac09) - resolved.
+- 0155436: [-Bug PHP] Save function not working throughout the site (jayashree_028ac09) - resolved.
+- 0155437: [-Bug PHP] rating not working - goes to error page (jayashree_028ac09) - resolved.
+- 0155429: [+Enhancement] dashboard- link added for add amount to wallet (beautlin_108ac10) - resolved.
+- 0155430: [+Enhancement] For contester - contester count displayed (beautlin_108ac10) - resolved.
+- 0155432: [+Feature Core] chart displatyed for contester (beautlin_108ac10) - resolved.
+- 0155433: [+Enhancement] For contestent - contestent count displayed (beautlin_108ac10) - resolved.
+- 0155438: [+Feature Core] chart displatyed for contestent (beautlin_108ac10) - resolved.
+- 0155421: [-Bug PHP] Add sample records for contest, entry and ratings (antonishanth_168at11) - resolved.
+- 0155414: [-Bug PHP] User view page has no information. It should display the user profile informations. (antonishanth_168at11) - resolved.
+- 0155412: [-Bug PHP] In user profile related pages, right bar menu should be changed. (antonishanth_168at11) - resolved.
+[27 issues]
+
+360Contest - 1.0a5 (Released 2011-10-20) [ View Issues ]
+======================================================
+
+Fifth alpha version released on Oct 28, 2011 (rev 21912)
+
+- 0150190: [+Enhancement] ACL plugin changes from CRM (sakthivel_135at10) - resolved.
+[1 issue]
+
+360Contest - 1.0a4 (Released 2011-10-06) [ View Issues ]
+======================================================
+
+Fourth alpha version released on Oct 20, 2011 (rev 21826)
+
+- 0149938: [+Enhancement] Remove croogo partially - croogo router (sakthivel_135at10) - resolved.
+- 0149940: [+Enhancement] croogo installed (sakthivel_135at10) - resolved.
+- 0149941: [+Enhancement] make croogo to work on core2 (sakthivel_135at10) - resolved.
+- 0149942: [+Enhancement] Remove croogo partially - croogo hook (sakthivel_135at10) - resolved.
+- 0149943: [+Enhancement] Remove croogo partially - croogo component (sakthivel_135at10) - resolved.
+- 0149944: [+Enhancement] Remove croogo partially - croogo libs removed (sakthivel_135at10) - resolved.
+- 0149945: [+Enhancement] Remove croogo partially - all croogo related words removed (sakthivel_135at10) - resolved.
+- 0149946: [+Enhancement] Apply the result to 360Contest - contest types plugin (sakthivel_135at10) - resolved.
+- 0149947: [+Enhancement] Apply the result to 360Contest - contest type plugin webroot access core2 issue fixed (sakthivel_135at10) - resolved.
+- 0149953: [+Enhancement] Need to create plugin for contest and its related relations and remove from app (sakthivel_135at10) - resolved.
+- 0149956: [+Enhancement] Need to update acl permission list and modify permissions based on user role (sakthivel_135at10) - resolved.
+- 0149957: [+Enhancement] contest plugin model relation issues (sakthivel_135at10) - resolved.
+- 0149958: [+Enhancement] contest types model relation issues (sakthivel_135at10) - resolved.
+- 0149960: [+Enhancement] Apply transactions, messages, user cash withdrawal, user profile, user notification,add amount to wallet, header menu to croogo (sakthivel_135at10) - resolved.
+- 0149961: [+Enhancement] contest plugin admin menu (sakthivel_135at10) - resolved.
+- 0149948: [+Enhancement] Need to add all pages from 360Contest to croogo 360Contest (aravindan_111act10) - resolved.
+- 0149949: [+Enhancement] Need to fix all the issues when adding code from contest to croogo 360Contest (aravindan_111act10) - resolved.
+- 0149950: [+Enhancement] Need to add menus and links in admin end (aravindan_111act10) - resolved.
+- 0149952: [+Enhancement] Need to add settings from contest to croogo contest and update croogo setting and maintain consistency in both (aravindan_111act10) - resolved.
+- 0149955: [+Enhancement] Need to do registration and its related user functionality from contest to croogo contest (aravindan_111act10) - resolved.
+[20 issues]
+
+360Contest - 1.0a3 (Released 2011-10-03) [ View Issues ]
+======================================================
+
+Third alpha version released on Oct 06, 2011 (rev 21511)
+
+- 0148964: [+Enhancement] Admin stats with filter link - Contest (sakthivel_135at10) - resolved.
+- 0148965: [+Enhancement] Admin stats with filter link - Contest Entries (status vise) (sakthivel_135at10) - resolved.
+- 0148966: [+Enhancement] Admin stats with filter link - Transactions (sakthivel_135at10) - resolved.
+- 0148967: [+Enhancement] Admin - Contest list with filter (sakthivel_135at10) - resolved.
+- 0148968: [+Enhancement] Admin - Contest entry list with filter (sakthivel_135at10) - resolved.
+- 0148969: [+Enhancement] Admin - Payment gateways (sakthivel_135at10) - resolved.
+- 0148970: [+Enhancement] Admin - PayPal transaction log (sakthivel_135at10) - resolved.
+- 0148971: [+Enhancement] Minimum contest prize validation (sakthivel_135at10) - resolved.
+- 0148972: [+Enhancement] Mail for withdraw/Eliminated (sakthivel_135at10) - resolved.
+- 0148973: [+Enhancement] Activity listing - content needs be corrected (sakthivel_135at10) - resolved.
+- 0148975: [+Enhancement] Transaction listing needs to be done (sakthivel_135at10) - resolved.
+- 0148976: [+Enhancement] Sorting & view type in contest entry view needs ajax work (sakthivel_135at10) - resolved.
+- 0148978: [+Enhancement] flash uploader in tab not proper needs to be fixed (sakthivel_135at10) - resolved.
+- 0148979: [+Enhancement] attachment are not downloading (sakthivel_135at10) - resolved.
+- 0148980: [+Enhancement] Attachment needs to be tracked along with messages, so, it can be shown in activity (sakthivel_135at10) - resolved.
+- 0148981: [+Enhancement] Message section in activity needs validation and total upload file limit (sakthivel_135at10) - resolved.
+- 0148982: [+Enhancement] Need info for 'Complete' and 'Message' tab (sakthivel_135at10) - resolved.
+[17 issues]
+
+360Contest - 1.0a2 (Released 2011-09-29) [ View Issues ]
+======================================================
+
+Second alpha version released on Oct 03, 2011 (rev 21491)
+
+- 0148779: [+Enhancement] Need to do contest comment work (aravindan_111act10) - resolved.
+- 0148780: [+Enhancement] Need to contest entry page listing using resource and seperate cto file (aravindan_111act10) - resolved.
+- 0148781: [+Feature Core] Need to add user notification module and other message sending methods (aravindan_111act10) - resolved.
+- 0148782: [+Enhancement] Need to add mail functionality for comment process (aravindan_111act10) - resolved.
+- 0148783: [+Enhancement] Need to do contest entry add work process (aravindan_111act10) - resolved.
+- 0148784: [+Enhancement] Need to check maximum allowed entry for project (aravindan_111act10) - resolved.
+- 0148785: [+Enhancement] Need to do eliminate and withdraw process work (aravindan_111act10) - resolved.
+- 0148786: [+DB Structure Change] Need to add 'entry-no' in contest users tabke (aravindan_111act10) - resolved.
+- 0148787: [+Enhancement] Need to do contest entry rating work process (aravindan_111act10) - resolved.
+- 0148788: [+Enhancement] Need to do sorting and view type for contest entry page (aravindan_111act10) - resolved.
+- 0148789: [+DB Structure Change] Need to add end date for proejcts (aravindan_111act10) - resolved.
+- 0148790: [+Enhancement] Need to add cron process for judgement day status (aravindan_111act10) - resolved.
+- 0148791: [+Enhancement] Need to add my contest page (aravindan_111act10) - resolved.
+- 0148792: [+Enhancement] Need to add contest filter by user_id & auth user (aravindan_111act10) - resolved.
+- 0148793: [+Feature Core] Need to add activty module (aravindan_111act10) - resolved.
+- 0148794: [+Enhancement] Need to add and update winner selection proceess and other payment updations (aravindan_111act10) - resolved.
+- 0148795: [+Enhancement] Need to add order completion process and relation transaction and maiol works (aravindan_111act10) - resolved.
+- 0148766: [+Enhancement] pricing days section added (sakthivel_135at10) - resolved.
+- 0148726: [+Enhancement] user wallet section & admin management (sakthivel_135at10) - resolved.
+- 0148725: [+Enhancement] setting for winner design commission (sakthivel_135at10) - resolved.
+- 0148727: [+Enhancement] user cash withdrawal request section (sakthivel_135at10) - resolved.
+- 0148728: [+Enhancement] admin user cash withdrawal request process (sakthivel_135at10) - resolved.
+- 0148729: [+Enhancement] watermark handling for image resource (sakthivel_135at10) - resolved.
+- 0148730: [+Enhancement] Membership fee section added (sakthivel_135at10) - resolved.
+- 0148731: [+Enhancement] Add Contest with payment handling (sakthivel_135at10) - resolved.
+- 0148732: [+Enhancement] fee & gateway fee handling management added (sakthivel_135at10) - resolved.
+[26 issues]
+
+360Contest - 1.0a1 (Released 2011-09-22) [ View Issues ]
+======================================================
+
+First alpha version released on Sep 29, 2011 (rev 21446)
+
+- 0148437: [+Enhancement] Option to choose resources - add contest type (sakthivel_135at10) - resolved.
+- 0148438: [+Enhancement] Option to choose resources - list & edit contest type fields (sakthivel_135at10) - resolved.
+- 0148439: [+Enhancement] Template handling - edit / add contest type belongs to template (99designs, logotournament) (sakthivel_135at10) - resolved.
+- 0148440: [+Enhancement] Template handling - option to choose existing template in contest add page (sakthivel_135at10) - resolved.
+- 0148441: [+Enhancement] Template handling - list the templates (sakthivel_135at10) - resolved.
+- 0148442: [+Enhancement] Pricing step - option to select the all available pricing to particular contest type (sakthivel_135at10) - resolved.
+- 0148443: [+Enhancement] Pricing step - create title for pricing list group (sakthivel_135at10) - resolved.
+- 0148444: [+Enhancement] Pricing step - create package , choose the pricings to that pack , fix the price (sakthivel_135at10) - resolved.
+- 0148445: [+Enhancement] Display - views/themes - list out the all themes (sakthivel_135at10) - resolved.
+- 0148446: [+Enhancement] Display - views/themes - display the contest form (sakthivel_135at10) - resolved.
+- 0148447: [+Enhancement] Display - views/themes - pricing for selection (sakthivel_135at10) - resolved.
+- 0148448: [+Enhancement] Contest - add the contest (sakthivel_135at10) - resolved.
+- 0148449: [+Enhancement] Contest - list & view contest (sakthivel_135at10) - resolved.
