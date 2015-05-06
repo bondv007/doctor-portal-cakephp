@@ -1,4 +1,4 @@
-/* jquery.js*/
+﻿/* jquery.js*/
 (function(window,undefined){var document=window.document,navigator=window.navigator,location=window.location;var jQuery=(function(){var jQuery=function(selector,context){return new jQuery.fn.init(selector,context,rootjQuery);},_jQuery=window.jQuery,_$=window.$,rootjQuery,quickExpr=/^(?:[^<]*(<[\w\W]+>)[^>]*$|#([\w\-]*)$)/,rnotwhite=/\S/,trimLeft=/^\s+/,trimRight=/\s+$/,rdigit=/\d/,rsingleTag=/^<(\w+)\s*\/?>(?:<\/\1>)?$/,rvalidchars=/^[\],:{}\s]*$/,rvalidescape=/\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g,rvalidtokens=/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g,rvalidbraces=/(?:^|:|,)(?:\s*\[)+/g,rwebkit=/(webkit)[ \/]([\w.]+)/,ropera=/(opera)(?:.*version)?[ \/]([\w.]+)/,rmsie=/(msie) ([\w.]+)/,rmozilla=/(mozilla)(?:.*? rv:([\w.]+))?/,userAgent=navigator.userAgent,browserMatch,readyList,DOMContentLoaded,toString=Object.prototype.toString,hasOwn=Object.prototype.hasOwnProperty,push=Array.prototype.push,slice=Array.prototype.slice,trim=String.prototype.trim,indexOf=Array.prototype.indexOf,class2type={};jQuery.fn=jQuery.prototype={constructor:jQuery,init:function(selector,context,rootjQuery){var match,elem,ret,doc;if(!selector){return this;}
 if(selector.nodeType){this.context=this[0]=selector;this.length=1;return this;}
 if(selector==="body"&&!context&&document.body){this.context=document;this[0]=document.body;this.selector=selector;this.length=1;return this;}
@@ -1925,6 +1925,7 @@ $('.cityvalues').click(function(){
 			}
 			
 		} else {
+			$('.js-specialty-toggle-show').text('Specialty');
 			htmldata = '<p><a href="">No specialties found</a></p>';
 		}
 		$('.js-specialties').html(htmldata);
@@ -1973,6 +1974,9 @@ function check_search() {
 	var searchcity = $('#search_city').val();
 	if (searchcity == ""){
 		$('.find-tm').text('Please select city').css('color','red');
+                setTimeout(function(){
+                  $('.find-tm').text('');
+                },5000);
 		return false;
 	} else {
 		document.getElementById('mainSearchForm').submit()

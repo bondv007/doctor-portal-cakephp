@@ -766,7 +766,7 @@ class NodesController extends AppController
         $this->pageTitle = __l('Tools');
     }
     public function home()
-    {
+    {		
         $this->pageTitle = __l('Home');
 		$cities = $this->City->find('list', array(
             'conditions' => array(
@@ -806,6 +806,6 @@ class NodesController extends AppController
         ));*/
 		$search_options = $this->InsuranceCompany->searchOptions;
 		$insurances = $search_options + $insurance_companies;
-		$this->set(compact('cities', 'specialties','insurance_companies','insurances','drop_cities','drop_specialties','drop_insurance_companies','drop_hospitals'));
+		$this->set(compact('cities', 'specialties','insurance_companies','insurances','drop_cities','drop_specialties','drop_insurance_companies','drop_hospitals'));		
     }		
 }

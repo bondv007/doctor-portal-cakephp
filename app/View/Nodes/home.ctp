@@ -21,9 +21,9 @@
             <div class="js-cities sltoggle hide">
               <?php if(!empty($drop_cities)) {
 					foreach($drop_cities as $drop_city) {
-						$city_name = $drop_city['City']['name'];//.', '.$drop_city['State']['code'];
+						$city_name = $drop_city['City']['name'];
 		?>
-              <p><a href="javascript://" class="cityvalues" cityid="<?php echo $drop_city['City']['id']; ?>"><?php echo $city_name; ?></a><?php //echo $this->Html->link($this->Html->cText($city_name), array('controller'=> 'users', 'action' => 'search', 'city' => $drop_city['City']['slug']), array('title' => __l($city_name),'escape' => false));?></p>
+              <p><a href="javascript://" class="cityvalues" cityid="<?php echo $drop_city['City']['id']; ?>"><?php echo $city_name; ?></a></p>
               <?php }
 		  }
 		?>
@@ -36,7 +36,7 @@
 						if (!empty($drop_specialties)):
 							foreach ($drop_specialties as $specialty):
 					?>
-              <p> <a href="javascript://" class="spcvalues" spcid="<?php echo $specialty['Specialty']['id']; ?>"><?php echo $specialty['Specialty']['name']; ?></a><?php //echo $this->Html->link($this->Html->cText($specialty['Specialty']['name']), array('controller'=> 'users', 'action' => 'search', 'doctor_specialty_id' =>$specialty['Specialty']['id']), array('title' => __l($specialty['Specialty']['name']),'escape' => false));?></p>
+              <p> <a href="javascript://" class="spcvalues" spcid="<?php echo $specialty['Specialty']['id']; ?>"><?php echo $specialty['Specialty']['name']; ?></a></p>
               <?php
 						endforeach;
 					endif;
@@ -51,7 +51,7 @@
 						if (!empty($drop_hospitals)):
 							foreach ($drop_hospitals as $hid=>$hospital):
 					?>
-              <p> <a href="javascript://" class="hvalues" hid="<?php echo $hid; ?>"><?php echo $hospital; ?></a><?php //echo $this->Html->link($this->Html->cText($specialty['Specialty']['name']), array('controller'=> 'users', 'action' => 'search', 'doctor_specialty_id' =>$specialty['Specialty']['id']), array('title' => __l($specialty['Specialty']['name']),'escape' => false));?></p>
+              <p> <a href="javascript://" class="hvalues" hid="<?php echo $hid; ?>"><?php echo $hospital; ?></a></p>
               <?php
 						endforeach;
 					endif;
@@ -59,19 +59,7 @@
             </div>
           </li>
           
-          <!--<li class="insurance"> <?php echo $this->Html->link(__l('Hospital'), '#', array('title' => __l('Hospital'), 'class' => "js-insurances-toggle-show"));  ?>
-           <!-- <div class="js-insurances hide">
-              <?php
-						if (!empty($drop_insurance_companies)):
-							foreach ($drop_insurance_companies as $insurance_company):
-					?>
-              <p> <?php echo $this->Html->link($this->Html->cText($insurance_company['InsuranceCompany']['name']), array('controller'=> 'users', 'action' => 'search', 'doctor_insurance_id' =>$insurance_company['InsuranceCompany']['id']), array('title' => __l($insurance_company['InsuranceCompany']['name']),'escape' => false));?></p>
-              <?php
-						endforeach;
-					endif;
-					?>
-            </div>
-          </li>-->
+          
         </ul>
         <div class="search-title"><h4><button type="button" name="" onclick="return check_search();" title="Doctor Name" style="width:100px;height: 40px; "">Search</button></h4>
         
@@ -140,7 +128,7 @@
 
           <div class="but">
           <?php echo $this->Html->link(__l('See an Doctor'), array('controller'=> 'users', 'action' => 'search', 'city' => 'new-york'), array('title' => __l('See an Doctor'),'escape' => false));?>
-            <?php /*  echo $this->Html->link(Configure::read('site.name').' '.__l('See an Doctor'), array('controller' => 'nodes', 'action' => 'view', 'type' => 'page', 'slug' => 'careers'), array('title' => Configure::read('site.name').' '.__l('See an Doctor'))); */?>
+           
           </div>
         </div>
       </div>
@@ -159,35 +147,6 @@
   
     </div>
   
-  <!-- <div class="sponsor-logo">
-    <h3>As been Featured in:</h3>
-    <div class="sponsor-tl">
-    <div class="sponsor-tr">
-    <div class="sponsor-tm">
-    </div>
-    </div>
-    </div>
-    <div class="sponsor-cl">
-    <div class="sponsor-cr">
-    <div class="sponsor-cm">
-    
-    <ul class="sponsor-list clearfix">
-      <li><?php echo $this->Html->image('times-logo.gif'); ?></li>
-      <li><?php echo $this->Html->image('cnn-logo.gif'); ?></li>
-      <li><?php echo $this->Html->image('nbc-logo.gif'); ?></li>
-      <li><?php echo $this->Html->image('fox-logo.gif'); ?></li>
-      <li><?php echo $this->Html->image('forbes-logo.gif'); ?></li>
-      <li><?php echo $this->Html->image('chronicale-logo.gif'); ?></li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    <div class="sponsor-bl">
-    <div class="sponsor-br">
-    <div class="sponsor-bm">
-    </div>
-    </div>
-    </div>
-  </div> -->
+  
 
 </div>

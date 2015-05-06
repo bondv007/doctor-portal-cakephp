@@ -34269,3 +34269,720 @@ Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
 #3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
 #4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2015-04-26 21:13:49 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:55 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-27 18:23:57 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-04-27 18:25:49 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-04-27 18:25:58 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-04-27 19:47:16 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:53 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-04-28 17:48:54 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:50 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:05:51 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'id' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'InsuranceCompany' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:09 Warning: Warning (2): Illegal string offset 'name' in [C:\wamp\www\tatkalcare\app\View\Nodes\home.ctp, line 68]
+Trace:
+include - APP\View\Nodes\home.ctp, line 68
+View::_evaluate() - CORE\Cake\View\View.php, line 2039
+View::_render() - CORE\Cake\View\View.php, line 1967
+View::render() - CORE\Cake\View\View.php, line 957
+Controller::render() - CORE\Cake\Controller\Controller.php, line 1923
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 275
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
+[main] - APP\webroot\index.php, line 227
+
+2015-05-01 01:10:11 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:02:33 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:03:51 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:10:19 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:13:03 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:13:52 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:14:10 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:16:16 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:16:21 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:16:38 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:17:05 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:17:24 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-03 23:19:15 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-04 21:19:12 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-04 21:19:17 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-04 21:19:23 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-04 21:19:25 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-04 21:19:34 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-04 21:25:49 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 C:\wamp\www\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 C:\wamp\www\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-07 01:21:39 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
