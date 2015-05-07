@@ -3976,6 +3976,9 @@ class UsersController extends AppController
 			$clinics = $this->Clinic->find('all', array(
 										'conditions' => array(
 											'Clinic.city_id' => $city_id
+										),
+										'order' => array(
+											'Clinic.name' => 'asc'
 										)
 									));						
 			
@@ -3990,8 +3993,11 @@ class UsersController extends AppController
 				if ( !in_array($cl['Clinic']['id'], $already) )
 					$allclinics[] = $cl;
 			}
+			
+			if(!empty($allclinics)) {
+				echo json_encode($allclinics); 	
+			}				
 								
-			echo json_encode($allclinics); 						
 		
 		}
 		die;

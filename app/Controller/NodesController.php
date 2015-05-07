@@ -769,15 +769,13 @@ class NodesController extends AppController
     {		
         $this->pageTitle = __l('Home');
 		$cities = $this->City->find('list', array(
-            'conditions' => array(
-                'City.is_approved' => 1
-            ),
+            'conditions' => array(                'City.is_approved' => 1            ),            'order' => array(				'City.name' => 'asc'			),
 			'recursive' => '-1'
         ));
 		$specialties = $this->Specialty->find('list', array(
             'conditions' => array(
                 'Specialty.is_active' => 1
-            ),
+            ),            'order' => array(				'Specialty.name' => 'asc'			),
 			'recursive' => '-1'
         ));				
 		$insurance_companies = $this->InsuranceCompany->find('list', array(
@@ -789,15 +787,15 @@ class NodesController extends AppController
 		$drop_cities = $this->City->find('all', array(
             'conditions' => array(
                 'City.is_approved' => 1
-            ),
+            ),            'order' => array(				'City.name' => 'asc'			),
 			'recursive' => '1'
         ));
 		$drop_specialties = $this->Specialty->find('all', array(
             'conditions' => array(
                 'Specialty.is_active' => 1
-            ),
+            ),			'order' => array('Specialty.name' => 'asc'),
 			'recursive' => '-1'
-        ));				$this->loadModel('Clinic');		$drop_hospitals = $this->Clinic->find('list', array(            'conditions' => array(                'Clinic.is_active' => 1            ),			'recursive' => '-1'        ));				$drop_insurance_companies = $insurance_companies;
+        ));				$this->loadModel('Clinic');		$drop_hospitals = $this->Clinic->find('list', array(            'conditions' => array(                'Clinic.is_active' => 1            ),			'order' => array(				'Clinic.name' => 'asc'			),			'recursive' => '-1'        ));				$drop_insurance_companies = $insurance_companies;
 		/*$drop_insurance_companies = $this->InsuranceCompany->find('all', array(
             'conditions' => array(
                 'InsuranceCompany.is_active' => 1

@@ -43,7 +43,7 @@
 					foreach ($users as $user):
 		  ?>
 		   <li>
-			   <h5><?php echo $this->Html->link(ucfirst($user['User']['username']), array('controller' => 'users', 'action' => 'view', $user['User']['username']),array('title' => $user['User']['username'])); ?></h5>
+			   <h5><?php echo $this->Html->link('Dr. '.ucfirst($user['UserProfile']['first_name']).' '.ucfirst($user['UserProfile']['last_name']), array('controller' => 'users', 'action' => 'view', $user['User']['username']),array('title' => $user['User']['username'])); ?></h5>
 			   <address>
 			  		 <span>
 						 <?php if(!empty($user['UserProfile']['address'])) { ?>

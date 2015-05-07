@@ -62,7 +62,10 @@
           
         </ul>
         <div class="search-title"><h4><button type="button" name="" onclick="return check_search();" title="Doctor Name" style="width:100px;height: 40px; "">Search</button></h4>
-        
+        	
+        	<p class="search-by grid_left">
+        		<span style="font-weight: bold;">Or Search by</span>
+        <a title="Doctor Name" href="<?php echo $this->webroot; ?>directory">Doctor Name</a>, <a title="Practice Name" href="<?php echo $this->webroot; ?>specialties">Practice Name</a>, <a title="Procedure" href="<?php echo $this->webroot; ?>specialties">Procedure</a></p>
         </div>
       </div>
     </div>
