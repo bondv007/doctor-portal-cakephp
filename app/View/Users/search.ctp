@@ -185,11 +185,24 @@
 					
 					<span><?php echo "<br/><b>Fees: ".Configure::read('site.currency')."&nbsp;".$user['DoctorAvailability']['consultation_fees'];?></b></span>
 					
+					<?php if($user['User']['is_partner'] == 0){
+							if(!empty($user['UserProfile']['phone']))
+								$phone = $user['UserProfile']['phone'];
+							else
+								$phone = 'N/A';
+						 ?>
+					<span><?php echo "<br/><b>Phone: &nbsp;".$phone;?></b></span>
+					<?php } ?>
+					
 			    </address>
-			    <?php if ( $user['UserProfile']['is_partner'] == '1') { ?>
+			    <?php
+			    
+			     if($user['User']['is_partner'] == 1) {  ?>
                 <div class="book-l"><?php echo $this->Html->link(__l('Book Online'), array('controller' => 'users', 'action' => 'view', $user['User']['username']),array('class' => 'book-l','title' => __l('Book Online'))); ?>
+				
 				<?php }else{ ?>
-					<div class="book-l"><?php echo $this->Html->link(__l('Show Details'), array('controller' => 'users', 'action' => 'view', $user['User']['username']),array('class' => 'book-l','title' => __l('Book Online'))); ?>
+				
+					<div class="book-l"><?php echo $this->Html->link(__l('Show Details'), array('controller' => 'users', 'action' => 'view', $user['User']['username']),array('class' => 'book-l','title' => __l('Show Details'))); ?>
 				
 				<?php } ?>	
 				</div>

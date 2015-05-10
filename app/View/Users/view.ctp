@@ -27,7 +27,7 @@
             </div>
 			</div>
 			<div class="green-outer">
-                <?php if ( $user['UserProfile']['is_partner'] == '1') { ?>
+                <?php if ( $user['User']['is_partner'] == 1) { ?>
                 <div class="button-green js-book-online">
     	       		<?php echo $this->Html->link(__l('Book Online'), '#Appointment_Box', array('title' => __l('Book Online')));?>
         		</div>
@@ -69,8 +69,8 @@
 				<?php if(!empty($user['UserProfile']['zip_code'])){?>
 				<span><?php echo $user['UserProfile']['zip_code'];?></span>,
 				<?php } ?>
-				<?php if(!empty($user['UserProfile']['phone'])){?>
-				<span><?php echo $user['UserProfile']['phone'];?></span>.
+				<?php if(!empty($user['UserProfile']['phone']) && $user['User']['is_partner'] == 0){?>
+				<span><?php echo '<br>Phone: '.$user['UserProfile']['phone'];?></span>.
 				<?php } ?>
 		  </address>
 		  </div>

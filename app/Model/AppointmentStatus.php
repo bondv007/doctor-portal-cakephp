@@ -30,4 +30,4 @@ class AppointmentStatus extends AppModel {
             )
         );
     }
-}
+}?>

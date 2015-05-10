@@ -186,6 +186,8 @@ class UsersController extends AppController
 				),
 				'recursive' => 2
 			);
+			
+			
 			if (isset($this->request->params['named']['q'])) {
 			$this->paginate = array_merge($this->paginate, array(
 				'search' => $this->request->params['named']['q']
@@ -377,6 +379,7 @@ class UsersController extends AppController
 			'fields' => array(
 				'User.id',
 				'User.username',
+				'User.is_partner'
 			),
 			'order' => array(
 				'User.id' => 'desc'
@@ -655,6 +658,10 @@ class UsersController extends AppController
             if (!empty($this->request->data)) {
                 $this->User->set($this->request->data);
                 if ($this->User->validates()) {
+                	
+					//for admin notification
+					$this->request->data['User']['is_admin_notification'] = 1;
+					
                     $this->User->create();
                     if (!empty($this->request->data['User']['fb_user_id'])) {
                         $this->request->data['User']['password'] = $this->Auth->password($this->request->data['User']['email'] . Configure::read('Security.salt'));
@@ -1752,6 +1759,7 @@ class UsersController extends AppController
 						'UserProfile.memberships',
 						'UserProfile.awards',
 						'UserProfile.title',
+						'UserProfile.phone',
 						'UserProfile.practice_name',
                     ) ,
 					'Specialty' => array(
@@ -1805,10 +1813,12 @@ class UsersController extends AppController
 				'User.default_thumbnail_id',
 				'User.overall_rating_count', 
 				'User.overall_avg_rating',
-				'User.is_active'
+				'User.is_active',
+				'User.is_partner'
             ) ,
             'recursive' => 3
         ));
+		
 		if($user['User']['default_thumbnail_id'] == 0) {
 			$default_thumbnail_id = 1;		
 		} else {
@@ -3814,7 +3824,8 @@ class UsersController extends AppController
 				'User.default_thumbnail_id',
 				'User.overall_rating_count', 
 				'User.overall_avg_rating',
-				'User.is_active'
+				'User.is_active',
+				'User.is_partner'
             ) ,
             'recursive' => 3
         );
@@ -4001,6 +4012,48 @@ class UsersController extends AppController
 		
 		}
 		die;
+	}
+
+	public function admin_get_new_data(){
+		
+		$this->loadModel('User');
+		$this->loadModel('Appointment');
+		
+		$count_user = $this->User->find('count', array(
+										'conditions' => array(
+											'User.is_admin_notification' => 1
+										)
+									));
+									
+		$count_app = $this->Appointment->find('count', array(
+										'conditions' => array(
+											'Appointment.is_admin_notification' => 1
+										)
+									));							
+		$count = array('user' => $count_user, 'appointment' => $count_app);
+		
+		echo json_encode($count); die;
+		
+	}
+	
+	public function admin_clear_notification() {
+		$id = $this->request->data['id'];
+		$type = $this->request->data['type'];
+		
+		if(!empty($id) && !empty($type)){
+			if($type == 1) {
+				$this->loadModel('User');
+				$this->User->id = $id;
+				$this->User->save(array('is_admin_notification' => 0));
+			}else{
+				$this->loadModel('Appointment');
+				$this->Appointment->id = $id;
+				$this->Appointment->save(array('is_admin_notification' => 0));
+			}
+		}
+		
+		die;
+		
 	}
 	
 }

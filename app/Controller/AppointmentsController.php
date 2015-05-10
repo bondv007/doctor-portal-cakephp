@@ -3,11 +3,12 @@ class AppointmentsController extends AppController {
 
 	var $name = 'Appointments';
 	public function beforeFilter()
-    {
+    {	
         $this->Security->disabledFields = array(
             'Appointment',
         );
         parent::beforeFilter();
+		
     }
 	public function index()
 	{
@@ -280,7 +281,7 @@ class AppointmentsController extends AppController {
 		$this->set('appointment', $appointment);
 	}
 	public function add()
-	{
+	{	
 		$this->pageTitle = __l('Book Your Appointment');
 		if (!empty($this->request->data)) {
 			$user = $this->Session->read('user');
@@ -306,14 +307,20 @@ class AppointmentsController extends AppController {
 				unset($this->request->data['Appointment']['guest_dob']);
 				//unset($this->request->data['Appointment']['dob']);
 			}
+			
+			//for admin notification
+			$this->request->data['Appointment']['is_admin_notification'] = 1;
+			
 			$this->Appointment->create();
+			
 			if ($this->Appointment->save($this->request->data)) {
+				
 				$this->redirect(array(
 						'controller' => 'appointments',
 						'action' => 'booking_info',
 						'appointment' => $this->Appointment->getLastInsertId()
            		));
-			} 
+			}
 		}
 	}
 	public function appointment_info()

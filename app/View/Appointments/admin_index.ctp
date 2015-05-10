@@ -36,6 +36,7 @@
 		<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('SpecialtyDisease.name',__l('Reason for visit')); ?></div></th>
 		<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('InsuranceCompany.name',__l('Insurance')); ?></div></th>
 		<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('appointment_status_id',__l('Status')); ?></div></th>
+		<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('created',__l('Notification Action')); ?></div></th>
 	</tr>
 <?php
 if (!empty($appointments)):
@@ -46,9 +47,10 @@ foreach ($appointments as $appointment):
 		$class = "altrow";
 	endif;
 ?>
+
 	<tr class="<?php echo $class;?>">
-		<td class="select"><?php echo $this->Form->input('Appointment.'.$appointment['Appointment']['id'].'.id', array('type' => 'checkbox', 'id' => "admin_checkbox_".$appointment['Appointment']['id'], 'label' => false, 'class' => 'js-checkbox-list')); ?></td>
-		<td  class="actions">
+		<td class="select" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Form->input('Appointment.'.$appointment['Appointment']['id'].'.id', array('type' => 'checkbox', 'id' => "admin_checkbox_".$appointment['Appointment']['id'], 'label' => false, 'class' => 'js-checkbox-list')); ?></td>
+		<td  class="actions" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>>
 							<div class="action-block">
 								<span class="action-information-block">
 									<span class="action-left-block">&nbsp;
@@ -69,14 +71,17 @@ foreach ($appointments as $appointment):
 								</div>
 							</div>
 						 </td>
-					<td class="dl"><?php echo $this->Html->link($this->Html->cText($appointment['User']['username']), array('controller'=> 'users', 'action'=>'view', $appointment['User']['username'], 'admin' => false), array('escape' => false));?></td>
-					<td class="dl"><?php echo $this->Html->link($this->Html->cText($appointment['DoctorUser']['username']), array('controller'=> 'users', 'action'=>'view', $appointment['DoctorUser']['username'], 'admin' => false), array('escape' => false));?></td>
-					<td class="dl"><?php echo $this->Html->cDateTime($appointment['Appointment']['appointment_date']);?></td>	
-					<td class="dl"><?php echo $this->Html->cTime($appointment['Appointment']['appointment_time']);?></td>			
-					<td class="dl"><?php echo $this->Html->cText($appointment['Appointment']['phone']);?></td>
-					<td class="dl"><?php echo $this->Html->cText($appointment['SpecialtyDisease']['name']);?></td>		
-					<td class="dl"><?php echo $this->Html->cText($appointment['InsuranceCompany']['name']);?></td>						 
-					<td class="dl"><?php echo $this->Html->cText($appointment['AppointmentStatus']['name']);?></td>						 
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->link($this->Html->cText($appointment['User']['username']), array('controller'=> 'users', 'action'=>'view', $appointment['User']['username'], 'admin' => false), array('escape' => false));?></td>
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->link($this->Html->cText($appointment['DoctorUser']['username']), array('controller'=> 'users', 'action'=>'view', $appointment['DoctorUser']['username'], 'admin' => false), array('escape' => false));?></td>
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cDateTime($appointment['Appointment']['appointment_date']);?></td>	
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cTime($appointment['Appointment']['appointment_time']);?></td>			
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cText($appointment['Appointment']['phone']);?></td>
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cText($appointment['SpecialtyDisease']['name']);?></td>		
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cText($appointment['InsuranceCompany']['name']);?></td>						 
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cText($appointment['AppointmentStatus']['name']);?></td>		
+					<td class="dl" <?php if($appointment['Appointment']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php 		if($appointment['Appointment']['is_admin_notification'] == 1){ ?>
+		<a href="javascript://" class="a_<?php echo $appointment['Appointment']['id'];  ?>" onclick="remove_notif('<?php echo $appointment['Appointment']['id']; ?>',2)">Clear</a>
+			<?php }else{ echo '-'; } ?></td>				 
 		</tr>
 <?php
     endforeach;

@@ -1983,3 +1983,28 @@ function check_search() {
 	}
 	
 }
+
+$(document).ready(function(){
+	$.post('users/get_new_data', function(data){
+		var resp = JSON.parse(data);
+		
+		if(parseInt(resp['appointment']) > 0) {
+			$('ul.admin-links li').eq(0).find('.amenu-left').append('<span style="margin-left: 93px; cursor:pointer; background: none repeat scroll 0% 0% rgb(255, 0, 0); border-radius: 50%; margin-top: -69px; text-align: center; color: rgb(255, 255, 255); font-weight: bold; padding-top: 3px; height: 23px; width:27px;">'+resp['appointment']+'</span>');
+		}
+		
+		
+		if(parseInt(resp['user']) > 0) {
+			
+			$('ul.admin-links>li').eq(3).find('.amenu-left').append('<span style="margin-left: 93px;cursor:pointer;  background: none repeat scroll 0% 0% rgb(255, 0, 0); border-radius: 50%; margin-top: -69px; text-align: center; color: rgb(255, 255, 255); font-weight: bold; padding-top: 3px; height: 23px; width:27px;">'+resp['user']+'</span>');
+		}
+		
+	});
+});
+
+function remove_notif(id, type) {
+	$.post('users/clear_notification',{ id: id, type:type}, function(data){
+		$('.a_'+id).hide();
+		//$('.a_'+id).parent().siblings('td').removeAttr('style');
+		 window.location.reload(true);	
+	});
+}

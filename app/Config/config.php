@@ -189,6 +189,10 @@ if (method_exists('CmsHook', 'setExceptionUrl')) {
 		'users/get_specialities',
 		
 		'users/get_hospitals',
+		
+		'users/admin_get_new_data',
+		
+		'users/admin_clear_notification',
 
         'users/register',
 

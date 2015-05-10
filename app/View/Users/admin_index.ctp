@@ -46,6 +46,7 @@
 		<?php if (Configure::read('user.signup_fee')){?>
         <th rowspan="2" class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('is_paid',__l('Paid Memebrship fee')); ?></div></th>
         <?php }?>
+        <th rowspan="2" class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('created',__l('Notification Action')); ?></div></th>
 		</tr>
 	<tr>
 		<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('user_login_count',__l('Count')); ?></div></th>
@@ -56,6 +57,7 @@
 <?php
 if (!empty($users)):
 $i = 0;
+	
 foreach ($users as $user):
 	$class = null;
 	$active_class = '';
@@ -76,10 +78,15 @@ foreach ($users as $user):
 	if (!empty($user['CkSession']['user_id'])) {
 		$online_class = 'online';
 	}
+	
+	
 ?>
+
+
+
 	<tr class="<?php echo $class.$active_class;?>">
-		<td class="select"><?php echo $this->Form->input('User.'.$user['User']['id'].'.id', array('type' => 'checkbox', 'id' => "admin_checkbox_".$user['User']['id'], 'label' => false, 'class' => $status_class.' js-checkbox-list')); ?></td>
-		<td  class="actions">
+		<td class="select" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Form->input('User.'.$user['User']['id'].'.id', array('type' => 'checkbox', 'id' => "admin_checkbox_".$user['User']['id'], 'label' => false, 'class' => $status_class.' js-checkbox-list')); ?></td>
+		<td  class="actions" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>>
 							<div class="action-block">
 								<span class="action-information-block">
 									<span class="action-left-block">&nbsp;
@@ -109,7 +116,7 @@ foreach ($users as $user):
 								</div>
 							</div>
 						 </td>
-					<td class="dl">
+					<td class="dl" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>>
                         <div class="clearfix user-info-block">
                         <p class="user-img-left grid_left">
                             <?php
@@ -161,15 +168,15 @@ foreach ($users as $user):
 						<?php endif; ?>
 						</div>
                         </td>	
-        <td class="dc"><?php echo $this->Html->link($this->Html->cInt($user['User']['user_login_count'], false), array('controller' => 'user_logins', 'action' => 'index', 'username' => $user['User']['username']));?></td>
-        <td class="dc">
+        <td class="dc" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->link($this->Html->cInt($user['User']['user_login_count'], false), array('controller' => 'user_logins', 'action' => 'index', 'username' => $user['User']['username']));?></td>
+        <td class="dc" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>>
 				<?php if($user['User']['last_logged_in_time'] == '0000-00-00 00:00:00' || empty($user['User']['last_logged_in_time'])){
 					echo '-';
 				}else{
 					echo $this->Html->cDateTimeHighlight($user['User']['last_logged_in_time']);
 				}?>
 			</td>
-			<td><?php if(!empty($user['LastLoginIp']['ip'])): ?>							  
+			<td <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php if(!empty($user['LastLoginIp']['ip'])): ?>							  
 				<?php echo  $this->Html->link($user['LastLoginIp']['ip'], array('controller' => 'users', 'action' => 'whois', $user['LastLoginIp']['ip'], 'admin' => false), array('target' => '_blank', 'title' => 'whois '.$user['User']['username'], 'escape' => false));								
 				?>
 				<p>
@@ -189,10 +196,13 @@ foreach ($users as $user):
 			<?php else: ?>
 				<?php echo __l('N/A'); ?>
 						<?php endif; ?>   </td>
-		<td class="dc"><?php echo $this->Html->cDateTimeHighlight($user['User']['created']);?></td>
+		<td class="dc" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cDateTimeHighlight($user['User']['created']);?></td>
 			<?php if (Configure::read('user.signup_fee')){?>
-		<td class="dc"><?php echo $this->Html->cBool($user['User']['is_paid']);?></td>
+		<td class="dc" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php echo $this->Html->cBool($user['User']['is_paid']);?></td>
 		<?php }?>
+		<td class="dc" <?php if($user['User']['is_admin_notification'] == 1){ echo 'style="background:#ffffaf"'; } ?>><?php 		if($user['User']['is_admin_notification'] == 1){ ?>
+		<a href="javascript://" class="a_<?php echo $user['User']['id'];  ?>" onclick="remove_notif('<?php echo $user['User']['id']; ?>',1)">Clear</a>
+			<?php }else{ echo '-'; } ?></td>
 	</tr>
 <?php
     endforeach;
@@ -216,8 +226,11 @@ if (!empty($users)):
     		<?php echo $this->Html->link(__l('None'), '#', array('class' => 'js-admin-select-none', 'title' => __l('None'))); ?>
     		<?php echo $this->Html->link(__l('Inactive'), '#', array('class' => 'js-admin-select-pending', 'title' => __l('Inactive'))); ?>
     		<?php echo $this->Html->link(__l('Active'), '#', array('class' => 'js-admin-select-approved', 'title' => __l('Active'))); ?>
+    		
+    		
     	</div>
     	<div class="admin-checkbox-button"><?php echo $this->Form->input('more_action_id', array('class' => 'js-admin-index-autosubmit', 'label' => false, 'empty' => __l('-- More actions --'))); ?></div>
+    	
     </div>
     <div class="js-pagination grid_right">
         <?php echo $this->element('paging_links'); ?>

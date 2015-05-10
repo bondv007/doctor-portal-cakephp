@@ -109,9 +109,9 @@ class AppController extends Controller
         $this->_affiliate_referral();
     }
     function beforeRender()
-    {
-        $this->set('meta_for_layout', Configure::read('meta'));
-        parent::beforeRender();
+    {		
+        $this->set('meta_for_layout', Configure::read('meta'));		
+        parent::beforeRender();		
     }
     /**
      * beforeFilter
@@ -119,7 +119,7 @@ class AppController extends Controller
      * @return void
      */
     public function beforeFilter()
-    {
+    {		
         parent::beforeFilter();
         $cur_page = $this->request->params['controller'] . '/' . $this->request->params['action'];
         // check site is under maintenance mode or not. admin can set in settings page and then we will display maintenance message, but admin side will work.
@@ -131,12 +131,12 @@ class AppController extends Controller
         );
         if (Configure::read('site.maintenance_mode') && $this->Auth->user('role_id') != ConstUserTypes::Admin && empty($this->request->params['prefix']) && !in_array($cur_page, $maintenance_exception_array)) {
             throw new MaintenanceModeException(__l('Maintenance Mode'));
-        }
-        $this->_checkAuth();
+        }		
+        $this->_checkAuth();		
         //Fix to upload the file through the flash multiple uploader
-        if ((isset($_SERVER['HTTP_USER_AGENT']) and ((strtolower($_SERVER['HTTP_USER_AGENT']) == 'shockwave flash') or (strpos(strtolower($_SERVER['HTTP_USER_AGENT']) , 'adobe flash player') !== false))) and isset($this->request->params['pass'][0]) and ($this->action == 'flashupload')) {
+        if ((isset($_SERVER['HTTP_USER_AGENT']) && ((strtolower($_SERVER['HTTP_USER_AGENT']) == 'shockwave flash') || (strpos(strtolower($_SERVER['HTTP_USER_AGENT']) , 'adobe flash player') !== false))) && isset($this->request->params['pass'][0]) and ($this->action == 'flashupload')) {
             $this->Session->id($this->request->params['pass'][0]);
-        }
+        }		
         $this->Security->blackHoleCallback = '__securityError';
         if (Configure::read('site.theme') && !isset($this->request->params['admin'])) {
             $this->theme = Configure::read('site.theme');
@@ -145,7 +145,7 @@ class AppController extends Controller
             Configure::write('Config.language', $this->request->params['locale']);
         }
         $this->layout = 'default';
-        if ($this->Auth->user('role_id') == ConstUserTypes::Admin && (isset($this->request->params['prefix']) and $this->request->params['prefix'] == 'admin')) {
+        if ($this->Auth->user('role_id') == ConstUserTypes::Admin && (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin')) {
             $this->layout = 'admin';
         }
         if (Configure::read('site.maintenance_mode') && !$this->Auth->user('role_id')) {
@@ -164,7 +164,7 @@ class AppController extends Controller
         }
     }
 	 public function _checkAuth()
-    {
+    {		
         $this->Auth->autoRedirect = false;
         $this->Auth->authenticate = array(
 			'Form' => array(
@@ -177,8 +177,8 @@ class AppController extends Controller
 		$this->Auth->loginError = __l(sprintf('Sorry, login failed.  Either your %s or password are incorrect or admin deactivated your account.', Configure::read('user.using_to_login')));
         $exception_array = Configure::read('site.exception_array');
         $cur_page = $this->request->params['controller'] . '/' . $this->request->params['action'];
-        if (!in_array($cur_page, $exception_array) && $this->request->params['action'] != 'flashupload') {
-            if (!$this->Auth->user('id')) {
+        if (!in_array($cur_page, $exception_array) && $this->request->params['action'] != 'flashupload') {			
+            if (!$this->Auth->user('id')) {	
                 // check cookie is present and it will auto login to account when session expires
                 $cookie_hash = $this->Cookie->read('User.cookie_hash');
                 if (!empty($cookie_hash)) {
@@ -205,23 +205,23 @@ class AppController extends Controller
                         $user_model_obj->UserLogin->insertUserLogin($this->Auth->user('id'));
                         $this->redirect(Router::url('/', true) . $this->request->url);
                     }
-                }
+                }				
                 $this->Session->setFlash(__l('Authorisation Required'));
-                $is_admin = false;
-                if (isset($this->request->params['prefix']) and $this->request->params['prefix'] == 'admin') {
+                $is_admin = false;				
+                if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin') {					
                     $is_admin = true;
-                }
-                $this->redirect(array(
+                }				
+               $this->redirect(array(
                     'controller' => 'users',
                     'action' => 'login',
                     'admin' => $is_admin,
                     '?f=' . $this->request->url
-                ));
-            }
-            if (isset($this->request->params['prefix']) and $this->request->params['prefix'] == 'admin' and $this->Auth->user('role_id') != ConstUserTypes::Admin) {
+                ));				
+            }			
+            if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'admin' && $this->Auth->user('role_id') != ConstUserTypes::Admin) {				
                 $this->redirect('/');
-            }
-        } else {
+            }			
+        } else {			
             $this->Auth->allow('*');
         }
     }
