@@ -26,6 +26,27 @@
     		 <h3><?php echo __l('Any note\'s for the doctor\'s office?');?></h3>
     		 <?php echo $this->Form->input('patient_note' , array('label' => false ));?>
     		 <?php echo $this->Form->input('appointment_id' , array('type' => 'hidden' , 'value' => $appointment_id));?>
+    		 <h3>Reminder Notification</h3>
+    		 <span>
+    		 	
+    		 <label for="reminder_sms"><?php echo __l('I want reminder SMS for appointment.');?></label>
+    		 <input id="reminder_sms" type="checkbox" name="data[Appointment][reminder_sms]" value="1" onclick="check_reminder();"/>
+    		 </span>
+    		 
+    		 <div id="reminder_time" style="display: none;">
+    		 	<label for="reminder_time_val">Send me reminder prior to appointment</label>
+    		 	<select id="reminder_time_val" name="data[Appointment][reminder_time]">
+    		 		<option value="15">15 Minutes</option>
+    		 		<option value="30">30 Minutes</option>
+    		 		<option value="45">45 Minutes</option>
+    		 		<option value="60">1 Hour</option>
+    		 		<option value="90">1 Hour 30 Minutes</option>
+    		 		<option value="120">2 Hours</option>
+    		 		<option value="180">3 Hours</option>
+    		 		<option value="240">4 Hours</option>
+    		 		<option value="300">5 Hours</option>
+    		 	</select>
+    		 </div>	
             <div class="submit-block clearfix">
                 <?php echo $this->Form->submit(__l('Book Appointment'));?>
             </div>
@@ -37,3 +58,5 @@
 	</div>
 </div>
 </div>
+
+

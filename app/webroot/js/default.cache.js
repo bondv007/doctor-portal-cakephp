@@ -2008,3 +2008,11 @@ function remove_notif(id, type) {
 		 window.location.reload(true);	
 	});
 }
+
+function check_reminder() {
+	if($('#reminder_sms').is(':checked')) {
+		$('#reminder_time').show();	
+	}else{
+		$('#reminder_time').hide();	
+	}
+}

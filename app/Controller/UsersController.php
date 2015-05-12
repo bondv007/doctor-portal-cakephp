@@ -3653,30 +3653,49 @@ class UsersController extends AppController
 		$zipcode_conditions = array();
 		$doctor_insurance_id = '';
 		$conditions['User.role_id'] = ConstUserTypes::Doctor;
-
+	
+		$alluserids = array();
+	
 		if(!empty($city_id)) {
 				
+			
+			if(!empty($doctor_specialty_id)) {
 				
+				$zipcode_conditions['UserProfile.specialty_id'] = $doctor_specialty_id;
+			
+				$zipcodes = $this->User->UserProfile->find('all', array(
+					'conditions' => $zipcode_conditions,
+					'fields'=>array(
+						'UserProfile.user_id',
+					),
+				));
+				
+			}else{
 				$zipcode_conditions['UserProfile.city_id'] = $city_id;
 			
-			$zipcodes = $this->User->UserProfile->find('all', array(
-				'conditions' => $zipcode_conditions,
-				'fields'=>array(
-					'UserProfile.user_id',
-				),
-			));
+				$zipcodes = $this->User->UserProfile->find('all', array(
+					'conditions' => $zipcode_conditions,
+					'fields'=>array(
+						'UserProfile.user_id',
+					),
+				));
+			}
+				
+			
 			if(!empty($zipcodes)) {
 				$i=1;
 				foreach($zipcodes as $zipcode) {
-							
-								$user_ids[] = $zipcode['UserProfile']['user_id'];
+							if(!in_array($zipcode['UserProfile']['user_id'],$alluserids)) {
+									$user_ids[] = $zipcode['UserProfile']['user_id'];
+									$alluserids[] = $zipcode['UserProfile']['user_id'];
+							}
 							
 						}
 				
 				
 			}
-			$conditions['User.id'] = $user_ids;
-		}else{
+			//$conditions['User.id'] = $user_ids;
+		}
 
 
 		
@@ -3691,9 +3710,12 @@ class UsersController extends AppController
 		));	
 		$specialty_user_ids = array();
 		foreach($specialties_users as $specialties_user) {
-			$specialty_user_ids[] = $specialties_user['SpecialtiesUser']['user_id'];
+			if(!in_array($specialties_user['SpecialtiesUser']['user_id'],$alluserids)) {
+				$specialty_user_ids[] = $specialties_user['SpecialtiesUser']['user_id'];
+				//$alluserids[] = $specialties_user['SpecialtiesUser']['user_id'];
+			}
 		}
-		$conditions['User.id'] = $specialty_user_ids;
+		//$conditions['User.id'] = $specialty_user_ids;
 		$specialty_diseases = $this->User->Specialty->SpecialtyDisease->find('list', array(
             'conditions' => array(
                 'SpecialtyDisease.is_active' => 1,
@@ -3735,9 +3757,12 @@ class UsersController extends AppController
        		));
 			$clinic_user_ids = array();
 			foreach($clinic_users as $clinic_user) {
-				$clinic_user_ids[] = $clinic_user['ClinicsUser']['user_id'];
+				if(!in_array($clinic_user['ClinicsUser']['user_id'],$alluserids)) {
+					$clinic_user_ids[] = $clinic_user['ClinicsUser']['user_id'];
+					//$alluserids = $clinic_user['ClinicsUser']['user_id'];
+				}
 			}	
-			$conditions['User.id'] = $clinic_user_ids;
+			//$conditions['User.id'] = $clinic_user_ids;
 			
 		} else {
 			$doctor_insurance_id ='';
@@ -3754,8 +3779,10 @@ class UsersController extends AppController
 			$insuranceplans = $search_options + $insurance_plans;
 			$this->set('doctor_insurance_id',$doctor_insurance_id);
 		}
-		}
+		//}
 		//print_r($conditions);
+		$conditions['User.id'] = $alluserids;
+			
  		$this->paginate = array(
 			'conditions' =>$conditions,
 			'contain' => array(

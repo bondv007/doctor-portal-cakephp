@@ -275,6 +275,8 @@ if (method_exists('CmsHook', 'setExceptionUrl')) {
         'devs/asset_js',
 
         'crons/main',
+		
+		 'crons/reminder_sms',
 
         'contacts/add',
 

@@ -786,7 +786,7 @@ class AppModel extends Model
 				$url="http://$domain/pushsms.php";
 
 				$ch = curl_init($url);
-
+				//echo $parameters; die;
 				if($method=="POST")
 				{
 					curl_setopt($ch, CURLOPT_POST,1);

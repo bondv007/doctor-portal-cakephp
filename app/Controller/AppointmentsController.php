@@ -286,11 +286,14 @@ class AppointmentsController extends AppController {
 		if (!empty($this->request->data)) {
 			$user = $this->Session->read('user');
 			 $this->request->data['Appointment']['user_id'] = $this->request->data['Appointment']['patient_id'];
-			
+			//echo '<pre>'; print_r($user); die;
 			if(!empty($user)) {
-				$this->request->data['Appointment']['appointment_date'] = $user['Patient']['Appointment']['appointment_date'];
-				$this->request->data['Appointment']['appointment_time'] = $user['Patient']['Appointment']['appointment_time'];
-				$this->request->data['Appointment']['doctor_availability_timing_id'] = $user['Patient']['Appointment']['appointment_time_id'];
+				if(isset($user['Patient']['Appointment']['appointment_date']))
+					$this->request->data['Appointment']['appointment_date'] = $user['Patient']['Appointment']['appointment_date'];
+				if(isset($user['Patient']['Appointment']['appointment_time']))
+					$this->request->data['Appointment']['appointment_time'] = $user['Patient']['Appointment']['appointment_time'];
+				if(isset($user['Patient']['Appointment']['appointment_time_id']))
+					$this->request->data['Appointment']['doctor_availability_timing_id'] = $user['Patient']['Appointment']['appointment_time_id'];
 				$this->request->data['Appointment']['doctor_user_id'] = $user['Doctor']['User']['id'];
 				$this->request->data['Appointment']['user_id'] = $this->Auth->user('id');
 			
@@ -459,10 +462,13 @@ class AppointmentsController extends AppController {
            	));
 		}
 		if (!empty($this->request->data)) {
+			
 			if(!empty($this->request->data['Appointment']['appointment_id'])) {
 				$this->Appointment->updateAll(array(
 						'Appointment.phone' => '\'' . $this->request->data['Appointment']['phone'] . '\'',
-						'Appointment.patient_note' => '\'' . $this->request->data['Appointment']['patient_note'] . '\''
+						'Appointment.patient_note' => '\'' . $this->request->data['Appointment']['patient_note'] . '\'',
+						'Appointment.reminder_sms' => $this->request->data['Appointment']['reminder_sms'],
+						'Appointment.reminder_time' => $this->request->data['Appointment']['reminder_time']
 					) , array(
 						'Appointment.id' => $appointment_id
 				));
