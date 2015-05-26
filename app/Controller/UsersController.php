@@ -130,6 +130,7 @@ class UsersController extends AppController
 		} else {
 			$this->paginate = array(
 				'conditions' =>$conditions,
+				
 				'contain' => array(
 					'UserProfile' => array(
 						'fields' => array(
@@ -1923,9 +1924,9 @@ class UsersController extends AppController
         ));
 
         if (!isset($user['User']['id'])) {
-            $this->Session->setFlash(__l('Invalid User.', true) , 'default', array(
+            /*$this->Session->setFlash(__l('Invalid User.', true) , 'default', array(
                 'class' => 'error'
-            ));
+            ));*/
             $this->redirect('/');
         }       
         $this->set('title_for_layout', $user['User']['username']);
@@ -3709,10 +3710,16 @@ class UsersController extends AppController
 			'recursive' => -1
 		));	
 		$specialty_user_ids = array();
+		$old_all_user_ids = $alluserids;
+		$alluserids = array();
 		foreach($specialties_users as $specialties_user) {
 			if(!in_array($specialties_user['SpecialtiesUser']['user_id'],$alluserids)) {
 				$specialty_user_ids[] = $specialties_user['SpecialtiesUser']['user_id'];
 				//$alluserids[] = $specialties_user['SpecialtiesUser']['user_id'];
+				
+				if(in_array($specialties_user['SpecialtiesUser']['user_id'], $old_all_user_ids)) {
+						$alluserids[] = $specialties_user['SpecialtiesUser']['user_id'];
+					}
 			}
 		}
 		//$conditions['User.id'] = $specialty_user_ids;
@@ -3756,12 +3763,21 @@ class UsersController extends AppController
 				),
        		));
 			$clinic_user_ids = array();
+			$old_all_user_ids = $alluserids;
+			$alluserids = array();
 			foreach($clinic_users as $clinic_user) {
 				if(!in_array($clinic_user['ClinicsUser']['user_id'],$alluserids)) {
 					$clinic_user_ids[] = $clinic_user['ClinicsUser']['user_id'];
+					
+					if(in_array($clinic_user['ClinicsUser']['user_id'], $old_all_user_ids)) {
+						$alluserids[] = $clinic_user['ClinicsUser']['user_id'];
+					}
 					//$alluserids = $clinic_user['ClinicsUser']['user_id'];
 				}
 			}	
+			
+			
+			
 			//$conditions['User.id'] = $clinic_user_ids;
 			
 		} else {
@@ -3961,9 +3977,11 @@ class UsersController extends AppController
 			$this->loadModel('UserProfile');
 			$this->loadModel('City');
 			$this->loadModel('SpecialtiesUser');
+			$this->loadModel('Clinic');
 			
 			$this->UserProfile->recursive = -1;
-			$data = $this->UserProfile->find('all', array(
+			$data = array();
+			$data['specialty'] = $this->UserProfile->find('all', array(
 										'fields' => array('DISTINCT Specialty.id','Specialty.name'), 
 										'joins' => array(											
 											array(
@@ -3976,6 +3994,28 @@ class UsersController extends AppController
 										'conditions' => array('UserProfile.city_id' => $city_id),
 										'order' => array('Specialty.name' => 'ASC')
 									));
+									
+									
+			$this->Clinic->recursive = -1;						
+			$clinics = $this->Clinic->find('all', array(
+										'conditions' => array(
+											'Clinic.city_id' => $city_id
+										),
+										'order' => array(
+											'Clinic.name' => 'asc'
+										)
+									));						
+			
+			$allclinics = array();
+			$already  = array();
+						
+			foreach($clinics as $cl) {
+				if ( !in_array($cl['Clinic']['id'], $already) )
+					$allclinics[] = $cl;
+			}		
+			
+			$data['hospital'] = $allclinics;	
+						
 			echo json_encode($data); 						
 		
 		}
@@ -4024,15 +4064,19 @@ class UsersController extends AppController
 			$already  = array();
 			foreach($data as $dat) {
 				if ( !in_array($dat['Clinic']['id'], $already) )
-					$allclinics[] = $dat;
+					$allclinics[] = $dat['Clinic'];
 			}
 			
 			foreach($clinics as $cl) {
 				if ( !in_array($cl['Clinic']['id'], $already) )
-					$allclinics[] = $cl;
+					$allclinics[] = $cl['Clinic'];
 			}
 			
+			
+			
 			if(!empty($allclinics)) {
+			
+				uasort( $allclinics, 'cmp' );
 				echo json_encode($allclinics); 	
 			}				
 								
@@ -4040,6 +4084,8 @@ class UsersController extends AppController
 		}
 		die;
 	}
+
+
 
 	public function admin_get_new_data(){
 		

@@ -1,3 +1,4 @@
+<?php  //echo '<pre>'; print_r($this->Session->read()); die;?>
 <div class="user-big-photo clearfix">
     <div class="img-block">
 		<?php echo $this->Html->getDoctorAvatarImage($user['Doctor']['User'], 'normal_thumb',true); ?>
@@ -30,8 +31,8 @@
 	}
 ?>					
 <div class="appointment-booking-info">
-	<p class="app-day"><?php echo date("D, M j, Y",strtotime($user['Patient']['Appointment']['appointment_date']));?></p>
-	<p class="app-time"><?php echo $this->Html->cText($user['Patient']['Appointment']['appointment_time']);?></p>
+	<p class="app-day"><?php echo date("D, M j, Y",strtotime($this->Session->read('appointment_date')));?></p>
+	<p class="app-time"><?php echo $this->Html->cText($this->Session->read('appointment_time'));?></p>
     <h4><?php echo __l('Patient');?></h4>
     <p><?php echo $this->Html->cText($name);?></p>
     <h4><?php echo __l('Reason for Visit');?></h4>

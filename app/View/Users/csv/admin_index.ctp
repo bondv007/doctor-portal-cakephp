@@ -16,10 +16,15 @@ do {
     if (!empty($Users)) {
         $data = array();
         foreach($Users as $key => $User) {
+			$partner = "Not Partner";
+			if($User['User']['is_partner'] == 1)
+				$partner = "Partner";
+				
 	        $data[]['User'] = array(
             __l('Username') => $User['User']['username'],
             __l('Email') => $User['User']['email'],            
-            __l('Login count') => $User['User']['user_login_count']
+            __l('Login count') => $User['User']['user_login_count'],
+			__l('Partner') => $partner
           	);
 			if (isPluginEnabled('Contests')) {
 				$contest = array(

@@ -1,4 +1,4 @@
-<?php /* SVN: $Id: index_list.ctp 99 2008-07-09 09:33:42Z rajesh_04ag02 $ */ ?>
+<?php /* SVN: $Id: index_list.ctp 99 2008-07-09 09:33:42Z rajesh_04ag02 $ */  ?>
 <div class="users index js-response">
 <div class="clearfix">
 	<ul class="filter-list-block clearfix">
@@ -131,7 +131,13 @@ foreach ($users as $user):
 								{
 								echo $this->Html->cText($user['User']['username']);
 								}
+								
+								if($user['User']['is_partner'] == 1){
+								
                             ?>
+                            
+                            <img src="<?php echo $this->webroot.'img/contact-winner.png'?>" alt="(P)" title="Partner"/>
+                            <?php } ?>
                             </p>
                               <p class="user-img-right clearfix grid_right">
 						  <?php if($user['User']['role_id'] == ConstUserTypes::Admin):?>

@@ -32,12 +32,34 @@
                     	<?php
 						if($this->Auth->user('role_id') == ConstUserTypes::Doctor || $this->Auth->user('role_id') == ConstUserTypes::Admin):
 						 	echo $this->Form->input('phone', array('label' => 'Phone'));
+							
+						
+						$checked = $readonly = "";	
+						if($this->Auth->user('role_id') == ConstUserTypes::Doctor){
+							$readonly = "disabled";
+							
+						}	
+						
+						if($this->request->data['User']['is_partner'] == 1) {
+							$checked = 'checked="checked"';
+						}
+						?>
+						<div class="input checkbox">
+							<label style="margin-left: 87px;">Is Partner</label>
+							<input type="checkbox" <?php echo $checked; ?> value="1" name="data[User][is_partner]" style="margin-left:4px;" <?php echo $readonly; ?>/>
+						</div>	
+						
+						<?php
+						
+							
 							echo $this->Form->input('about_me', array('label' => 'Professional Statement'));
 							echo $this->Form->input('board_certifications', array('label' => 'Board Certifications'));
 							echo $this->Form->input('memberships', array('label' => 'Professional Memberships'));
 							echo $this->Form->input('awards', array('label' => 'Awards and Publications'));
 
 						endif;	
+						
+							
 						if($this->Auth->user('role_id') == ConstUserTypes::User || $this->Auth->user('role_id') == ConstUserTypes::Admin):
 						 	echo $this->Form->input('phone', array('label' => 'Phone'));
 							echo $this->Form->input('home_number', array('label' => 'Home'));

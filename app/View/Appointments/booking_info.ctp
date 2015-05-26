@@ -9,7 +9,11 @@
         	<li class="step4 active"><?php echo __l('Finish');?></li>
         </ul>
 		<?php 
-		if(!empty($user['Patient']['UserProfile']['phone_id'])) {
+		
+		if(isset($user_profile['UserProfile']['phone']) && !empty($user_profile['UserProfile']['phone'])) {
+			$phone = $user_profile['UserProfile']['phone'];
+		}else{
+			if(!empty($user['Patient']['UserProfile']['phone_id'])) {
 				if($user['Patient']['UserProfile']['phone_id'] == ConstPreferredPhone::Cell) {
 					$phone = $user['Patient']['UserProfile']['cell_number'];
 				} else if($user['Patient']['UserProfile']['phone_id'] == ConstPreferredPhone::Home) {
@@ -18,6 +22,8 @@
 					$phone = $user['Patient']['UserProfile']['work_number'];
 				}
 			}
+		}
+		
 		?>	
         <div class="appointment-bookings-details">
             <?php echo $this->Form->create('Appointment', array('class' => 'normal','action' => 'booking_info'));?>

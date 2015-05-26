@@ -17,17 +17,22 @@
 		echo $this->Html->meta('description', $meta_for_layout['description']), "\n";
 		echo $this->Html->css('default.cache', null, array('inline' => true));
 		echo $this->Html->css('chart', null, array('inline' => true));
+		
         echo $this->Layout->js();
-        $js_inline = "document.documentElement.className = 'js';";
+		echo $this->Html->css(array('jquery.rateyo'));
+		echo $this->Html->script(array('default.cache','index'));
+        /*$js_inline = "document.documentElement.className = 'js';";
 		$js_inline .= "(function() {";
 		$js_inline .= "var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true;";
 		$js_inline .= "js.src = \"" . $this->Html->assetUrl('default.cache', array('pathPrefix' => JS_URL, 'ext' => '.js')) . "\";";
 		$js_inline .= "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(js, s);";
 		$js_inline .= "})();";
 		echo $this->Javascript->codeBlock($js_inline, array('inline' => true));
-		
+		*/
 		echo $scripts_for_layout;
+		
     ?>
+	
 </head>
 <body>
     <div id="<?php echo $this->Html->getUniquePageId();?>" class="content">

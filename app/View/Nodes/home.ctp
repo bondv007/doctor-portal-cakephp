@@ -61,7 +61,7 @@
           
           
         </ul>
-        <div class="search-title"><h4><button type="button" name="" onclick="return check_search();" title="Doctor Name" style="width:100px;height: 40px; "">Search</button></h4>
+        <div class="search-title"><h4><button type="button" name="" onclick="return check_search();" title="Doctor Name" style="width:100px;height: 40px;">Search</button></h4>
         	
         	<p class="search-by grid_left">
         		<span style="font-weight: bold;">Or Search by</span>

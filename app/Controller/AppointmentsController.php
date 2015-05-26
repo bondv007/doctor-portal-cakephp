@@ -286,14 +286,15 @@ class AppointmentsController extends AppController {
 		if (!empty($this->request->data)) {
 			$user = $this->Session->read('user');
 			 $this->request->data['Appointment']['user_id'] = $this->request->data['Appointment']['patient_id'];
-			//echo '<pre>'; print_r($user); die;
+			
+			
 			if(!empty($user)) {
-				if(isset($user['Patient']['Appointment']['appointment_date']))
-					$this->request->data['Appointment']['appointment_date'] = $user['Patient']['Appointment']['appointment_date'];
-				if(isset($user['Patient']['Appointment']['appointment_time']))
-					$this->request->data['Appointment']['appointment_time'] = $user['Patient']['Appointment']['appointment_time'];
-				if(isset($user['Patient']['Appointment']['appointment_time_id']))
-					$this->request->data['Appointment']['doctor_availability_timing_id'] = $user['Patient']['Appointment']['appointment_time_id'];
+				if($this->Session->check('appointment_date'))
+					$this->request->data['Appointment']['appointment_date'] = $this->Session->read('appointment_date');
+				if($this->Session->check('appointment_time'))
+					$this->request->data['Appointment']['appointment_time'] = $this->Session->read('appointment_time');
+				if($this->Session->check('appointment_time_id'))
+					$this->request->data['Appointment']['doctor_availability_timing_id'] = $this->Session->read('appointment_time_id');
 				$this->request->data['Appointment']['doctor_user_id'] = $user['Doctor']['User']['id'];
 				$this->request->data['Appointment']['user_id'] = $this->Auth->user('id');
 			
@@ -409,6 +410,11 @@ class AppointmentsController extends AppController {
 			$user['Patient']['Appointment']['appointment_time_id'] = $this->request->params['named']['timing_id'];				 
 			$this->set('appointment_date',$appointment_date); 
 			$this->set('appointment_time',$appointment_time); 	
+			
+			
+			$this->Session->write('appointment_time', $appointment_time);
+			$this->Session->write('appointment_date', $appointment_date);
+			$this->Session->write('appointment_time_id', $user['Patient']['Appointment']['appointment_time_id']);
 		}
 		$this->Session->write('user', $user); 
 		$this->set('user',$user);
@@ -453,6 +459,12 @@ class AppointmentsController extends AppController {
 		}
 		$this->set('appointment_id', $appointment_id);	
 		$user = $this->Session->read('user');
+		
+		$this->loadModel('UserProfile');
+		$user_profile = $this->UserProfile->findByUserId($user['Patient']['User']['id']);
+		//echo '<pre>'; print_r($user_profile); die;
+		$this->set('user_profile', $user_profile);
+		
 		if(!empty($user)) {
 			$this->set('user', $user);
 		} else {

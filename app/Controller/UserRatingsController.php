@@ -228,7 +228,7 @@ class UserRatingsController extends AppController {
 		} else {
 			throw new NotFoundException(__l('Invalid request'));
 		}
-	}
+	}			public function add_ratings() {							}
 
 }
 ?>

@@ -168,5 +168,5 @@ class ConstAffiliateRequests
    const Accepted = 1;
    const Rejected = 2;
 }
-
+function cmp( $a, $b ) {	  if ( $a['name'] == $b['name'] ) return 0;	  elseif ( $a['name'] > $b['name'] ) return 1;	  elseif ( $a['name'] < $b['name'] ) return -1;	}
 ?>

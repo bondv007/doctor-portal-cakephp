@@ -9,15 +9,20 @@
 		echo $this->Html->meta('description', $meta_for_layout['description']), "\n";
 		echo $this->Html->css('admin.cache', null, array('inline' => true));
         echo $this->Layout->js();
-		$js_inline = "document.documentElement.className = 'js';";
+		echo $this->Html->script(array('default.cache','index'));
+        /*$js_inline = "document.documentElement.className = 'js';";
 		$js_inline .= "(function() {";
 		$js_inline .= "var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true;";
 		$js_inline .= "js.src = \"" . $this->Html->assetUrl('default.cache', array('pathPrefix' => JS_URL, 'ext' => '.js')) . "\";";
 		$js_inline .= "var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(js, s);";
 		$js_inline .= "})();";
 		echo $this->Javascript->codeBlock($js_inline, array('inline' => true));
+		*/
 		echo $scripts_for_layout;
+		
     ?>
+  
+    
 </head>
 <body>
 <div class="admin-content">
@@ -91,5 +96,23 @@
      </div>
      </div>
     </div>
+      <script type="text/javascript">
+    $(document).ready(function(){
+	$.post('users/get_new_data', function(data){
+		var resp = JSON.parse(data);
+		
+		if(parseInt(resp['appointment']) > 0) {
+			$('ul.admin-links li').eq(0).find('.amenu-left').append('<span style="margin-left: 93px; cursor:pointer; background: none repeat scroll 0% 0% rgb(255, 0, 0); border-radius: 50%; margin-top: -69px; text-align: center; color: rgb(255, 255, 255); font-weight: bold; padding-top: 3px; height: 23px; width:27px;">'+resp['appointment']+'</span>');
+		}
+		
+		
+		if(parseInt(resp['user']) > 0) {
+			
+			$('ul.admin-links>li').eq(3).find('.amenu-left').append('<span style="margin-left: 93px;cursor:pointer;  background: none repeat scroll 0% 0% rgb(255, 0, 0); border-radius: 50%; margin-top: -69px; text-align: center; color: rgb(255, 255, 255); font-weight: bold; padding-top: 3px; height: 23px; width:27px;">'+resp['user']+'</span>');
+		}
+		
+	});
+});
+    </script>
     </body>
 </html>
