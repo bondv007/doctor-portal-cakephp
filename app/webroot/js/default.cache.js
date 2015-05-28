@@ -1907,3 +1907,125 @@ function buildChart(){if($('.js-load-line-graph','body').is('.js-load-line-graph
 if($('.js-load-pie-chart','body').is('.js-load-pie-chart')){$('.js-load-pie-chart').each(function(){data_container=$(this).metadata().data_container;chart_container=$(this).metadata().chart_container;chart_title=$(this).metadata().chart_title;chart_y_title=$(this).metadata().chart_y_title;var table=document.getElementById(data_container);options={chart:{renderTo:chart_container,plotBackgroundColor:null,plotBorderWidth:null,plotShadow:false},title:{text:chart_title},tooltip:{formatter:function(){return'<b>'+this.point.name+'</b>: '+(this.percentage).toFixed(2)+' %';}},plotOptions:{pie:{allowPointSelect:true,cursor:'pointer',dataLabels:{enabled:false},showInLegend:true}},series:[{type:'pie',name:chart_y_title,data:[]}]};options.series[0].data=[];jQuery('tr',table).each(function(i){var tr=this;jQuery('th, td',tr).each(function(j){if(j==0){options.series[0].data[i]=[];options.series[0].data[i][j]=this.innerHTML}else{options.series[0].data[i][j]=parseFloat(this.innerHTML);}});});var chart=new Highcharts.Chart(options);});}
 if($('.js-load-column-chart','body').is('.js-load-column-chart')){$('.js-load-column-chart').each(function(){data_container=$(this).metadata().data_container;chart_container=$(this).metadata().chart_container;chart_title=$(this).metadata().chart_title;chart_y_title=$(this).metadata().chart_y_title;var table=document.getElementById(data_container);seriesType='column';if($(this).metadata().series_type){seriesType=$(this).metadata().series_type;}
 options={chart:{renderTo:chart_container,defaultSeriesType:seriesType,margin:[50,50,100,80]},title:{text:chart_title},xAxis:{categories:[],labels:{rotation:-90,align:'right',style:{font:'normal 13px Verdana, sans-serif'}}},yAxis:{min:0,title:{text:chart_y_title}},legend:{enabled:false},tooltip:{formatter:function(){return'<b>'+this.x+'</b><br/>'+Highcharts.numberFormat(this.y,1);}},series:[{name:'Data',data:[],dataLabels:{enabled:true,rotation:-90,color:'#FFFFFF',align:'right',x:-3,y:10,formatter:function(){return'';},style:{font:'normal 13px Verdana, sans-serif'}}}]};options.xAxis.categories=[];options.series[0].data=[];jQuery('tr',table).each(function(i){var tr=this;jQuery('th, td',tr).each(function(j){if(j==0){options.xAxis.categories.push(this.innerHTML);}else{options.series[0].data.push(parseFloat(this.innerHTML));}});});chart=new Highcharts.Chart(options);});}}
+
+
+//custom code
+$(document).ready(function(){
+	console.log(123);
+	$('.cityvalues').click(function(){
+	$('.js-city-toggle-show').text($(this).text());
+	$('.js-cities').slideToggle('slow');
+	
+	$('#search_city').val($(this).attr('cityid'));
+	$('.js-specialty-toggle-show').text('Specialty');
+	$('.js-insurances-toggle-show').text('Hospital');
+	$.get('users/get_specialities/'+$(this).attr('cityid'), function(data) {
+		var htmldata_spec = htmldata_hosp = "";
+		data = JSON.parse(data);
+		
+			
+			var spec = data['specialty'];
+			var hosp = data['hospital'];
+			
+			if(spec.length > 0) {
+				for(var i = 0; i < spec.length; i++) {
+					//console.log(data[i]);
+					htmldata_spec += '<p><a href="javascript://" class="spcvalues" spcid="'+spec[i].Specialty.id+'">'+spec[i].Specialty.name+'</a></p>'; 
+				}
+			}else {
+			
+				htmldata_spec = '<p><a href="">No specialties found</a></p>';
+			}
+			
+			if(hosp.length > 0) {
+				for(var i = 0; i < hosp.length; i++) {
+					htmldata_hosp += '<p><a href="javascript://" class="hvalues" hid="'+hosp[i].Clinic.id+'">' + hosp[i].Clinic.name + '</a></p>'; 
+				}
+			}else{
+				htmldata_hosp = '<p><a href="">No hospitals found</a></p>';
+			}
+			
+			
+		
+		$('.js-specialties').html(htmldata_spec);
+		$('.js-insurances').html(htmldata_hosp);
+	});
+	
+	 $("#rateYo").rateYo({
+	    minValue: 1
+	  });	
+	  
+});
+
+$('.spcvalues').live('click', function() {
+	var searchcity = $('#search_city').val();
+	
+		var txt = $(this).text();
+	txt = $.trim(txt).substring(0, 20).trim(this);
+	$('.js-specialty-toggle-show').text(txt);
+	$('.js-specialties').slideToggle('slow');
+	$('#search_speciality').val($(this).attr('spcid'));
+	$('.js-insurances-toggle-show').text('Hospital');
+	$.get('users/get_hospitals/'+searchcity+'/'+$(this).attr('spcid'), function(data) {
+		var htmldata = "";
+		data = JSON.parse(data);
+		if(data.length > 0) {		
+			
+			for(var i = 0; i < data.length; i++) {
+				//console.log(data[i]);
+				htmldata += '<p><a href="javascript://" class="hvalues" hid="'+data[i].id+'">' + data[i].name + '</a></p>'; 
+			}
+			
+		} else {
+			htmldata = '<p><a href="">No hospitals found</a></p>';
+		}
+		$('.js-insurances').html(htmldata);
+	});
+	
+    
+});
+
+$('.hvalues').live("click",function(){
+	var txt = $(this).text();
+	txt = $.trim(txt).substring(0, 20).trim(this);
+	$('.js-insurances-toggle-show').text(txt);
+	$('.js-insurances').slideToggle('slow');
+	
+	//$('.js-cities').slideToggle('slow');
+	$('#search_hospital').val($(this).attr('hid'));
+	
+});
+});
+
+
+function check_search() {
+	var searchcity = $('#search_city').val();
+	if (searchcity == ""){
+		$('.find-tm').text('Please select city').css('color','red');
+                setTimeout(function(){
+                  $('.find-tm').text('');
+                },5000);
+		return false;
+	} else {
+		document.getElementById('mainSearchForm').submit()
+	}
+	
+}
+
+
+
+function remove_notif(id, type) {
+	$.post('users/clear_notification',{ id: id, type:type}, function(data){
+		$('.a_'+id).hide();
+		//$('.a_'+id).parent().siblings('td').removeAttr('style');
+		 window.location.reload(true);	
+	});
+}
+
+function check_reminder() {
+	if($('#reminder_sms').is(':checked')) {
+		$('#reminder_time').show();	
+	}else{
+		$('#reminder_time').hide();	
+	}
+}

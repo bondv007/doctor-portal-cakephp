@@ -2705,3 +2705,174 @@ Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 211
 #3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
 #4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2015-05-27 22:21:04 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-27 22:22:53 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-27 22:23:04 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-27 22:23:10 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-27 22:23:19 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:35:14 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:35:22 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:35:29 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:35:45 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:36:09 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:36:09 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:36:24 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:36:41 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:50:50 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:51:07 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:51:15 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:52:20 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:52:59 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:53:43 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:53:49 Error: [NotFoundException] Invalid request
+#0 [internal function]: ImagesController->view('paging-bg.png')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(ImagesController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(ImagesController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:54:01 Error: [MissingActionException] Action NodesController::admin_users() could not be found.
+#0 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(NodesController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-28 23:54:12 Error: [MissingActionException] Action UsersController::admin_users() could not be found.
+#0 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-05-28 23:55:34 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:56:06 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-05-28 23:57:39 Error: [NotFoundException] Invalid request
+#0 [internal function]: DevsController->asset_css('chart.css')
+#1 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Controller\Controller.php(975): ReflectionMethod->invokeArgs(Object(DevsController), Array)
+#2 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(247): Controller->invokeAction(Object(CakeRequest))
+#3 E:\xampp\htdocs\tatkalcare\core\lib\Cake\Routing\Dispatcher.php(211): Dispatcher->_invoke(Object(DevsController), Object(CakeRequest), Object(CakeResponse))
+#4 E:\xampp\htdocs\tatkalcare\app\webroot\index.php(227): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}

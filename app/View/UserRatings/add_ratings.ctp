@@ -1,5 +1,10 @@
 <?php 
-echo $this->Html->script(array('libs/jquery.rateyo'));
+/*
+ * 1. Hospital (hygiene)
+2. Doctor
+3. Staff Hospitality
+ * */
+//echo $this->Html->script(array('libs/jquery.rateyo'));
 ?>
 <div class="userRatings form">
 <?php echo $this->Form->create('UserRating', array('class' => 'normal'));?>

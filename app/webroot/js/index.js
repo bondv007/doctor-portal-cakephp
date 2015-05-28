@@ -38,6 +38,11 @@ $(document).ready(function(){
 		$('.js-specialties').html(htmldata_spec);
 		$('.js-insurances').html(htmldata_hosp);
 	});
+	
+	 $("#rateYo").rateYo({
+	    minValue: 1
+	  });	
+	  
 });
 
 $('.spcvalues').live('click', function() {
