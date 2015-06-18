@@ -8,8 +8,10 @@
 		echo $this->Html->meta('keywords', $meta_for_layout['keywords']), "\n";
 		echo $this->Html->meta('description', $meta_for_layout['description']), "\n";
 		echo $this->Html->css('admin.cache', null, array('inline' => true));
+        	
         echo $this->Layout->js();
-		echo $this->Html->script(array('default.cache','index'));
+		echo $this->Html->css(array('raty/jquery.raty'));
+		echo $this->Html->script(array('libs/jquery','libs/jquery.raty','libs/jquery.form','libs/highcharts','libs/jquery.truncate-2.3','libs/jquery.metadata','libs/jquery.flash','libs/jquery-ui-1.8.18.custom.min','libs/jquery.overlabel','libs/jquery.lazyload.min','libs/jquery.countdown','libs/jquery.ui.timepicker','libs/date.format','libs/jquery.fuploader','libs/jquery.uploader','libs/jquery.blockUI','libs/jquery.easytabs','libs/jquery.hashchange.min','libs/jquery.colorbox','libs/jquery.chosen','libs/AC_RunActiveContent','libs/jquery.autogeocomplete','libs/jquery.galleryview-3.0','libs/jquery.easing.1.3','libs/jquery.timers-1.2','libs/jquery.ui.stars','libs/jquery.lightbox-0.5','libs/jquery.cookie','common','index'));
         /*$js_inline = "document.documentElement.className = 'js';";
 		$js_inline .= "(function() {";
 		$js_inline .= "var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true;";
@@ -20,9 +22,8 @@
 		*/
 		echo $scripts_for_layout;
 		
+		
     ?>
-  
-    
 </head>
 <body>
 <div class="admin-content">
@@ -96,7 +97,7 @@
      </div>
      </div>
     </div>
-      <script type="text/javascript">
+	     <script type="text/javascript">
     $(document).ready(function(){
 	$.post('users/get_new_data', function(data){
 		var resp = JSON.parse(data);

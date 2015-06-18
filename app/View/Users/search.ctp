@@ -73,7 +73,7 @@
         </div>
         
 		<ol class="doctor-list">
-         <?php	 
+         <?php	 //echo '<pre/>'; print_r($users); die;
 		 if(!empty($users)) { 
 		 			$i = 1;
 		      		foreach($users as $user) {
@@ -93,8 +93,35 @@
 						if(empty($attachment)) {
 							$attachment = 1;
 						}
-						$userimg = 'doctor_small_thumb/Photo/' . $attachment . '.' . md5(Configure::read('Security.salt') . 'Photo' . $attachment . 'jpg' . 'doctor_small_thumb' . Configure::read('site.name')) . '.' . 'jpg';	
-						$rating1 = $this->Html->get_star_rating($user['User']['overall_avg_rating']);
+						$userimg = 'doctor_small_thumb/Photo/' . $attachment . '.' . md5(Configure::read('Security.salt') . 'Photo' . $attachment . 'jpg' . 'doctor_small_thumb' . Configure::read('site.name')) . '.' . 'jpg';
+						$hyRating='0' ; $docRating='0'; $staffRating='0';
+						$total = '0'; $avg_rate_1='0' ; $avg_rate_2='0' ; $avg_rate_3='0';
+						foreach($user['UserRating'] as $ur){
+							if($ur['status']=='1'){
+								if($ur['rate_1']){
+									$hyRating=$hyRating + $ur['rate_1'];
+									
+								}
+								if($ur['rate_2']){
+									$docRating=$docRating + $ur['rate_2'];
+									
+								}
+								if($ur['rate_3']){
+									$staffRating=$staffRating + $ur['rate_3'];
+									
+								}
+								$total++;
+							}
+							
+						}
+						if($total !='0'){
+							$avg_rate_1 = round(($hyRating/$total),1);
+							$avg_rate_2 = round(($docRating/$total),1);
+							$avg_rate_3 = round(($staffRating/$total),1); 
+						
+						}
+						$overallRating=($avg_rate_1 + $avg_rate_2 + $avg_rate_3 )/3;
+						$rating1 = $this->Html->get_star_rating($overallRating);
 						$rating = $this->Html->cHtml($rating1);
 						?>
 						<?php 
@@ -129,7 +156,7 @@
 					        $address1.= $user['UserProfile']['zip_code'];
 						 }
 						 ?>
-						<!-- <div id="user-rating-<?php echo $i;?>" class="hide"><?php echo $rating;?></div>
+						<!-- <div id="user-rating-<?php  echo $i;?>" class="hide"><?php echo $rating;?></div>
 						<div class="hide">
 						<?php 
 						echo $this->Html->link($this->Html->cText($user['User']['username'], false), array('controller' => 'users', 'action' => 'view', $user['User']['username'], 'admin' => false), array('id'=>"js-map-side-$id",'class'=>"js-user-map js-map-data {'lat':'$lat','lng':'$lng', 'name':'$name','id':'$id','userimg':'$userimg', 'usertitle':'$username', 'address':'$address','address1':'$address1'}",'title'=>$this->Html->cText($user['User']['username'], false),'escape' => false));
@@ -150,19 +177,18 @@
               <div class="doctor-info-block">
 			 
 				<?php $hover_class = 'js-username-hover {\'user_id\':\''. $user['User']['id'] .'\'}'; ?>
+               
 				<h6><?php echo $this->Html->link($username, array('controller' => 'users', 'action' => 'view', $user['User']['username']),array('class' => $hover_class,'title' => __l($username))); ?></h6>
 				
-				<div class="popup-profile show-content-<?php echo $user['User']['id']?> hide">
-            	   <?php echo $this->element('../users/detail_view', array('doctor_user_id' => $user['User']['id'], 'cache' => array('config' => 'sec'))); ?>
-				</div>
+				
                 <dl class="avg-rating clearfix">
                   <dt><?php echo __l('Avg Rec:');?></dt>
 				   <?php
-						$overall_rating_percentage = $user['User']['overall_avg_rating']*20;
+						$overall_rating_percentage = $rating;
 					?>
                   <dd>
                     <ul class="star-rating">
-                      <li class="current-rating" style="width: <?php echo $overall_rating_percentage;?>%;" title="<?php echo __l('Currently');?> <?php echo $user['User']['overall_avg_rating'];?> <?php echo __l('Stars.');?>"><?php echo __l('Currently');?> <?php echo $user['User']['overall_avg_rating'];?> <?php echo __l('Stars');?></li>
+                      <li class="current-rating"><?php echo $rating;?></li>
                     </ul>
                   </dd>
                 </dl>

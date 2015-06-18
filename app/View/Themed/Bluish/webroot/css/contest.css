@@ -1,1331 +1,1331 @@
-/* contest view page style is begin */
-div.contest-heading-info h2 {
-	border-bottom:0px;
-	padding:0px 0px 5px 0px;
-	color:#1891C8;
-	margin:0px;
-}
-span.status-name,ul.follower-link li.report a {
-	font-size:11px;
-	color:#656565;
-}
-ul.follower-link li.report a:hover {
-	text-decoration:underline;
-}
-div.contest-heading-info {
-	padding:10px 0px 15px 0px;
-	border-bottom:1px solid #e0dede;
-	margin:0px 0px 10px 0px;
-}
-ul.follower-link li {
-	float:left;
-}
-ul.follower-link li.report a {
-	padding:0px 0px 0px 15px;
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -711px;
-}
-ul.follower-link li.flike a,ul.follower-link li.tweet a,ul.follower-link li.count a {
-	display:block;
-	text-indent:-3000em;
-	height:20px;
-}
-ul.add-list li {
-    background: url("../theme/bluish/img/contest-sprite.png") no-repeat -6px -80px;
-    float: left;
-    height: 48px;
-    padding: 0 0 0 11px;
-}
-ul.add-list li:hover {
-	background-position: -6px -3805px;
-}
-ul.contest-add-list li {
-	float:none;
-}
-ul.add-list li a {
-    background: url("../theme/bluish/img/contest-sprite.png") no-repeat right -198px;
-    color: #FFFFFF;
-    display: block;
-    font-size: 17px;
-    height: 29px;
-    padding:14px 19px 0 9px;
-}
-ul.add-list li:hover a {
-	background-position: right -3923px;
-}
-div.fb-like span{
-    width:90px !important;
-}
-div.contest-side2 ul.add-list li a{
-    text-align: center;
-    width: 196px;
-}
-div.overview-tl {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1123px;
-}
-div.overview-tr {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1204px;
-}
-div.overview-tc {
-	background:url("../theme/bluish/img/overview-tc.png") repeat-x left top;
-}
-div.overview-bl {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -961px;
-}
-div.overview-br {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1042px;
-}
-div.overview-bc {
-	background:url("../theme/bluish/img/overview-bc.png") repeat-x left top;
-}
-div.overview-bc,div.overview-tc {
-	height:11px;
-	margin:0px 10px;
-}
-div.overview-center {
-	background:#C7E5F2;
-	padding:5px 10px;
-}
-div.overview-block {
-	margin:0px 0px 10px 0px;
-}
-dl.overview dt {
-	font-weight:bold;
-	color:#474747;
-	margin:0px 5px 0px 0px;
-}
-dl.overview dt,dl.overview dd {
-	float:left;
-	min-height:24px;
-	font-size:12px;
-}
-dl.overview dd {
-	width:70%;
-	color:#000;
-}
-div.contest-description-block,div.contest-description-block p {
-	padding:0px 0px 10px 0px;
-}
-div#contests-view div.main-inner {
-	background:none;
-	padding:0px;
-	border:none;
-}
-div.contest-view-block {
-	padding:10px;
-	background:#fff;
-	margin:0px 0px 15px 0px;
-}
-ul.status-list div.status-outer-block,div.entries-block {
-	height:42px;
-	padding:0px 0px 0px 10px;
-	margin:0px 0px 5px 0px;
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1675px;
-}
-div.entries-block {
-	margin:0px 0px 10px 0px;
-}
-ul.status-list li div.status-inner,div.entries-inner-block {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat scroll right -1720px transparent;
-	color:#9F9F9F;
-	font-size:12px;
-	font-weight:bold;
-	height:27px;
-	padding:10px 0 0 0px;
-}
-div.entries-inner-block {
-	padding:10px 0 0 5px;
-	font-size:11px;
-}
-div.entries-inner-block span.posted-block {
-	float:left;
-	width:125px;
-}
-ul.status-list div.active {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1563px;
-}
-ul.status-list div.active div.status-inner {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1611px;
-	color:#FFFFFF;
-	height:30px;
-	padding:13px 0 0 0px;
-}
-ul.status-list span.start-date{
-    margin:0px 5px 0px 0px;
-}
-div.user-status-inner {
-	margin:5px 0;
-}
-div.user-status-inner a {
-	font-size:14px;
-	color:#dba203;
-}
-div.contest-view-block h4,div.contest-view-block h3 {
-	font-size:14px;
-	padding:10px 0;
-	color:#222;
-}
-div.contest-side2 h5 {
-	font-size:12px;
-	padding:5px 0px 5px 6px;
-}
-div.contest-followers h3 {
-	padding:0 0 0 8px;
-}
-div.post-info-block a {
-	background:url("../theme/bluish/img/post.png") no-repeat scroll left top transparent;
-	bottom:-25px;
-	color:#FFFFFF;
-	display:block;
-	font-size:18px;
-	height:42px;
-	left:166px;
-	padding:19px 0 0;
-	position:absolute;
-	text-align:center;
-	width:645px;
-}
-div.contest-view-block1 {
-	color:#777777;
-	font-size:11px;
-	padding:0 10px 10px;
-	margin:0px 0px 20px 0px;
-}
-div.post-info-block a:hover {
-	color:#000;
-}
-div.contest-description {
-	padding:0px 0px 30px 0px;
-}
-div.contest-title-block {
-	padding:5px 0 6px;
-}
-p.contest-price {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2688px;
-	color:#1891c8;
-	font-size:25px;
-	font-weight:bold;
-	margin:0 0 8px;
-	padding:10px 0 10px 50px;
-}
-p.created-on {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2791px;
-	color:#000000;
-	font-size:10px;
-	font-weight:bold;
-	padding: 2px 0 3px 20px;
-}
-div.sort-info-block{
-    width:162px;
-}
-div.sort-info-block1{
-    width:257px;
-}
-div.contest-user-discussion div.sort-info-block1{
-    width:100px;
-}
-div.contest-description-block{
-    padding:0px 5px 0px 5px;
-}
-div.contest-tabs-block .ui-tabs .ui-tabs-panel{
-    -moz-border-radius-bottomright:0px;
-    -moz-border-radius-bottomleft:0px;
-     padding:10px;
-   
-}
-div.contest-tabs-block{
-    min-height:50px;
-    margin:0px 0px 20px 0px;
-}
-div.contest-tabs-block .ui-tabs .ui-tabs-nav{
-    padding:0px;
-}
-div.message-information-block{
-    margin: 3px 0;
-    min-height: 20px;
-    text-align: justify;
-    font-size:11px;
-}
-/* contest list page style is begin */
-ol.contest-list>li {
-	margin:0px 2px;
-	width:185px;
-}
-div.contest-img {
-	text-align:center;
-	padding:5px 0px;
-}
-div.contest-center-block {
-	padding:9px 0 0;
-	position:relative;
-}
-div.contest-center-block1 {
-	background:url("../Contests/img/contest-img.png") no-repeat left top;
-	height:142px;
-}
-div.participants-img {
-	background:url("../Contests/img/participant.png") no-repeat scroll left top transparent;
-	height:109px;
-	padding:15px 0 0;
-	text-align:center;
-	width:147px;
-}
-div.zoom-img img {
-	border:2px solid #ddd;
-}
-
-div.rating-left-block {
-	margin:0px 0px 0px 13px;
-}
-div.user-right-block {
-	margin:3px 10px 0px 0px;
-	width:6px;
-}
-p.textonly {
-	margin:10px 1px 9px 308px;
-}
-a.report-abuse {
-	margin:0px 0px 0px 10px;
-}
-div.radio-label {
-	font-weight:bold;
-	margin:0px 0px 10px 0px;
-}
-form.contest-form div.input label {
-	width:290px;
-}
-form.contest-form div.radio-block label {
-   display:block;
-   width:auto;
-}
-form.contest-form div.checkbox input,form.contest-form div.select select,form.contest-form div.text input,form.contest-form div.textarea textarea,form.contest-form div.file input {
-	margin:0 0 0 306px;
-}
-form.contest-form span.info,form.contest-form  div.error-message{
-	margin:6px 0 0 306px;
-}
-form.contest-form div.time-desc {
-	margin:7px 0 0px 305px;
-}
-form.contest-form div.timepicker {
-	margin:7px 0 0 306px;
-}
-form.contest-form div.datepicker-container div.timepicker {
-	margin:0px 10px 0px 0px;
-}
-form.contest-form div.checkbox {
-	margin:5px 0px;
-}
-form.contest-form div.submit-block {
-	margin:0 0 0 319px;
-}
-ul.filter-block {
-	margin:0px 0px 0px 5px;
-}
-ul.filter-block li {
-	margin:0;
-	padding:1px 5px;
-}
-ul.filter-block li a {
-	color:#1B7EE3;
-	font-size:11px;
-}
-ul.filter-block li a:hover {
-	text-decoration:underline;
-}
-ul.filter-block li.active {
-	background:#525252;
-}
-ul.filter-block li.active a {
-	color:#fff;
-}
-div.inbox-option {
-	margin:5px 0 10px 10px;
-}
-div.contest-user {
-	margin:0px 0px 0px 10px;
-}
-.fb_iframe_widget iframe {
-	width:50px !important;
-}
-dl.contest-view-list dt {
-	font-weight:bold;
-	padding:15px 0px 3px 0px;
-}
-dl.contest-view-list dd {
-	line-height:20px;
-}
-div.contest-img-block img {
-	border:1px solid #ddd;
-}
-div.contest-img-block {
-	width:600px;
-	padding:0px 0px 15px 0px;
-}
-div.contest-info-block {
-	padding:10px 0px;
-}
-div.contest-info-block ul.small-star {
-	margin:2px 10px 0 0;
-}
-div.contest-info-block span.compact-info {
-	margin:0px 0px 0px 5px;
-}
-div.withdraw-block {
-	font-size:11px;
-	padding:0px 0px 0px 10px;
-}
-div.contest-cl {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1777px;
-	margin:10px 0 10px 0;
-}
-div.contest-cr {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1825px;
-}
-div.contest-cc {
-	background:#E4E4E4;
-	margin: 0 12px;
-}
-/* message-discussion style is begin */
-ol.message-discussion-list {
-    font-size: 84%;
-	padding:10px 0px 0px 0px;
-}
-ol.message-discussion-list li {
-    margin:0 0 6px 0;
-}
-ol.message-discussion-list1 span.user-name{
-    font-size:111%;
-}
-ol.message-discussion-list div.user-content-block {
-    color: #1C1817;
-    font-size: 12px;
-    width: 90%;
-    margin:0px 0px 0px 10px;
-}
-li.path-1 {
-    padding-left:65px;
-	background:url("../Contests/img/tree-arrow.png") no-repeat 3% top;
-}
-li.path-2 {
-	padding-left:118px;
-	background:url("../Contests/img/tree-arrow.png") no-repeat 9.9% top;
-}
-li.path-3 {
-	background:url("../Contests/img/tree-arrow.png") no-repeat 16% top;
-    padding-left:175px;
-}
-ol.message-discussion-list1 .path-1 {
-	padding-left:30px;
-}
-ol.message-discussion-list1 .path-2 {
-	padding-left:35px;
-	background:url("../Contests/img/tree-arrow.png") no-repeat 5% top;
-}
-ol.message-discussion-list1 .path-3 {
-	padding-left:70px;
-    background:url("../Contests/img/tree-arrow.png") no-repeat 14% top;
-}
-ol.message-discussion-list1 div.avatar-block {
-	width:7%;
-}
-ol.message-discussion-list1 div.user-content-block {
-	width:83%;
-	padding:5px 10px;
-}
-ol.message-discussion-list1 div.posted-date-section{
-    width:32.5%;
-}
-ol.message-discussion-list div.posted-date-section {
-  padding:0;
-}
-ol.message-discussion-list .reply-block {
-  margin:0;
-}
-div.path-1 div.user-content-block {
-    width:89%;
-}
-div.path-2 div.user-content-block {
-    width:88%;
-}
-div.path-3 div.user-content-block {
-	width:87%;
-}
-ol.message-discussion-list1 div.path-1 div.user-content-block {
-	width:83%;
-}
-ol.message-discussion-list1 div.path-2 div.user-content-block {
-	width:82%;
-}
-ol.message-discussion-list1 div.path-3 div.user-content-block {
-	width:78%;
-}
-div.user-content-block1 {
-	background:#f2fbff;
-	border-bottom:1px solid #C2EBFC;
-    padding:5px;
-}
-div.contest-holder {
-	background:#f4ffdf;
-	border-bottom:1px solid #dbfea2;
-}
-div.posted-date-section {
-	padding:0 10px 0 0;
-	color:#70706e;
-	text-align:right;
-}
-span.replay-info {
-	display:block;
-}
-.message-board-block {
-    margin: 5px 6px 0;
-}
-ol.message-discussion-list span.private-msg {
-	background:#FF8309;
-	color:#FFFFFF;
-	font-size:10px;
-	line-height:10px;
-	padding:1px 2px;
-	margin:0 5px;
-}
-span.user-name {
-	font-weight:bold;
-	font-size:14px;
-}
-span.private-msg-to {
-	font-size:11px;
-	color:#6f7170;
-}
-a.reply, a.reply-block {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1365px;
-	color:#FFFFFF;
-	display:block !important;
-	height:20px;
-	text-align:center;
-	width:51px;
-}
-.reply-block {
-    margin: 10px 0 0;
-}
-a.reply:hover {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1387px;
-}
-form.compose div.textarea textarea,form.messages-form div.textarea textarea {
-	width:99%;
-	margin:0;
-	font-size:11px;
-}
-form.messages-form div.textarea textarea {
-    margin: 5px 0 0 36px;
-    width: 95%;
-}
-form.compose div.file input{
-    margin:0px 0px 0px 0px;
-}
-form.compose div.submit-block,form.messages-form div.submit-block {
-	margin:0 25px 0 0;
-	float:right;
-}
-div.cancel-link {
-	float:left;
-	margin:10px 0 0 5px;
-}
-div.cancel-link a {
-	color:#d72a2a;
-	font-weight:bold;
-}
-div.contest-status img {
-	opacity:0.2;
-	filter:alpha(opacity=20)
-}
-span.eliminated-info,span.withdrawan-info {
-    color: #A5A5A5;
-    font-size: 20px;
-    position: absolute;
-    left: 18%;
-    top: 30%;
-}
-span.withdrawan-info {
-	color: #8b65d6;
-	top: 38%;
-    left: 20%;
-}
-/* activities-list style is begining */
-ol.activities-list>li {
-	border-bottom:1px solid #e0dedf;
-	padding:10px;
-	font-size:11px;
-}
-div.activities-status,div.open {
-	background:#4A86E8;
-	color:#FFFFFF;
-	padding:3px 5px;
-	text-align:center;
-}
-div.activities-section2 {
-	margin:0 0px 0 45px;
-}
-div.activities-section3 {
-	font-size:11px;
-	color:#949494;
-	text-align:right;
-}
-div.avatar-info-block ul.star-rating {
-	display:inline-block;
-	margin:-4px 5px;
-}
-div.new-entry {
-	background:#1B7EE3;
-}
-div.rated {
-	background:#ff7070;
-}
-div.winner-selected {
-	background:#956b43;
-}
-div.completed {
-	background:#577036;
-}
-div.change-request {
-	background:#cd75e6;
-}
-div.user-contest-block {
-	border-right:1px solid #E0DEDE;
-	padding:0 5px 0 0;
-}
-div.user-contest-block ol.contest-list {
-	margin: 0 0 0 30px;
-}
-/* contest add page style is begin */
-ul.filter-list-block {
-	border-bottom:none;
-	border-right:1px solid #ddd;
-	min-height:89px;
-}
-div.contest-followers dl.list dt {
-	width: auto;
-}
-form.normal div.radio-block{
-    margin:0px 0px 0px 306px;
-}
-form.normal div.radio-block span.info{
-    margin:6px 0 0 5px;
-}
-form.normal div.radio-block span.info,form.normal div.contest-add-block div.radio-block input{
-    float:left;
-}
-form.normal div.contest-add-block div.radio-block label{
-    display:block;
-    margin: 0;
-    min-height: 25px;
-    width: 565px;
-    border:1px solid #fff;
-}
-form.normal div.radio-block label + input{
-    margin:3px 3px 0 4px;
-}
-form.normal div.radio-block div.error-message{
-    margin:0px 0px 0px 3px;
-}
-*+html form.normal div.radio-block label + input{
-    margin:0px 0 0 0px;
-}
-/* Entry view page style is begin*/
-.header {
-	color:#afafaf;
-    padding:10px 0px 0px 0px;
-	font-size:91%;
-	position:relative;
-    z-index:10000;
-}
-.header a{
-    color:#000;
-}
-.header a:hover {
-	text-decoration:underline;
-}
-h1.contest-logo{
-    padding:0px;
-}
-h1.contest-logo a {
-	height:45px;
-	width:40px;
-	background:url("../theme/bluish/img/logo-small.png") no-repeat top left;
-    margin:0px 10px 0px 0px;
-}
-div.contest-user-img-block {
-	text-align:center;
-	position:relative;
-}
-div.contest-user-img-block img{
-    width:100%;
-}
-div.slider-inner-block{
-    background:#ddd;
-    border-bottom: 1px solid #9B9B9B;
-    border-top: 1px solid #9B9B9B;
-    font-size: 11px;
-    height: 93px;
-    margin: 0 0 10px;
-    padding: 3px 10px 30px;
-}
-div.close-block{
-    background:#898989;
-    border-top: 1px solid #BFBFBF;
-    color:#fff;
-    font-size: 11px;
-    margin: 5px 0 0;
-    padding: 5px 10px;
-    
-}
-ol.participant-list {
-	margin:0px 0px 0px 55px;
-}
-ol.participant-list li {
-	float:left;
-	margin:0 5px;
-	width:98px;
-	color:#fff;
-}
-ol.participant-list li img{
-    height: 86px;
-    width: 97px;
-    border:3px solid #ddd;
-}
-ol.participant-list li:hover img,ol.participant-list li.active img{
-    border:3px solid #1891C8;
-}
-div.contest-user-discussion, div.contest-user-discussion1 {
-	position:relative;
-}
-div.contest-user-discussion div.sort-info-block1 {
-	font-size:12px;
-	position:absolute;
-	right:10px;
-	top:-23px;
-	width:90px;
-}
-div.contest-user-discussion ul.filter-block li.active {
-	background:none;
-}
-div.contest-user-discussion ul.filter-block li {
-	margin:0;
-	padding:3px 5px 0 0px;
-}
-div.contest-user-discussion ul.filter-block li a {
-	display:block;
-	height:12px;
-	width:10px;
-	text-indent:-3000em;
-}
-div.contest-user-discussion ul.filter-block li.descending a {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2554px;
-}
-div.contest-user-discussion ul.filter-block li.ascending a {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2603px;
-}
-div.contest-user-discussion ul.filter-block li.freshness a {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2578px;
-	width:15px;
-}
-div.contests-user-view-block h2 {
-	margin:0 0 10px;
-	padding:10px 0 8px 15px;
-}
-div.contest-user-discussion div.contests-user-view-block h2{
-    font-size: 13px;
-    font-weight: bold;
-    margin: 0 0 10px;
-    padding: 10px 0 8px 5px;
-}
-div.contests-user-view-block {
-	position:relative;
-	padding:20px 0px;
-	overflow:hidden;
-}
-div.contest-user-img-block{
-    float:left;
-    left:10%;
-}
-div.contest-user-img-block span.flip-link {
-	background:url("../Contests/img/show.png") no-repeat left top;
-	height:59px;
-	position:absolute;
-	text-indent:-3000em;
-	right:0px;
-	width:61px;
-	cursor:pointer;
-	bottom:0px;
-	padding:0px;
-}
-div.contest-user-img-block span.js-flip-out {
-	background:url("../Contests/img/show.png") no-repeat left top;
-}
-div.contest-user-discussion form.compose div.submit-block {
-	float:none;
-	margin:0 0 0 11px;
-}
-div.contest-user-discussion form.compose div.textarea textarea {
-	width:89%;
-	height:14px;
-}
-div.contest-user-discussion form.compose div.textarea-large textarea {
-	height:100px;
-}
-div.contest-user-discussion form.compose div.error-message {
-	margin:3px 0 0 0;
-}
-a.download,a.request-refund {
-	padding:2px 0px 2px 20px;
-}
-a.download {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat -1px -2403px;
-}
-a.request-refund {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2342px;
-}
-div.contest-user-block {
-	text-align:center;
-}
-ul.top-menu li {
-	float:left;
-	margin:5px 0 8px 0;
-}
-ul.top-menu li a,span.view-all {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2476px;
-	color:#000000;
-	display:block;
-	font-size:10px;
-	height:18px;
-	margin:0 10px 0 0;
-	text-align:center;
-	width:92px;
-	cursor:pointer;
-}
-span.next-user,a.next-user,span.prev-user,a.prev-user {
-	display:block;
-	width:13px;
-	text-indent:-3000em;
-	display:block;
-	height:23px;
-	cursor:pointer;
-}
-span.view-all {
-	margin:12px 0px 0px 0px;
-}
-span.next-user,a.next-user {
-	float:right;
-}
-a.next-user,span.next-user {
-	margin:50px 12px 0 0;
-}
-a.prev-user,span.prev-user {
-	margin:50px 0px 0 12px;
-}
-a.next-user {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2144px;
-}
-span.next-user {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2273px;
-}
-a.prev-user {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2192px;
-}
-span.prev-user {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2232px;
-}
-div.contest-user-discussion ol.activities-list li {
-	font-size:95%;
-}
-div.contest-user-discussion ol.activities-list .grid_2 {
-	width:55px;
-}
-div.contest-user-discussion div.activities-section2 {
-	margin:0 0 0 15px;
-}
-h4.up-arrow,h4.down-arrow {
-	color:#1B7EE3;
-	cursor:pointer;
-	padding:5px 0 5px 21px;
-	border-bottom:1px solid #ddd;
-	font-size:100%;
-}
-h4.up-arrow:hover,h4.down-arrow:hover {
-	color:#000;
-}
-h4.up-arrow {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 3px -3688px;
-}
-h4.down-arrow {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 3px -3633px;
-}
-span.up-arrow,span.down-arrow {
-	display:block;
-	padding:0 9px 0 0;
-	color:#fff;
-}
-span.up-arrow:hover,span.down-arrow:hover {
-	text-decoration:underline;
-}
-span.up-arrow {
-	background:url("../Contests/img/up-arrow.png") no-repeat 78% 8px;
-}
-span.down-arrow {
-	background: url("../Contests/img/down-arrow.png") no-repeat 78% 8px;
-}
-div.entry-name-block{
-    border-left:1px solid #ccc;
-    margin:0px 10px;
-}
-div.entry-inner-block{
-    border-right:1px solid #ccc;
-    margin: 0 5px 0 0;
-    min-height: 43px;
-    padding: 0 20px;
-}
-div.report-block{
-    margin:0px 0px 0px 10px;
-}
-/* participants style is begin */
-div.participants-right-block {
-	border-left:1px solid #CCCCCC;
-	padding:0 0 0 5px;
-	width:774px;
-}
-ol.participants-list>li {
-	border-bottom:1px solid #e0dede;
-	padding:10px 0px;
-}
-ol.participants-list ul.pictures{
-    width:auto;
-    margin:0px;
-    float:left;
-}
-div.browsecontests-left-block {
-	width:698px;
-	margin:0px 0px 0px 5px;
-}
-div.browsecontests-left-block table.list {
-	margin:0px 0px 10px 0px;
-}
-div.category-side1 h3 {
-	background:url("../img/bg-table.png") repeat-x scroll left top transparent;
-	border:1px solid #C5C5C5;
-	border-bottom:none;
-	font-size:14px;
-	font-weight:bold;
-	height:12px;
-	padding:6px 0 15px 10px;
-}
-ul.categories-list {
-	border:1px solid #ddd;
-	padding:0px 0px 10px 0px;
-}
-ul.categories-list a {
-	background:url("../Contests/img/arrow.png") no-repeat 7px 11px;
-	border-top:1px dashed #CCCCCC;
-	font-size:11px;
-	margin:0 4px;
-	padding:6px 10px 6px 18px;
-	display:block;
-}
-ul.categories-list a:hover {
-	background:#fbfbfb url("../Contests/img/arrow.png") no-repeat 7px 11px;
-}
-ul.categories-list li:first-child a {
-	border-top:none;
-}
-div.conteststatus-right-block h3 {
-	font-size:13px;
-	line-height:15px;
-	padding:0 0 5px;
-	font-weight:normal;
-}
-div.conteststatus-right-block {
-	font-size:10px;
-	color:#9e9e9e;
-}
-div.status-block1 {
-	position:absolute;
-	top:0px;
-	right:0px;
-}
-.status-block1 span {
-	color:#FFFFFF;
-	height:15px;
-	line-height:3px;
-	text-indent:1px;
-	width:auto;
-	margin:0px;
-}
-.status-block1 span span,div.active-status-block span span{
-    height:auto;
-    padding:5px;
-}
-div.active-status-block span span{
-    padding:0px;
-    text-align:center;
-}
-div.conteststatus-img {
-    background:#EFEBEB;
-    height: 59px;
-    margin: 0 10px 0 0;
-    padding: 4px 0 0;
-    text-align: center;
-    width: 77px;
-}
-div.conteststatus-img img {
-	border:1px solid #d6d7d8;
-}
-div.contest-list-block ul.tab-menu li.ui-state-default {
-	float:right;
-}
-table.list th.prize span.prize {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3565px;
-	padding:5px 0 5px 25px;
-}
-table.list th.prize{
-    padding:10px 1px;
-}
-div#contests-browse ul.tab-menu{
-    margin: 0 0 3px;
-    padding:10px 0 0 640px;
-}
-div#contests-view ul.tab-menu{
-    border-bottom:none;
-}
-div#message-section ul.tab-menu{
-    border-bottom:1px solid #E2E0E0;
-}
-div#contests-view .panel-container{
-    padding:10px;
-}
-div.contest-user-discussion h2{
-    font-size:98%;
-    font-weight: bold;
-    padding: 10px 0 8px 5px;
-}
-/* contest add page style is begin */
-ul.stage {
-	background:#EDEDED;
-	padding:10px 0 10px 15px;
-}
-ul.stage li {
-	color:#8E8E8E;
-	float:left;
-	font-size:13px;
-	font-weight:700;
-	margin:0 25px 0 0;
-	padding:14px 9px 8px 45px;
-}
-ul.stage li.step1 {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2966px;
-}
-ul.stage li.step2 {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3049px;
-}
-ul.stage li.step3 {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3136px;
-}
-ul.stage li.step1-active,ul.stage li.step2-active,ul.stage li.step3-active {
-	color:#1891C8;
-}
-ul.stage li.step1-active {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3249px;
-}
-ul.stage li.step2-active {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3350px;
-}
-ul.stage li.step3-active {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3459px;
-}
-div#contest_types-index div.main-inner,#contests-add div.main-inner,#contests-prizing_selection div.main-inner {
-	padding:0px;
-}
-div.stage-inner-block {
-	padding:10px 20px;
-}
-ol.list>li:hover .currency-info {
-	display:block;
-}
-.currency-info {
-	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3565px;
-	color:#1891c8;
-	font-size:11px;
-	padding:3px 0 4px 29px;
-	margin:5px 0px 0px 0px;
-}
-div.payment-information h3 {
-	font-size:12px;
-	padding:10px 0px;
-}
-div.payment-information p {
-	padding:0px 0px 10px 0px;
-}
-div.payment-description {
-	color:#7F7F7F;
-	font-size:11px;
-	margin:3px 0 14px 19px;
-}
-div.prizing-package {
-	font-size:11px;
-	font-weight:700;
-}
-div.prizing-package1 {
-	margin:10px 0px 0px 0px;
-}
-form.prizing-form div.text input {
-	margin:0px 0px 0px 0px;
-}
-.total-info {
-    color: #888888;
-    font-size: 17px;
-    padding: 16px 0 0;
-}
-div.payment-information1 {
-	border-top:1px dashed #DDDDDD;
-	margin:20px 0 0;
-	padding:10px 0 0;
-}
-div.contest-view-list {
-	background:url("../Contests/img/border.png") repeat-y 49% top;
-}
-div.contest-view-list .grid_11 {
-     padding: 0 10px 0 0;
-    width: 449px;
-}
-div.contests-user-view-block form.normal div.input label {
-	text-align:left;
-	width:auto;
-}
-div.contests-user-view-block form.normal div.select select {
-	margin:0 0 0 31px;
-	width:321px;
-}
-div.contests-user-view-block form.normal div.checkbox input {
-	margin:0px;
-}
-div.content div.flow-chart-block {
-	right: 2px;
-}
-/* zooming effect style is begin */
-#poppedOut {
-	font-family:verdana;
-}
-table.list th.contest-title,table.list td.contest-title {
-	width:369px;
-}
-div.browse-index-block {
-	position:relative;
-}
-div.admin-contest-view-block .ui-tabs-panel {
-	padding:0px 0px 0px 30px;
-	background:url("../img/admin-stip.png") repeat-y left top #fff;
-}
-div.admin-contest-view-block .ui-tabs-panel form.normal{
-    margin:0px;
-}
-div.admin-tabs-block table.list{
-    width:98%;
-}
-div.js-img-zoom {
-	font-family:verdana;
-}
-form#MessageMoveToForm div.quick-replay1 div.submit-block {
-	margin:0px 12px 0px 0px;
-	float:right;
-}
-form#MessageMoveToForm div.quick-replay1 div.textarea {
-	margin: 0px auto;
-}
-span.color-code{
-    display:inline-block;
-    width:12px;
-    height:12px;
-    margin:0px 2px 0px 0px;
-}
-div.active-status-block{
-    position:static;
-}
-div.active-status-block span{
-     height:auto;
-     line-height:15px;
-     padding:1px 5px;
-     width:60px;
-     margin:0px auto;
-}
-/* slider block style is begin */
-.pictures {
-	margin:0px auto;
-	width:933px;
-	list-style:none;
-}
-div.user-contest-block .pictures{
-    width:579px;
-}
-.clear {
-	clear: both;
-}
-.pictures li{
-	float:left;
-	padding:0px 0px 30px 0px;
-    z-index:0 !important;
-}
-.pictures li.withdrawn{
-    padding:5px 0 0 5px;
-    position:relative;
-    width:174px;
-    z-index:0 !important;
-}
-.pictures li:hover{
-    z-index:100000 !important;
-}
-/* slider block style is end */
-
-div.slider-inner-block .pictures{
-    width:98%;
-    margin: 0 0 0 20px;
-}
-.slider-inner-block1 {
-    margin: 0 auto;
-    position: relative;
-}
-.slider-inner-block1 a.prev-user, .slider-inner-block1 a.next-user  {
-    margin: 0;
-    position: absolute;
-    top: 52px;
-}
-.slider-inner-block1 a.next-user{
-    right:-4px;
-}
-.slider-block {
-	height:0;
-	overflow:hidden;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index:2;
-}
-.view-img-block {
-	width:55%;
-	text-align:center;
-	border-radius: 5px;
-	padding:2.5%;
-	float:left;
-	position: relative;
-    background:#EAECED;
-    border:1px solid #EAECED;
-}
-.view-img-block img {
-	max-width:100%;
-}
-.view-image {
-    margin:0 auto;
-	position:relative;
-    width:600px;
-}
-div.slider-block span.close{
-    background: url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -633px;
-    display: block;
-    height: 10px;
-    text-indent: -3000em;
-    width: 10px;
-    margin:5px 0 0;
-    cursor:pointer;
-	
-}
-span.contest-status-info{
-    display:block;
-    color:#999;
-}
-h3.contest-title{
-    font-size:17px;
-    font-weight:normal;
-	padding:0;
-}
-h3.contest-title a{
-    color:#1891c8;
-}
-h3.contest-title a:hover{
-    color:#000;
-}
-span.prev-link a,span.next-link a{
-    position:absolute;
-    display:block;
-    text-indent:-3000em;
-    display:block;
-    width:20px;
-    height:24px;
-    position:absolute;
-}
-span.prev-link a{
-    top:50%;
-    left:-29px;
-    background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2232px;
-}
-span.next-link a{
-    top:50%;
-    right:-34px;
-    background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2273px;
-}
-div.contest-user-img-block span.flip-link {
-    display:none;
-}
-div.contest-user-img-block:hover span.flip-link {
-    display:block;
-}
-div.fade-out-block{
-    height: 100%;
-    position: fixed;
-    width: 100%;
-    z-index: 100000;
-}
-form.contest-form .ui-widget-content,form.contest-form .ui-widget-content .ui-state-default{
-    background:none;
-    border:none;
-}
-div.contest-view-list h3{
-    padding:10px 0 10px 10px;
-}
-div.description-info{
-    padding:0px 0px 0px 10px;
-}
-div.entry-header-block ul.menu{
-    margin:-4px 0px 0px 0px;
-}
-div.entry-header-block div.sub-menu-block{
-    font-size:93%;
-}
-div.entry-header-block form.language-form {
-    margin:5px 10px 0 0;
-     width:72px;
-}
-div.entry-content ul.menu > li.dropdown{
-    margin:0 1px;
-}
-div.slider-inner-block1 ol.participant-list li.active .picture-img {
-     border: 5px solid #FCC221;
-  	border-radius:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	padding:0;
-}
-div.slider-inner-block1 ol.participant-list li .picture-img {
-   padding:5px;
-}
-form.prizing-form span.info {
-    margin-left: 5px;
-}
-ul.view-links{
-    padding:5px 0px 0px 5px;
-    border-top:1px solid #ddd;
-    margin:0 6px 0 0;
-}
-ul.view-links li{
-    display:inline;
-    margin:0px 5px;
-    padding:0px;
-}
-div.contest-entry-view-block{
-    margin:0 0 0 197px;
+/* contest view page style is begin */
+div.contest-heading-info h2 {
+	border-bottom:0px;
+	padding:0px 0px 5px 0px;
+	color:#1891C8;
+	margin:0px;
+}
+span.status-name,ul.follower-link li.report a {
+	font-size:11px;
+	color:#656565;
+}
+ul.follower-link li.report a:hover {
+	text-decoration:underline;
+}
+div.contest-heading-info {
+	padding:10px 0px 15px 0px;
+	border-bottom:1px solid #e0dede;
+	margin:0px 0px 10px 0px;
+}
+ul.follower-link li {
+	float:left;
+}
+ul.follower-link li.report a {
+	padding:0px 0px 0px 15px;
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -711px;
+}
+ul.follower-link li.flike a,ul.follower-link li.tweet a,ul.follower-link li.count a {
+	display:block;
+	text-indent:-3000em;
+	height:20px;
+}
+ul.add-list li {
+    background: url("../theme/bluish/img/contest-sprite.png") no-repeat -6px -80px;
+    float: left;
+    height: 48px;
+    padding: 0 0 0 11px;
+}
+ul.add-list li:hover {
+	background-position: -6px -3805px;
+}
+ul.contest-add-list li {
+	float:none;
+}
+ul.add-list li a {
+    background: url("../theme/bluish/img/contest-sprite.png") no-repeat right -198px;
+    color: #FFFFFF;
+    display: block;
+    font-size: 17px;
+    height: 29px;
+    padding:14px 19px 0 9px;
+}
+ul.add-list li:hover a {
+	background-position: right -3923px;
+}
+div.fb-like span{
+    width:90px !important;
+}
+div.contest-side2 ul.add-list li a{
+    text-align: center;
+    width: 196px;
+}
+div.overview-tl {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1123px;
+}
+div.overview-tr {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1204px;
+}
+div.overview-tc {
+	background:url("../theme/bluish/img/overview-tc.png") repeat-x left top;
+}
+div.overview-bl {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -961px;
+}
+div.overview-br {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1042px;
+}
+div.overview-bc {
+	background:url("../theme/bluish/img/overview-bc.png") repeat-x left top;
+}
+div.overview-bc,div.overview-tc {
+	height:11px;
+	margin:0px 10px;
+}
+div.overview-center {
+	background:#C7E5F2;
+	padding:5px 10px;
+}
+div.overview-block {
+	margin:0px 0px 10px 0px;
+}
+dl.overview dt {
+	font-weight:bold;
+	color:#474747;
+	margin:0px 5px 0px 0px;
+}
+dl.overview dt,dl.overview dd {
+	float:left;
+	min-height:24px;
+	font-size:12px;
+}
+dl.overview dd {
+	width:70%;
+	color:#000;
+}
+div.contest-description-block,div.contest-description-block p {
+	padding:0px 0px 10px 0px;
+}
+div#contests-view div.main-inner {
+	background:none;
+	padding:0px;
+	border:none;
+}
+div.contest-view-block {
+	padding:10px;
+	background:#fff;
+	margin:0px 0px 15px 0px;
+}
+ul.status-list div.status-outer-block,div.entries-block {
+	height:42px;
+	padding:0px 0px 0px 10px;
+	margin:0px 0px 5px 0px;
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1675px;
+}
+div.entries-block {
+	margin:0px 0px 10px 0px;
+}
+ul.status-list li div.status-inner,div.entries-inner-block {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat scroll right -1720px transparent;
+	color:#9F9F9F;
+	font-size:12px;
+	font-weight:bold;
+	height:27px;
+	padding:10px 0 0 0px;
+}
+div.entries-inner-block {
+	padding:10px 0 0 5px;
+	font-size:11px;
+}
+div.entries-inner-block span.posted-block {
+	float:left;
+	width:125px;
+}
+ul.status-list div.active {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1563px;
+}
+ul.status-list div.active div.status-inner {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1611px;
+	color:#FFFFFF;
+	height:30px;
+	padding:13px 0 0 0px;
+}
+ul.status-list span.start-date{
+    margin:0px 5px 0px 0px;
+}
+div.user-status-inner {
+	margin:5px 0;
+}
+div.user-status-inner a {
+	font-size:14px;
+	color:#dba203;
+}
+div.contest-view-block h4,div.contest-view-block h3 {
+	font-size:14px;
+	padding:10px 0;
+	color:#222;
+}
+div.contest-side2 h5 {
+	font-size:12px;
+	padding:5px 0px 5px 6px;
+}
+div.contest-followers h3 {
+	padding:0 0 0 8px;
+}
+div.post-info-block a {
+	background:url("../theme/bluish/img/post.png") no-repeat scroll left top transparent;
+	bottom:-25px;
+	color:#FFFFFF;
+	display:block;
+	font-size:18px;
+	height:42px;
+	left:166px;
+	padding:19px 0 0;
+	position:absolute;
+	text-align:center;
+	width:645px;
+}
+div.contest-view-block1 {
+	color:#777777;
+	font-size:11px;
+	padding:0 10px 10px;
+	margin:0px 0px 20px 0px;
+}
+div.post-info-block a:hover {
+	color:#000;
+}
+div.contest-description {
+	padding:0px 0px 30px 0px;
+}
+div.contest-title-block {
+	padding:5px 0 6px;
+}
+p.contest-price {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2688px;
+	color:#1891c8;
+	font-size:25px;
+	font-weight:bold;
+	margin:0 0 8px;
+	padding:10px 0 10px 50px;
+}
+p.created-on {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2791px;
+	color:#000000;
+	font-size:10px;
+	font-weight:bold;
+	padding: 2px 0 3px 20px;
+}
+div.sort-info-block{
+    width:162px;
+}
+div.sort-info-block1{
+    width:257px;
+}
+div.contest-user-discussion div.sort-info-block1{
+    width:100px;
+}
+div.contest-description-block{
+    padding:0px 5px 0px 5px;
+}
+div.contest-tabs-block .ui-tabs .ui-tabs-panel{
+    -moz-border-radius-bottomright:0px;
+    -moz-border-radius-bottomleft:0px;
+     padding:10px;
+   
+}
+div.contest-tabs-block{
+    min-height:50px;
+    margin:0px 0px 20px 0px;
+}
+div.contest-tabs-block .ui-tabs .ui-tabs-nav{
+    padding:0px;
+}
+div.message-information-block{
+    margin: 3px 0;
+    min-height: 20px;
+    text-align: justify;
+    font-size:11px;
+}
+/* contest list page style is begin */
+ol.contest-list>li {
+	margin:0px 2px;
+	width:185px;
+}
+div.contest-img {
+	text-align:center;
+	padding:5px 0px;
+}
+div.contest-center-block {
+	padding:9px 0 0;
+	position:relative;
+}
+div.contest-center-block1 {
+	background:url("../Contests/img/contest-img.png") no-repeat left top;
+	height:142px;
+}
+div.participants-img {
+	background:url("../Contests/img/participant.png") no-repeat scroll left top transparent;
+	height:109px;
+	padding:15px 0 0;
+	text-align:center;
+	width:147px;
+}
+div.zoom-img img {
+	border:2px solid #ddd;
+}
+
+div.rating-left-block {
+	margin:0px 0px 0px 13px;
+}
+div.user-right-block {
+	margin:3px 10px 0px 0px;
+	width:6px;
+}
+p.textonly {
+	margin:10px 1px 9px 308px;
+}
+a.report-abuse {
+	margin:0px 0px 0px 10px;
+}
+div.radio-label {
+	font-weight:bold;
+	margin:0px 0px 10px 0px;
+}
+form.contest-form div.input label {
+	width:290px;
+}
+form.contest-form div.radio-block label {
+   display:block;
+   width:auto;
+}
+form.contest-form div.checkbox input,form.contest-form div.select select,form.contest-form div.text input,form.contest-form div.textarea textarea,form.contest-form div.file input {
+	margin:0 0 0 306px;
+}
+form.contest-form span.info,form.contest-form  div.error-message{
+	margin:6px 0 0 306px;
+}
+form.contest-form div.time-desc {
+	margin:7px 0 0px 305px;
+}
+form.contest-form div.timepicker {
+	margin:7px 0 0 306px;
+}
+form.contest-form div.datepicker-container div.timepicker {
+	margin:0px 10px 0px 0px;
+}
+form.contest-form div.checkbox {
+	margin:5px 0px;
+}
+form.contest-form div.submit-block {
+	margin:0 0 0 319px;
+}
+ul.filter-block {
+	margin:0px 0px 0px 5px;
+}
+ul.filter-block li {
+	margin:0;
+	padding:1px 5px;
+}
+ul.filter-block li a {
+	color:#1B7EE3;
+	font-size:11px;
+}
+ul.filter-block li a:hover {
+	text-decoration:underline;
+}
+ul.filter-block li.active {
+	background:#525252;
+}
+ul.filter-block li.active a {
+	color:#fff;
+}
+div.inbox-option {
+	margin:5px 0 10px 10px;
+}
+div.contest-user {
+	margin:0px 0px 0px 10px;
+}
+.fb_iframe_widget iframe {
+	width:50px !important;
+}
+dl.contest-view-list dt {
+	font-weight:bold;
+	padding:15px 0px 3px 0px;
+}
+dl.contest-view-list dd {
+	line-height:20px;
+}
+div.contest-img-block img {
+	border:1px solid #ddd;
+}
+div.contest-img-block {
+	width:600px;
+	padding:0px 0px 15px 0px;
+}
+div.contest-info-block {
+	padding:10px 0px;
+}
+div.contest-info-block ul.small-star {
+	margin:2px 10px 0 0;
+}
+div.contest-info-block span.compact-info {
+	margin:0px 0px 0px 5px;
+}
+div.withdraw-block {
+	font-size:11px;
+	padding:0px 0px 0px 10px;
+}
+div.contest-cl {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1777px;
+	margin:10px 0 10px 0;
+}
+div.contest-cr {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat right -1825px;
+}
+div.contest-cc {
+	background:#E4E4E4;
+	margin: 0 12px;
+}
+/* message-discussion style is begin */
+ol.message-discussion-list {
+    font-size: 84%;
+	padding:10px 0px 0px 0px;
+}
+ol.message-discussion-list li {
+    margin:0 0 6px 0;
+}
+ol.message-discussion-list1 span.user-name{
+    font-size:111%;
+}
+ol.message-discussion-list div.user-content-block {
+    color: #1C1817;
+    font-size: 12px;
+    width: 90%;
+    margin:0px 0px 0px 10px;
+}
+li.path-1 {
+    padding-left:65px;
+	background:url("../Contests/img/tree-arrow.png") no-repeat 3% top;
+}
+li.path-2 {
+	padding-left:118px;
+	background:url("../Contests/img/tree-arrow.png") no-repeat 9.9% top;
+}
+li.path-3 {
+	background:url("../Contests/img/tree-arrow.png") no-repeat 16% top;
+    padding-left:175px;
+}
+ol.message-discussion-list1 .path-1 {
+	padding-left:30px;
+}
+ol.message-discussion-list1 .path-2 {
+	padding-left:35px;
+	background:url("../Contests/img/tree-arrow.png") no-repeat 5% top;
+}
+ol.message-discussion-list1 .path-3 {
+	padding-left:70px;
+    background:url("../Contests/img/tree-arrow.png") no-repeat 14% top;
+}
+ol.message-discussion-list1 div.avatar-block {
+	width:7%;
+}
+ol.message-discussion-list1 div.user-content-block {
+	width:83%;
+	padding:5px 10px;
+}
+ol.message-discussion-list1 div.posted-date-section{
+    width:32.5%;
+}
+ol.message-discussion-list div.posted-date-section {
+  padding:0;
+}
+ol.message-discussion-list .reply-block {
+  margin:0;
+}
+div.path-1 div.user-content-block {
+    width:89%;
+}
+div.path-2 div.user-content-block {
+    width:88%;
+}
+div.path-3 div.user-content-block {
+	width:87%;
+}
+ol.message-discussion-list1 div.path-1 div.user-content-block {
+	width:83%;
+}
+ol.message-discussion-list1 div.path-2 div.user-content-block {
+	width:82%;
+}
+ol.message-discussion-list1 div.path-3 div.user-content-block {
+	width:78%;
+}
+div.user-content-block1 {
+	background:#f2fbff;
+	border-bottom:1px solid #C2EBFC;
+    padding:5px;
+}
+div.contest-holder {
+	background:#f4ffdf;
+	border-bottom:1px solid #dbfea2;
+}
+div.posted-date-section {
+	padding:0 10px 0 0;
+	color:#70706e;
+	text-align:right;
+}
+span.replay-info {
+	display:block;
+}
+.message-board-block {
+    margin: 5px 6px 0;
+}
+ol.message-discussion-list span.private-msg {
+	background:#FF8309;
+	color:#FFFFFF;
+	font-size:10px;
+	line-height:10px;
+	padding:1px 2px;
+	margin:0 5px;
+}
+span.user-name {
+	font-weight:bold;
+	font-size:14px;
+}
+span.private-msg-to {
+	font-size:11px;
+	color:#6f7170;
+}
+a.reply, a.reply-block {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1365px;
+	color:#FFFFFF;
+	display:block !important;
+	height:20px;
+	text-align:center;
+	width:51px;
+}
+.reply-block {
+    margin: 10px 0 0;
+}
+a.reply:hover {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -1387px;
+}
+form.compose div.textarea textarea,form.messages-form div.textarea textarea {
+	width:99%;
+	margin:0;
+	font-size:11px;
+}
+form.messages-form div.textarea textarea {
+    margin: 5px 0 0 36px;
+    width: 95%;
+}
+form.compose div.file input{
+    margin:0px 0px 0px 0px;
+}
+form.compose div.submit-block,form.messages-form div.submit-block {
+	margin:0 25px 0 0;
+	float:right;
+}
+div.cancel-link {
+	float:left;
+	margin:10px 0 0 5px;
+}
+div.cancel-link a {
+	color:#d72a2a;
+	font-weight:bold;
+}
+div.contest-status img {
+	opacity:0.2;
+	filter:alpha(opacity=20)
+}
+span.eliminated-info,span.withdrawan-info {
+    color: #A5A5A5;
+    font-size: 20px;
+    position: absolute;
+    left: 18%;
+    top: 30%;
+}
+span.withdrawan-info {
+	color: #8b65d6;
+	top: 38%;
+    left: 20%;
+}
+/* activities-list style is begining */
+ol.activities-list>li {
+	border-bottom:1px solid #e0dedf;
+	padding:10px;
+	font-size:11px;
+}
+div.activities-status,div.open {
+	background:#4A86E8;
+	color:#FFFFFF;
+	padding:3px 5px;
+	text-align:center;
+}
+div.activities-section2 {
+	margin:0 0px 0 45px;
+}
+div.activities-section3 {
+	font-size:11px;
+	color:#949494;
+	text-align:right;
+}
+div.avatar-info-block ul.star-rating {
+	display:inline-block;
+	margin:-4px 5px;
+}
+div.new-entry {
+	background:#1B7EE3;
+}
+div.rated {
+	background:#ff7070;
+}
+div.winner-selected {
+	background:#956b43;
+}
+div.completed {
+	background:#577036;
+}
+div.change-request {
+	background:#cd75e6;
+}
+div.user-contest-block {
+	border-right:1px solid #E0DEDE;
+	padding:0 5px 0 0;
+}
+div.user-contest-block ol.contest-list {
+	margin: 0 0 0 30px;
+}
+/* contest add page style is begin */
+ul.filter-list-block {
+	border-bottom:none;
+	border-right:1px solid #ddd;
+	min-height:89px;
+}
+div.contest-followers dl.list dt {
+	width: auto;
+}
+form.normal div.radio-block{
+    margin:0px 0px 0px 306px;
+}
+form.normal div.radio-block span.info{
+    margin:6px 0 0 5px;
+}
+form.normal div.radio-block span.info,form.normal div.contest-add-block div.radio-block input{
+    float:left;
+}
+form.normal div.contest-add-block div.radio-block label{
+    display:block;
+    margin: 0;
+    min-height: 25px;
+    width: 565px;
+    border:1px solid #fff;
+}
+form.normal div.radio-block label + input{
+    margin:3px 3px 0 4px;
+}
+form.normal div.radio-block div.error-message{
+    margin:0px 0px 0px 3px;
+}
+*+html form.normal div.radio-block label + input{
+    margin:0px 0 0 0px;
+}
+/* Entry view page style is begin*/
+.header {
+	color:#afafaf;
+    padding:10px 0px 0px 0px;
+	font-size:91%;
+	position:relative;
+    z-index:10000;
+}
+.header a{
+    color:#000;
+}
+.header a:hover {
+	text-decoration:underline;
+}
+h1.contest-logo{
+    padding:0px;
+}
+h1.contest-logo a {
+	height:45px;
+	width:40px;
+	background:url("../theme/bluish/img/logo-small.png") no-repeat top left;
+    margin:0px 10px 0px 0px;
+}
+div.contest-user-img-block {
+	text-align:center;
+	position:relative;
+}
+div.contest-user-img-block img{
+    width:100%;
+}
+div.slider-inner-block{
+    background:#ddd;
+    border-bottom: 1px solid #9B9B9B;
+    border-top: 1px solid #9B9B9B;
+    font-size: 11px;
+    height: 93px;
+    margin: 0 0 10px;
+    padding: 3px 10px 30px;
+}
+div.close-block{
+    background:#898989;
+    border-top: 1px solid #BFBFBF;
+    color:#fff;
+    font-size: 11px;
+    margin: 5px 0 0;
+    padding: 5px 10px;
+    
+}
+ol.participant-list {
+	margin:0px 0px 0px 55px;
+}
+ol.participant-list li {
+	float:left;
+	margin:0 5px;
+	width:98px;
+	color:#fff;
+}
+ol.participant-list li img{
+    height: 86px;
+    width: 97px;
+    border:3px solid #ddd;
+}
+ol.participant-list li:hover img,ol.participant-list li.active img{
+    border:3px solid #1891C8;
+}
+div.contest-user-discussion, div.contest-user-discussion1 {
+	position:relative;
+}
+div.contest-user-discussion div.sort-info-block1 {
+	font-size:12px;
+	position:absolute;
+	right:10px;
+	top:-23px;
+	width:90px;
+}
+div.contest-user-discussion ul.filter-block li.active {
+	background:none;
+}
+div.contest-user-discussion ul.filter-block li {
+	margin:0;
+	padding:3px 5px 0 0px;
+}
+div.contest-user-discussion ul.filter-block li a {
+	display:block;
+	height:12px;
+	width:10px;
+	text-indent:-3000em;
+}
+div.contest-user-discussion ul.filter-block li.descending a {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2554px;
+}
+div.contest-user-discussion ul.filter-block li.ascending a {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2603px;
+}
+div.contest-user-discussion ul.filter-block li.freshness a {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2578px;
+	width:15px;
+}
+div.contests-user-view-block h2 {
+	margin:0 0 10px;
+	padding:10px 0 8px 15px;
+}
+div.contest-user-discussion div.contests-user-view-block h2{
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    padding: 10px 0 8px 5px;
+}
+div.contests-user-view-block {
+	position:relative;
+	padding:20px 0px;
+	overflow:hidden;
+}
+div.contest-user-img-block{
+    float:left;
+    left:10%;
+}
+div.contest-user-img-block span.flip-link {
+	background:url("../Contests/img/show.png") no-repeat left top;
+	height:59px;
+	position:absolute;
+	text-indent:-3000em;
+	right:0px;
+	width:61px;
+	cursor:pointer;
+	bottom:0px;
+	padding:0px;
+}
+div.contest-user-img-block span.js-flip-out {
+	background:url("../Contests/img/show.png") no-repeat left top;
+}
+div.contest-user-discussion form.compose div.submit-block {
+	float:none;
+	margin:0 0 0 11px;
+}
+div.contest-user-discussion form.compose div.textarea textarea {
+	width:89%;
+	height:14px;
+}
+div.contest-user-discussion form.compose div.textarea-large textarea {
+	height:100px;
+}
+div.contest-user-discussion form.compose div.error-message {
+	margin:3px 0 0 0;
+}
+a.download,a.request-refund {
+	padding:2px 0px 2px 20px;
+}
+a.download {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat -1px -2403px;
+}
+a.request-refund {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2342px;
+}
+div.contest-user-block {
+	text-align:center;
+}
+ul.top-menu li {
+	float:left;
+	margin:5px 0 8px 0;
+}
+ul.top-menu li a,span.view-all {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2476px;
+	color:#000000;
+	display:block;
+	font-size:10px;
+	height:18px;
+	margin:0 10px 0 0;
+	text-align:center;
+	width:92px;
+	cursor:pointer;
+}
+span.next-user,a.next-user,span.prev-user,a.prev-user {
+	display:block;
+	width:13px;
+	text-indent:-3000em;
+	display:block;
+	height:23px;
+	cursor:pointer;
+}
+span.view-all {
+	margin:12px 0px 0px 0px;
+}
+span.next-user,a.next-user {
+	float:right;
+}
+a.next-user,span.next-user {
+	margin:50px 12px 0 0;
+}
+a.prev-user,span.prev-user {
+	margin:50px 0px 0 12px;
+}
+a.next-user {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2144px;
+}
+span.next-user {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2273px;
+}
+a.prev-user {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2192px;
+}
+span.prev-user {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2232px;
+}
+div.contest-user-discussion ol.activities-list li {
+	font-size:95%;
+}
+div.contest-user-discussion ol.activities-list .grid_2 {
+	width:55px;
+}
+div.contest-user-discussion div.activities-section2 {
+	margin:0 0 0 15px;
+}
+h4.up-arrow,h4.down-arrow {
+	color:#1B7EE3;
+	cursor:pointer;
+	padding:5px 0 5px 21px;
+	border-bottom:1px solid #ddd;
+	font-size:100%;
+}
+h4.up-arrow:hover,h4.down-arrow:hover {
+	color:#000;
+}
+h4.up-arrow {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 3px -3688px;
+}
+h4.down-arrow {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat 3px -3633px;
+}
+span.up-arrow,span.down-arrow {
+	display:block;
+	padding:0 9px 0 0;
+	color:#fff;
+}
+span.up-arrow:hover,span.down-arrow:hover {
+	text-decoration:underline;
+}
+span.up-arrow {
+	background:url("../Contests/img/up-arrow.png") no-repeat 78% 8px;
+}
+span.down-arrow {
+	background: url("../Contests/img/down-arrow.png") no-repeat 78% 8px;
+}
+div.entry-name-block{
+    border-left:1px solid #ccc;
+    margin:0px 10px;
+}
+div.entry-inner-block{
+    border-right:1px solid #ccc;
+    margin: 0 5px 0 0;
+    min-height: 43px;
+    padding: 0 20px;
+}
+div.report-block{
+    margin:0px 0px 0px 10px;
+}
+/* participants style is begin */
+div.participants-right-block {
+	border-left:1px solid #CCCCCC;
+	padding:0 0 0 5px;
+	width:774px;
+}
+ol.participants-list>li {
+	border-bottom:1px solid #e0dede;
+	padding:10px 0px;
+}
+ol.participants-list ul.pictures{
+    width:auto;
+    margin:0px;
+    float:left;
+}
+div.browsecontests-left-block {
+	width:698px;
+	margin:0px 0px 0px 5px;
+}
+div.browsecontests-left-block table.list {
+	margin:0px 0px 10px 0px;
+}
+div.category-side1 h3 {
+	background:url("../img/bg-table.png") repeat-x scroll left top transparent;
+	border:1px solid #C5C5C5;
+	border-bottom:none;
+	font-size:14px;
+	font-weight:bold;
+	height:12px;
+	padding:6px 0 15px 10px;
+}
+ul.categories-list {
+	border:1px solid #ddd;
+	padding:0px 0px 10px 0px;
+}
+ul.categories-list a {
+	background:url("../Contests/img/arrow.png") no-repeat 7px 11px;
+	border-top:1px dashed #CCCCCC;
+	font-size:11px;
+	margin:0 4px;
+	padding:6px 10px 6px 18px;
+	display:block;
+}
+ul.categories-list a:hover {
+	background:#fbfbfb url("../Contests/img/arrow.png") no-repeat 7px 11px;
+}
+ul.categories-list li:first-child a {
+	border-top:none;
+}
+div.conteststatus-right-block h3 {
+	font-size:13px;
+	line-height:15px;
+	padding:0 0 5px;
+	font-weight:normal;
+}
+div.conteststatus-right-block {
+	font-size:10px;
+	color:#9e9e9e;
+}
+div.status-block1 {
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+.status-block1 span {
+	color:#FFFFFF;
+	height:15px;
+	line-height:3px;
+	text-indent:1px;
+	width:auto;
+	margin:0px;
+}
+.status-block1 span span,div.active-status-block span span{
+    height:auto;
+    padding:5px;
+}
+div.active-status-block span span{
+    padding:0px;
+    text-align:center;
+}
+div.conteststatus-img {
+    background:#EFEBEB;
+    height: 59px;
+    margin: 0 10px 0 0;
+    padding: 4px 0 0;
+    text-align: center;
+    width: 77px;
+}
+div.conteststatus-img img {
+	border:1px solid #d6d7d8;
+}
+div.contest-list-block ul.tab-menu li.ui-state-default {
+	float:right;
+}
+table.list th.prize span.prize {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3565px;
+	padding:5px 0 5px 25px;
+}
+table.list th.prize{
+    padding:10px 1px;
+}
+div#contests-browse ul.tab-menu{
+    margin: 0 0 3px;
+    padding:10px 0 0 640px;
+}
+div#contests-view ul.tab-menu{
+    border-bottom:none;
+}
+div#message-section ul.tab-menu{
+    border-bottom:1px solid #E2E0E0;
+}
+div#contests-view .panel-container{
+    padding:10px;
+}
+div.contest-user-discussion h2{
+    font-size:98%;
+    font-weight: bold;
+    padding: 10px 0 8px 5px;
+}
+/* contest add page style is begin */
+ul.stage {
+	background:#EDEDED;
+	padding:10px 0 10px 15px;
+}
+ul.stage li {
+	color:#8E8E8E;
+	float:left;
+	font-size:13px;
+	font-weight:700;
+	margin:0 25px 0 0;
+	padding:14px 9px 8px 45px;
+}
+ul.stage li.step1 {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2966px;
+}
+ul.stage li.step2 {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3049px;
+}
+ul.stage li.step3 {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3136px;
+}
+ul.stage li.step1-active,ul.stage li.step2-active,ul.stage li.step3-active {
+	color:#1891C8;
+}
+ul.stage li.step1-active {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3249px;
+}
+ul.stage li.step2-active {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3350px;
+}
+ul.stage li.step3-active {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3459px;
+}
+div#contest_types-index div.main-inner,#contests-add div.main-inner,#contests-prizing_selection div.main-inner {
+	padding:0px;
+}
+div.stage-inner-block {
+	padding:10px 20px;
+}
+ol.list>li:hover .currency-info {
+	display:block;
+}
+.currency-info {
+	background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -3565px;
+	color:#1891c8;
+	font-size:11px;
+	padding:3px 0 4px 29px;
+	margin:5px 0px 0px 0px;
+}
+div.payment-information h3 {
+	font-size:12px;
+	padding:10px 0px;
+}
+div.payment-information p {
+	padding:0px 0px 10px 0px;
+}
+div.payment-description {
+	color:#7F7F7F;
+	font-size:11px;
+	margin:3px 0 14px 19px;
+}
+div.prizing-package {
+	font-size:11px;
+	font-weight:700;
+}
+div.prizing-package1 {
+	margin:10px 0px 0px 0px;
+}
+form.prizing-form div.text input {
+	margin:0px 0px 0px 0px;
+}
+.total-info {
+    color: #888888;
+    font-size: 17px;
+    padding: 16px 0 0;
+}
+div.payment-information1 {
+	border-top:1px dashed #DDDDDD;
+	margin:20px 0 0;
+	padding:10px 0 0;
+}
+div.contest-view-list {
+	background:url("../Contests/img/border.png") repeat-y 49% top;
+}
+div.contest-view-list .grid_11 {
+     padding: 0 10px 0 0;
+    width: 449px;
+}
+div.contests-user-view-block form.normal div.input label {
+	text-align:left;
+	width:auto;
+}
+div.contests-user-view-block form.normal div.select select {
+	margin:0 0 0 31px;
+	width:321px;
+}
+div.contests-user-view-block form.normal div.checkbox input {
+	margin:0px;
+}
+div.content div.flow-chart-block {
+	right: 2px;
+}
+/* zooming effect style is begin */
+#poppedOut {
+	font-family:verdana;
+}
+table.list th.contest-title,table.list td.contest-title {
+	width:369px;
+}
+div.browse-index-block {
+	position:relative;
+}
+div.admin-contest-view-block .ui-tabs-panel {
+	padding:0px 0px 0px 30px;
+	background:url("../img/admin-stip.png") repeat-y left top #fff;
+}
+div.admin-contest-view-block .ui-tabs-panel form.normal{
+    margin:0px;
+}
+div.admin-tabs-block table.list{
+    width:98%;
+}
+div.js-img-zoom {
+	font-family:verdana;
+}
+form#MessageMoveToForm div.quick-replay1 div.submit-block {
+	margin:0px 12px 0px 0px;
+	float:right;
+}
+form#MessageMoveToForm div.quick-replay1 div.textarea {
+	margin: 0px auto;
+}
+span.color-code{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    margin:0px 2px 0px 0px;
+}
+div.active-status-block{
+    position:static;
+}
+div.active-status-block span{
+     height:auto;
+     line-height:15px;
+     padding:1px 5px;
+     width:60px;
+     margin:0px auto;
+}
+/* slider block style is begin */
+.pictures {
+	margin:0px auto;
+	width:933px;
+	list-style:none;
+}
+div.user-contest-block .pictures{
+    width:579px;
+}
+.clear {
+	clear: both;
+}
+.pictures li{
+	float:left;
+	padding:0px 0px 30px 0px;
+    z-index:0 !important;
+}
+.pictures li.withdrawn{
+    padding:5px 0 0 5px;
+    position:relative;
+    width:174px;
+    z-index:0 !important;
+}
+.pictures li:hover{
+    z-index:100000 !important;
+}
+/* slider block style is end */
+
+div.slider-inner-block .pictures{
+    width:98%;
+    margin: 0 0 0 20px;
+}
+.slider-inner-block1 {
+    margin: 0 auto;
+    position: relative;
+}
+.slider-inner-block1 a.prev-user, .slider-inner-block1 a.next-user  {
+    margin: 0;
+    position: absolute;
+    top: 52px;
+}
+.slider-inner-block1 a.next-user{
+    right:-4px;
+}
+.slider-block {
+	height:0;
+	overflow:hidden;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index:2;
+}
+.view-img-block {
+	width:55%;
+	text-align:center;
+	border-radius: 5px;
+	padding:2.5%;
+	float:left;
+	position: relative;
+    background:#EAECED;
+    border:1px solid #EAECED;
+}
+.view-img-block img {
+	max-width:100%;
+}
+.view-image {
+    margin:0 auto;
+	position:relative;
+    width:600px;
+}
+div.slider-block span.close{
+    background: url("../theme/bluish/img/contest-sprite.png") no-repeat 0 -633px;
+    display: block;
+    height: 10px;
+    text-indent: -3000em;
+    width: 10px;
+    margin:5px 0 0;
+    cursor:pointer;
+	
+}
+span.contest-status-info{
+    display:block;
+    color:#999;
+}
+h3.contest-title{
+    font-size:17px;
+    font-weight:normal;
+	padding:0;
+}
+h3.contest-title a{
+    color:#1891c8;
+}
+h3.contest-title a:hover{
+    color:#000;
+}
+span.prev-link a,span.next-link a{
+    position:absolute;
+    display:block;
+    text-indent:-3000em;
+    display:block;
+    width:20px;
+    height:24px;
+    position:absolute;
+}
+span.prev-link a{
+    top:50%;
+    left:-29px;
+    background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2232px;
+}
+span.next-link a{
+    top:50%;
+    right:-34px;
+    background:url("../theme/bluish/img/contest-sprite.png") no-repeat left -2273px;
+}
+div.contest-user-img-block span.flip-link {
+    display:none;
+}
+div.contest-user-img-block:hover span.flip-link {
+    display:block;
+}
+div.fade-out-block{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 100000;
+}
+form.contest-form .ui-widget-content,form.contest-form .ui-widget-content .ui-state-default{
+    background:none;
+    border:none;
+}
+div.contest-view-list h3{
+    padding:10px 0 10px 10px;
+}
+div.description-info{
+    padding:0px 0px 0px 10px;
+}
+div.entry-header-block ul.menu{
+    margin:-4px 0px 0px 0px;
+}
+div.entry-header-block div.sub-menu-block{
+    font-size:93%;
+}
+div.entry-header-block form.language-form {
+    margin:5px 10px 0 0;
+     width:72px;
+}
+div.entry-content ul.menu > li.dropdown{
+    margin:0 1px;
+}
+div.slider-inner-block1 ol.participant-list li.active .picture-img {
+     border: 5px solid #FCC221;
+  	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	padding:0;
+}
+div.slider-inner-block1 ol.participant-list li .picture-img {
+   padding:5px;
+}
+form.prizing-form span.info {
+    margin-left: 5px;
+}
+ul.view-links{
+    padding:5px 0px 0px 5px;
+    border-top:1px solid #ddd;
+    margin:0 6px 0 0;
+}
+ul.view-links li{
+    display:inline;
+    margin:0px 5px;
+    padding:0px;
+}
+div.contest-entry-view-block{
+    margin:0 0 0 197px;
 }

@@ -1,4 +1,5 @@
 <?php /* SVN: $Id: index_list.ctp 99 2008-07-09 09:33:42Z rajesh_04ag02 $ */ ?>
+<?php // echo '<pre/>'; print_r($userReviews);die; ?>
 <div class="userReviews index js-response js-responses">
 	<div class="clearfix">
 		<div class="grid_left">
@@ -27,13 +28,14 @@
 			<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('created', __l('Created')); ?></div></th>
 			<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('DoctorUser.username', __l('Doctor')); ?></div></th>
 			<th class="dc"><div class="js-pagination"><?php echo $this->Paginator->sort('User.username', __l('Patient')); ?></div></th>
-			<th class="dl"><div class="js-pagination"><?php echo $this->Paginator->sort('UserReview.bedside_rate', __l('Bedside Average Rating')); ?></div></th>
-			<th class="dl"><div class="js-pagination"><?php echo $this->Paginator->sort('UserReview.waittime_rate', __l('Timing Average Rating')); ?></div></th>
+			<th class="dl"><div class="js-pagination"><?php echo  __l('Hospitality(Hygeine) Rating'); ?></div></th>
+			<th class="dl"><div class="js-pagination"><?php echo  __l('Doctor Rating'); ?></div></th>
+            <th class="dl"><div class="js-pagination"><?php echo  __l('Staff Hospitality Rating'); ?></div></th>
 			<th class="dl"><div class="js-pagination"><?php echo __l('Overall Rate'); ?></div></th>
 			<th class="dc"><div class="js-pagination"><?php echo __l('Review'); ?></div></th>
 			<th class="dl"><div class="js-pagination"><?php echo $this->Paginator->sort('ip_id', __l('IP'));?></div></th>
 		</tr>
-		<?php
+		<?php  
 			if (!empty($userReviews)):
 				$i = 0;
 				foreach($userReviews as $userReview):
@@ -57,6 +59,14 @@
 						<div class="action-inner-left-block">
 							<ul class="action-link clearfix">
 								<li><?php echo $this->Html->link(__l('Delete') , array('action' => 'delete', $userReview['UserReview']['id']) , array('class' => 'delete js-delete', 'title' => __l('Delete'))); ?><?php echo $this->Layout->adminRowActions($userReview['UserReview']['id']); ?></li>
+                                 <li><?php
+								 if($userReview['UserReview']['is_active']=='1'){
+									  echo $this->Html->link(__l('Inactive') , array('action' => 'change_status', $userReview['UserReview']['id'],0) , array('class' => 'reject', 'title' => __l('Inactive')));
+								 }else{
+									  echo $this->Html->link(__l('Activate') , array('action' => 'change_status', $userReview['UserReview']['id'],1) , array('class' => 'js-delete active-link', 'title' => __l('Activate'))); 
+								 }?>
+                                      
+								</li>
 							</ul>
 						</div>
 						<div class="action-bottom-block"></div>
@@ -67,16 +77,20 @@
 			<td class="dc"><?php echo $this->Html->cText($userReview['DoctorUser']['username']); ?></td>
 			<td class="dc"><?php echo $this->Html->cText($userReview['User']['username']); ?></td>
 			<td class="dc">
-					<?php $bedside_rating = $this->Html->get_star_rating($userReview['UserReview']['bedside_rate']); ?>
-					<?php echo $this->Html->cHtml($bedside_rating); ?>
+					<?php $hyRating = $this->Html->get_star_rating($userReview['UserRating']['0']['rate_1']); ?>
+					<?php echo $this->Html->cHtml($hyRating); ?>
 			</td>
 			<td class="dc">
-					<?php $waittime_rating = $this->Html->get_star_rating($userReview['UserReview']['waittime_rate']); ?>
-					<?php echo $this->Html->cHtml($waittime_rating); ?>
+					<?php $docRating = $this->Html->get_star_rating($userReview['UserRating']['0']['rate_2']); ?>
+					<?php echo $this->Html->cHtml($docRating); ?>
+			</td>
+            <td class="dc">
+					<?php $staffHosRating = $this->Html->get_star_rating($userReview['UserRating']['0']['rate_3']); ?>
+					<?php echo $this->Html->cHtml($staffHosRating); ?>
 			</td>
 			<td class="dc">
 					<?php 
-						$average = ($userReview['UserReview']['bedside_rate'] + $userReview['UserReview']['waittime_rate']) / 2;
+						$average = ($userReview['UserRating']['0']['rate_1'] + $userReview['UserRating']['0']['rate_2'] + $userReview['UserRating']['0']['rate_3']) / 3;
 						$overall_rating = $this->Html->get_star_rating($average); 
 						echo $this->Html->cHtml($overall_rating); ?>
 			</td>

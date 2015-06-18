@@ -1,3 +1,11 @@
+	<link href='<?php echo $this->webroot;?>css/fullcalendar.css' rel='stylesheet' />
+	
+	
+	
+	<!--FullCalendar-->
+	<script src='<?php echo $this->webroot;?>js/fullcalendar.js'></script>
+	
+
 <div class="profile-block">
     <div class="clearfix">
         <div class="doctor-photo-block">
@@ -33,7 +41,18 @@
         		</div>
         		<?php } ?>
             </div>
+            <div class="green-outer" style="margin-top: 10px;">
+            <div class="book-l" style="margin-left: 32px;">
+    			 	<!--<a href="<?php //echo $this->webroot.'user_ratings/add_ratings/'.$user['User']['username']; ?>">Write Review</a>--->
+                <?php if($this->Auth->user('id')){ ?>   
+                <a href="<?php echo $this->webroot.'user_ratings/add_ratings/'.$user['User']['username']; ?>">Write Review</a>
+                <?php }else{
+                      echo $this->Html->link(__l('Write Review'), array('controller' => 'users', 'action' => 'write_review_as','0',$user['User']['username']), array('class' => 'review_as_box js-thickbox', 'title' => __l('Add')));
+                 } ?>
+            </div>
+    			 </div>
         </div>
+        
     		<?php
     			$usermarkerimg = '';
     			if(!empty($default_photo['Attachment'])) {
@@ -69,34 +88,72 @@
 				<?php if(!empty($user['UserProfile']['zip_code'])){?>
 				<span><?php echo $user['UserProfile']['zip_code'];?></span>,
 				<?php } ?>
-				<?php if(!empty($user['UserProfile']['phone']) && $user['User']['is_partner'] == 0){?>
-				<span><?php echo '<br>Phone: '.$user['UserProfile']['phone'];?></span>.
-				<?php } ?>
+				
 		  </address>
 		  </div>
     	</div>
         <div class="doctor-profile-middle">
         	<div class="user-title">
                 <h2>
-                    <?php echo __l('Dr. ');?><?php echo ucfirst($user['UserProfile']['practice_name']);?>
-                    <?php if(!empty($user['UserProfile']['title'])){ ?>
-                    <span><?php echo $user['UserProfile']['title'];?></span>
-                    <?php } ?>
+                	<?php if(!empty($user['UserProfile']['title'])) {
+                		$title = $user['UserProfile']['title'].' ';
+                	}else{
+                		$title = 'Dr. ';
+                	} ?>
+                    <?php echo __l($title);?><?php if(!empty($user['UserProfile']['practice_name'])) { echo ucfirst($user['UserProfile']['practice_name']); }else{ echo $user['UserProfile']['first_name'].' '.$user['UserProfile']['last_name']; } ?>
+                   
                 </h2>
     			 <?php if(!empty($user['UserProfile']['Specialty']['name'])) { ?>
     					<p><?php echo $user['UserProfile']['Specialty']['name'];?></p>
     			 <?php } ?>
+    			 
+    			 
             </div>
             <div class="doctor-profile-block">
             <div class="clearfix">
                 <div class="doctor-profile-left">
                     <div class="doctor-review-rating">
             			 <h3 class="user-title"><?php echo __l('Average Rating ');?></h3>
-            			 <?php
-							$overall_rating_percentage = $user['User']['overall_avg_rating']*20;
+            			 <?php // echo '<pre/>'; print_r($user) ; die; 
+						 
+						 $hyRating='0' ; $docRating='0'; $staffRating='0';
+						$total = '0'; $avg_rate_1='0' ; $avg_rate_2='0' ; $avg_rate_3='0';
+						foreach($user['UserRating'] as $ur){ 
+							if($ur['status']=='1'){
+								if($ur['rate_1']){
+									$hyRating=$hyRating + $ur['rate_1'];
+									
+								}
+								if($ur['rate_2']){
+									$docRating=$docRating + $ur['rate_2'];
+									
+								}
+								if($ur['rate_3']){
+									$staffRating=$staffRating + $ur['rate_3'];
+									
+								}
+								$total++;
+							}
+							
+						}
+						if($total !='0'){
+							$avg_rate_1 = round(($hyRating/$total),1);
+							$avg_rate_2 = round(($docRating/$total),1);
+							$avg_rate_3 = round(($staffRating/$total),1); 
+						
+						}
+						$overallRating=($avg_rate_1 + $avg_rate_2 + $avg_rate_3 )/3;
+						$rating1 = $this->Html->get_star_rating($overallRating);
+						$Avrating = $this->Html->cHtml($rating1);         
+						/*$overallRating=(round(($user['UserRating']['0']['UserRating']['0']['AvgHyRating']),1) + round(($user['UserRating']['0']['UserRating']['0']['AvgDocRating']),1) + round(($user['UserRating']['0']['UserRating']['0']['AvgStRating']),1))/3;
+						     $overallRating=$overallRating;	*/
+							 
+                          $overall_rating_percentage = $overallRating*20;
+                                                        
+                                                        
 						?>
 						 <ul class="star-rating">
-							<li class="current-rating" style="width: <?php echo $overall_rating_percentage;?>%;"><?php echo __l('Currently');?> <?php echo $user['User']['overall_avg_rating'];?> <?php echo __l('Stars.');?></li>
+                                                        <li class="current-rating" style="width: <?php echo $overall_rating_percentage;?>%;"><?php if($this->Auth->user('id')){ ?><a href="javascript:(0)"><?php echo __l('Currently');?> <?php echo $Avrating ;?> <?php echo __l('Stars.');?></a><?php }else{?><a  onclick="open_reviewbox()" ><?php echo __l('Currently');?> <?php echo $Avrating ;?> <?php echo __l('Stars.');?></a><?php } ?></li>
                         </ul>
     				    <div>
                             <?php echo $this->Html->link(__l('Read Reviews'), '#Profile_ReviewsBox', array('title' => __l('Read Reviews')));?>
@@ -200,10 +257,18 @@
                     <div class="docapp-inner">
             		  <div class="calendar-info">
             			
-						<div class="js-calendar-responses cal-table-block">
-            					<?php echo $this->element('doctor-calendar', array('type' => 'doctor-profile', 'user_id' => $user['User']['id'],'clinic_id'=>$clinic_id,'config' => 'sec')); ?>
+						
+            					<div class="row full-calendar">
+                                <!----js full calendar------>
+                                 <div id='dayCalendar' ></div>
+                                 <!----js full calendar------>
+                               
             					</div>
-            					
+            				<div id="indicationbox" style=" margin-left: 10px;margin-top: 10px;">
+                             <p><span style="line-height:10px !important; border-radius:5px; background-color:#FF7F50;padding-right:10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Past slot</p>
+                            <p><span style="line-height:10px !important; border-radius:5px; background-color:#5ebc00;padding-right:10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Free slot</p>
+                             <p><span style="line-height:10px !important; border-radius:5px; background-color:#FF0000;padding-right:10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Booked slot</p>
+                            </div>	
             			 
             		  </div>
                     </div>
@@ -291,3 +356,168 @@
 		</div>
 	 </div>
  </div>
+    
+    <div class="doctorAvailabilities">
+<div class="form-box">
+                <div class="form-box-inner">
+                   <div class="button">
+                      
+                    </div>
+                    	
+        </div>
+ </div>
+ </div>
+<script type="text/javascript">
+		
+		/*
+			jQuery document ready
+		*/
+		
+		$(document).ready(function()
+		{
+			/*
+				date store today date.
+				d store today date.
+				m store current month.
+				y store current year.
+			*/
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+			
+			/*
+				Initialize fullCalendar and store into variable.
+				Why in variable?
+				Because doing so we can use it inside other function.
+				In order to modify its option later.
+			*/
+			
+			var calendar = $('#dayCalendar').fullCalendar(
+			{
+				/*
+					header option will define our calendar header.
+					left define what will be at left position in calendar
+					center define what will be at center position in calendar
+					right define what will be at right position in calendar
+				*/
+				header:
+				{
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				/*
+					defaultView option used to define which view to show by default,
+					for example we have used agendaWeek.
+				*/
+				defaultView: 'month',
+				/*
+					selectable:true will enable user to select datetime slot
+					selectHelper will add helpers for selectable.
+				*/
+				selectable: true,
+				selectHelper: true,
+				/*
+					when user select timeslot this option code will execute.
+					It has three arguments. Start,end and allDay.
+					Start means starting time of event.
+					End means ending time of event.
+					allDay means if events is for entire day or not.
+				*/
+				select: function(start, end, allDay)
+				{
+					/*
+						after selection user will be promted for enter title for event.
+					*/
+					var title = prompt('Event Title:');
+					/*
+						if title is enterd calendar will add title and event into fullCalendar.
+					*/
+					if (title)
+					{
+						calendar.fullCalendar('renderEvent',
+							{
+								title: title,
+								start: start,
+								end: end,
+								allDay: allDay
+							},
+							true // make the event "stick"
+						);
+					}
+					calendar.fullCalendar('unselect');
+				},
+				/*
+					editable: true allow user to edit events.
+				*/
+				editable: true,
+				/*foreach($arr as $a){
+			
+			foreach($a as $key=>$val){
+				foreach($val as $k=>$v){
+					echo '<pre/>'; print_r($k); die;
+				}
+			}
+		}
+	;
+					events is the main option for calendar.
+					for demo we have added predefined events in json object.
+				*/
+				<?php if($arr){ ?>
+				events: [
+					<?php foreach($arr as $a){ 
+					         foreach($a as $key=>$val){
+								 foreach($val as $k=>$v){ 
+								 $dte=explode('-',$key);
+								  $color='#5ebc00';$link='1';
+								  if($bookedDates && $bookedTimes){
+									  if(in_array($key,$bookedDates)  && in_array($v,$bookedTimes)  && $key >= date('Y-m-d')){
+										  $color='#FF0000';
+											$link='0';
+									  }else{
+											$color='#5ebc00';
+											$link='1';
+											if($key < date('Y-m-d')){
+												$color='#FF7F50';
+											}
+										}
+								  }
+								/* if($AlreadyBooked){
+									foreach($AlreadyBooked as $ab){
+										if($key==$ab['Appointment']['appointment_date'] && $v==$ab['Appointment']['appointment_time']){
+											$color='#FF0000';
+											$link='0';
+										}else{
+											$color='#5ebc00';
+											$link='1';
+											if($key < date('Y-m-d')){
+												$color='#FF7F50';
+											}
+										}
+									}
+								 }*/?>
+					{
+						title: '<?php echo $v ?>',
+						start: new Date(<?php echo $dte['0']?>, <?php echo ($dte['1']-1)?>,<?php echo $dte['2']?>),
+						end: new Date(<?php echo $dte['0']?>, <?php echo ($dte['1']-1)?>,<?php echo $dte['2']?>),
+						color: '<?php echo $color; ?>'
+						<?php if($link){ ?>,
+						url: '<?php echo $this->webroot;?>appointments/booking/doctor:<?php echo $user['User']['id'];?>/timing_id:<?php echo $k ;?>/date:<?php echo $key ;?>/time:<?php echo $v ; ?>'
+						<?php } ?>
+					},
+					<?php }
+							 }
+					}?>
+				]
+				<?php } ?>
+			});
+			
+		});
+                
+                function open_reviewbox(){
+                    $('.review_as_box').trigger('click');
+				return false;
+                }
+
+	</script>

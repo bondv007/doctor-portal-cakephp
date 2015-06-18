@@ -19,8 +19,8 @@
 		echo $this->Html->css('chart', null, array('inline' => true));
 		
         echo $this->Layout->js();
-		echo $this->Html->css(array('jquery.rateyo'));
-		echo $this->Html->script(array('default.cache','index'));
+		echo $this->Html->css(array('raty/jquery.raty'));
+		echo $this->Html->script(array('libs/jquery','libs/jquery.raty','libs/jquery.form','libs/highcharts','libs/jquery.truncate-2.3','libs/jquery.metadata','libs/jquery.flash','libs/jquery-ui-1.8.18.custom.min','libs/jquery.overlabel','libs/jquery.lazyload.min','libs/jquery.countdown','libs/jquery.ui.timepicker','libs/date.format','libs/jquery.fuploader','libs/jquery.uploader','libs/jquery.blockUI','libs/jquery.easytabs','libs/jquery.hashchange.min','libs/jquery.colorbox','libs/jquery.chosen','libs/AC_RunActiveContent','libs/jquery.autogeocomplete','libs/jquery.galleryview-3.0','libs/jquery.easing.1.3','libs/jquery.timers-1.2','libs/jquery.ui.stars','libs/jquery.lightbox-0.5','libs/jquery.cookie','common','index'));
         /*$js_inline = "document.documentElement.className = 'js';";
 		$js_inline .= "(function() {";
 		$js_inline .= "var js = document.createElement('script'); js.type = 'text/javascript'; js.async = true;";
@@ -32,7 +32,13 @@
 		echo $scripts_for_layout;
 		
     ?>
-	
+	<style>
+		.icons.round-facebook {  background-position: -352px 0;	  height: 42px;	  width: 41px;}
+		.icons.round-google-plus { background-position: -443px 0; height: 42px; width: 41px;}
+		.inlineBlock, .inlineBlockLi li, .inlineBlockA a { display: inline-block !important;}
+		.icons { background: url(<?php echo $this->webroot; ?>img/icons.png) 0 0 no-repeat;}
+		.inlineBlockA{ float:right; margin-right:15px;}
+	</style>
 </head>
 <body>
     <div id="<?php echo $this->Html->getUniquePageId();?>" class="content">
@@ -68,13 +74,11 @@
 		?>
 
 <?php endif; ?>
-                    	<!-- <ul class="share-list clearfix">
-
-                            <li class="tweet"><a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo Router::url('/',true); ?>" data-text="<?php echo Router::url('/',true); ?>" data-via="vetpetsite" data-count="none">Tweet</a></li>
-                            <li class="flike">
-								<div class="fb-like" data-href="<?php echo Router::url('/',true); ?>" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-							</li>
-                        </ul> -->
+				<div class="social-icons inlineBlockA share-list clearfix">
+					<a href="https://www.facebook.com/TCHServices" target="_blank" class="icons round-facebook">&nbsp;</a>					
+					<a href="https://plus.google.com/u/0/101641191572014883221/posts" target="_blank" class="icons round-google-plus">&nbsp;</a>
+				</div>
+                    	
                     	<?php echo $this->element('header-menu'); ?>
                     	
     				</div>

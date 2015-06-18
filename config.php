@@ -175,7 +175,7 @@ setlocale (LC_TIME, 'es');
 if (method_exists('CmsHook', 'setExceptionUrl')) {
 
     CmsHook::setExceptionUrl(array(
-
+		 'userratings/add_ratings',
         'nodes/home',
 
         'nodes/view',

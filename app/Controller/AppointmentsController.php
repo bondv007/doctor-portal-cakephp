@@ -328,7 +328,7 @@ class AppointmentsController extends AppController {
 		}
 	}
 	public function appointment_info()
-	{
+	{  
 		$this->pageTitle = __l('Book Your Appointment');
 		$user_info = $this->Session->read('user');
 		if($this->Auth->user('role_id') == ConstUserTypes::Doctor) {
@@ -398,6 +398,12 @@ class AppointmentsController extends AppController {
 			$appointment_time = $this->request->params['named']['time'];
 			if(strtotime($appointment_date) < strtotime(date("Y-m-d"))){
 				$this->Session->setFlash(__l('You are attempting to schedule an appointment in the past.'), 'default', null, 'error');
+				$this->redirect(array('action' => 'browse'));
+			}
+			$this->loadModel('DoctorHoliday');
+			$isHoliday=$this->DoctorHoliday->findByDoctorUidAndHolidayDate($doctor_user_id,$this->request->params['named']['date']);
+			if($isHoliday){
+				$this->Session->setFlash(__l('Doctor is on holiday on this date, kindly choose another date.'), 'default', null, 'error');
 				$this->redirect(array('action' => 'browse'));
 			}
 			$is_already_booked = $this->_getAppointmentTime($appointment_date,$appointment_time);
@@ -529,15 +535,19 @@ class AppointmentsController extends AppController {
 				$smsinfo = array();
 				$sms = array();
 				//Send SMS to Patient
+				if($patient_mobile){
 				$smsinfo['mobile'] = $patient_mobile;
 				$smsinfo['message'] = 'Dear '.$appointment['User']['username'].'your appointment with Dr. '. $user['Doctor']['UserProfile']['first_name'].' '.$user['Doctor']['UserProfile']['last_name'].' is booked at '.date("F j, Y", strtotime($user['Patient']['Appointment']['appointment_date'])).' at '.$user['Doctor']['UserProfile']['address'].' Call at 950022122 to modify or cancel booking';
-				//$smsdata = $this->Appointment->sendSMS($smsinfo);
-				$this->log($smsdata);
+				$smsdata = $this->Appointment->sendSMS($smsinfo);
+				
+				}
 				//Send SMS to Doctor
+				if($doctor_mobile){
 				$sms['mobile'] = $doctor_mobile;
 				$sms['message'] = 'Dear '.$appointment['DoctorUser']['username'].', Patient '.$appointment['User']['username'].' requesting your appointment at '.date("F j, Y", strtotime($user['Patient']['Appointment']['appointment_date'])).' '.$user['Patient']['Appointment']['appointment_time'].'. Please check with your appointment schedule and confirmation your appointment.';
-				$smsdoctordata = $this->Appointment->sendSMS($sms);
-				$this->log($smsdoctordata);
+				$smsdoctordata = $this->Appointment->sendSMS($sms);    //commented by naveen because it is showing curl error.
+				//$this->log($smsdoctordata);
+				}
 				//Email send for Patients and Doctors
 				$emailFindReplace = array(
 					'##USERNAME##' => $user['Patient']['User']['username'],
@@ -563,8 +573,10 @@ class AppointmentsController extends AppController {
 						'admin' => false
 					) , true)
 				);
-				$this->Appointment->_sendEmail('New Appointment Request', $emailFindReplace,  $user['Patient']['User']['email']);
+				
+				$this->Appointment->_sendEmail('New Appointment Request', $emailFindReplace,  $this->Auth->user('email'));
 				$this->Appointment->_sendEmail('New Appointment Requested form patient', $emailFindReplace1,  $user['Doctor']['User']['email']);
+				
 				$this->redirect(array(
 							'controller' => 'appointments',
 							'action' => 'confirm',

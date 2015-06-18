@@ -73,7 +73,7 @@
 		<?php if(!empty($type) && $type == 'doctor') { 
 				echo $this->Form->input('UserProfile.zip');
 				echo $this->Form->input('UserProfile.specialty_id', array('options' => $specialties,'empty' => __l('-- Select --'))); 
-			//echo $this->Form->input('User.is_partner', array('label' => 'I want to be a partner' ));		
+			echo $this->Form->input('User.is_partner', array('label' => 'I want to be a partner' ));		
 			 }		
 		?>
 		<?php 

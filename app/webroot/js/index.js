@@ -1,5 +1,6 @@
 //custom code
 $(document).ready(function(){
+	
 	$('.cityvalues').click(function(){
 	$('.js-city-toggle-show').text($(this).text());
 	$('.js-cities').slideToggle('slow');
@@ -39,10 +40,7 @@ $(document).ready(function(){
 		$('.js-insurances').html(htmldata_hosp);
 	});
 	
-	 $("#rateYo").rateYo({
-	    minValue: 1
-	  });	
-	  
+	 
 });
 
 $('.spcvalues').live('click', function() {
@@ -116,4 +114,4 @@ function check_reminder() {
 	}else{
 		$('#reminder_time').hide();	
 	}
-}// JavaScript Document
+}

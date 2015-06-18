@@ -4,7 +4,7 @@ class DoctorAvailabilitiesController extends AppController {
 	public $name = 'DoctorAvailabilities';
 	
 	public $helpers = array(
-        'Calendar'
+        'Calendar','Js'
     );
 	public function beforeFilter()
     {
@@ -527,6 +527,8 @@ class DoctorAvailabilitiesController extends AppController {
 				$this->set('clinic_id', $clinic_id);	
 
 		$this->set('type', $type);
+		//echo '<pre/>'; print_r($appointment_timings); die;
+		
 	}
 	public function setup_time($year = null, $month = null, $day = null, $data = null, $user_id = null,$clinic_id=null)
 	{
@@ -684,6 +686,8 @@ class DoctorAvailabilitiesController extends AppController {
 		$this->set('month', $month);
 		$this->set('year', $year);
 		$this->set('data', $appointment_times);
+		$this->loadModel('DoctorHoliday');
+		$this->set('HolidayList',$this->DoctorHoliday->find('all',array('controller'=>array('DoctorHoliday.doctor_uid'=>$this->Auth->user('id')))));
 	}
 	function view($id = null) {
 		$this->pageTitle = __l('Doctor Availability');
@@ -1009,6 +1013,42 @@ class DoctorAvailabilitiesController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		} else {
 			throw new NotFoundException(__l('Invalid request'));
+		}
+	}
+	
+	function add_holidays(){
+		$this->loadModel('DoctorHoliday');
+		$rs='0';
+		$holidayArr=array();
+		if($this->request->query['data']){
+			$this->request->data=$this->request->query['data'];
+			$tatalCount=count($this->request->data['DoctorHoliday']['holiday_date']);
+			for($i=0; $i<$tatalCount; $i++){
+				$holidayArr['DoctorHoliday']['holiday_date']=date('Y-m-d',strtotime($this->request->data['DoctorHoliday']['holiday_date'][$i]));
+				$holidayArr['DoctorHoliday']['holiday_type']=$this->request->data['DoctorHoliday']['holiday_type'][$i];
+				$holidayArr['DoctorHoliday']['doctor_uid']=$this->Auth->user('id');
+				$holidayArr['DoctorHoliday']['date']=date('Y-m-d H:i:s');
+				//
+				if($this->DoctorHoliday->save($holidayArr,false)){
+					$rs='1';
+				}
+			}
+			if($rs){
+				$this->Session->setFlash(__l('Holiday Added Successfully'), 'default', null, 'success');
+			    $this->redirect($this->referer());
+			}
+		}
+	}
+	
+	function delete_holiday($id,$uid){
+		$this->loadModel('DoctorHoliday');
+		if($id && $uid){
+			if($uid==$this->Auth->user('id')){
+				$this->DoctorHoliday->delete($id);
+				$this->Session->setFlash(__l('Holiday deleted Successfully'), 'default', null, 'success');
+			    $this->redirect($this->referer());
+			}
+			
 		}
 	}
 

@@ -1,9 +1,9 @@
-<?php
-class Chart extends AppModel
-{
-    public $name = 'Chart';
-	public $useTable = false;
-	
-    	
-}
+<?php
+class Chart extends AppModel
+{
+    public $name = 'Chart';
+	public $useTable = false;
+	
+    	
+}
 ?>

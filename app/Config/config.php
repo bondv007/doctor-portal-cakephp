@@ -175,11 +175,12 @@ setlocale (LC_TIME, 'es');
 if (method_exists('CmsHook', 'setExceptionUrl')) {
 
     CmsHook::setExceptionUrl(array(
-
-        'userratings/add_ratings',
-        
+	'users/testsms',
+		 'user_ratings/add_ratings',
+		  'user_ratings/write_review_as',
+        'users/write_review_as',
         'nodes/home',
-        
+
         'nodes/view',
 
         'nodes/term',
@@ -194,7 +195,7 @@ if (method_exists('CmsHook', 'setExceptionUrl')) {
 		
 		'users/admin_get_new_data',
 		
-		'users/admin_clear_notification',
+		'users/admin_clear_notification',		
 
         'users/register',
 
@@ -277,8 +278,10 @@ if (method_exists('CmsHook', 'setExceptionUrl')) {
         'devs/asset_js',
 
         'crons/main',
-        
-		'crons/reminder_sms',
+		
+		 'crons/reminder_sms',
+		 
+		  'crons/test',
 
         'contacts/add',
 

@@ -20,18 +20,21 @@ class UsersController extends AppController
     );
     public $uses = array(
         'User',
-        'EmailTemplate',
+        'EmailTemplate','DoctorAvailability'
     );
     public $helpers = array(
         'Csv',
-		'Calendar'
+		'Calendar','Js','Session'
 		
     );
 	
     public function beforeFilter()
-    {
+    {  $this->Security->disabledFields = array(
+            'DoctorAvailability.user_id',
+            'User.username',
+        );
         parent::beforeFilter();
-
+        
 		if(in_array($this->request->action,array("search"))){
 			$this->Security->validatePost = false;
 		}
@@ -130,7 +133,6 @@ class UsersController extends AppController
 		} else {
 			$this->paginate = array(
 				'conditions' =>$conditions,
-				
 				'contain' => array(
 					'UserProfile' => array(
 						'fields' => array(
@@ -1709,7 +1711,8 @@ class UsersController extends AppController
         ));
     }
     public function view($username,$clinic_id=null)
-    {
+    { 
+	//print_r($this->request->params['named']['clinic_id']); die;
 		if(!empty($this->request->params['named']['clinic_id'])) {
 				$this->set('clinic_id', $this->request->params['named']['clinic_id']);
 				$clinic_id = $this->request->params['named']['clinic_id'];
@@ -1724,7 +1727,13 @@ class UsersController extends AppController
 							'InsuranceCompany.id',
 							'InsuranceCompany.name',
 						) 
-				 ),		
+				 ),	
+				 'UserRating' => array(
+					'fields' => array(
+							 'UserRating.rate_1','UserRating.rate_2','UserRating.rate_3','UserRating.status'
+						) 
+				 ),	
+				 	
 				'Photo' => array(
 					'Attachment' => array(
 						'fields' => array(
@@ -1924,9 +1933,9 @@ class UsersController extends AppController
         ));
 
         if (!isset($user['User']['id'])) {
-            /*$this->Session->setFlash(__l('Invalid User.', true) , 'default', array(
+            $this->Session->setFlash(__l('Invalid User.', true) , 'default', array(
                 'class' => 'error'
-            ));*/
+            ));
             $this->redirect('/');
         }       
         $this->set('title_for_layout', $user['User']['username']);
@@ -1936,7 +1945,303 @@ class UsersController extends AppController
         $this->request->data['UserView']['ip_id'] = $this->User->UserView->toSaveIp();
         $this->User->UserView->save($this->request->data);
 		$this->pageTitle = __l('Dr. ').$username.' - '. $user['UserProfile']['title'] .' - '. $user['UserProfile']['Specialty']['name'].' - '.'Reviews & Appointments';
+		
+		
+		/*-----Doctor availability calendar data------>*/
+		$this->loadModel('DoctorAvailability');
+		$this->loadModel('DoctorAvailabilityTiming');
+		$this->loadModel('Appointment');
+		$this->loadModel('AppointmentStatus');
+		$this->loadModel('Clinic');
+		$this->loadModel('ClinicUser');
+		if(!empty($user['User']['id'])) {
+			$doctorAvailability = $this->DoctorAvailability->find('first', array(
+					'conditions' => array(
+						'DoctorAvailability.user_id = ' => $user['User']['id']
+					),
+					'recursive' => 0,
+			));	
+			$cond['DoctorAvailabilityTiming.doctor_availability_id'] = $doctorAvailability['DoctorAvailability']['id'];
+			if(!empty($this->request->params['named']['clinic_id']))
+			{	
+			$cond['DoctorAvailabilityTiming.clinic_id'] = $this->request->params['named']['clinic_id'];
+			}
+			
+	//	echo '<pre/>'; print_r($doctorAvailability); die;
+			$appointment_timings = array();
+			$appointment_timings = $this->DoctorAvailability->DoctorAvailabilityTiming->find('all', array(
+				'conditions' => $cond,
+                'contain' => array(
+					'Appointment' => array(
+						'AppointmentStatus' => array(
+							'fields' => array(
+								'AppointmentStatus.id',
+								'AppointmentStatus.name'
+							)	
+						),
+					'fields' => array(
+						'Appointment.id',
+						'Appointment.user_id',
+						'Appointment.doctor_user_id',
+						'Appointment.appointment_date',
+						'Appointment.appointment_time',
+						'Appointment.first_name',
+						'Appointment.last_name',
+						'Appointment.is_guest_appointment',
+						'Appointment.guest_first_name',
+						'Appointment.guest_last_name',
+						'Appointment.appointment_status_id',
+						'Appointment.doctor_availability_timing_id'
+					)
+				   ),
+				),	
+				'fields' => array(
+                    'DoctorAvailabilityTiming.id',
+                    'DoctorAvailabilityTiming.availability_date',
+                    'DoctorAvailabilityTiming.timings',
+					'DoctorAvailabilityTiming.clinic_id',
+                ) ,
+                'recursive' => 2
+			));
+		} else {
+			throw new NotFoundException(__l('Invalid request'));
+		}
+		
+	
+		//$this->set('day', $day);
+		//$this->set('month', $month);
+		//$this->set('year', $year);
+		
+		
+		$arrFData=array(); $timing=array();$arr=array();
+		if($appointment_timings){
+			foreach($appointment_timings as $row){
+				$timing=explode(',',$row['DoctorAvailabilityTiming']['timings']);
+				for($i=0; $i<count($timing);){
+					
+					$arr[][$row['DoctorAvailabilityTiming']['availability_date']][$row['DoctorAvailabilityTiming']['id']]=$timing[$i];
+					$i++;
+				}
+				$timing='';
+			}
+		}
+		//echo '<pre/>'; print_r($arr); die;
+		
+			
+			
+		$this->set('arr', $arr);
+		//$this->set('user_id', $user_id);
+				//$this->set('clinic_id', $clinic_id);	
+
+		//$this->set('type', $type);
+        /*-----Doctor availability calendar data------>*/
+		//echo '<pre/>'; print_r($appointment_timings); die;
         $this->set(compact('user','default_photo','userphotos','specialties','clinics'));
+		
+		
+		
+		/*if(!empty($this->request->params['named']['clinic_id'])) {
+				$this->set('clinic_id', $this->request->params['named']['clinic_id']);
+				$clinic_id = $this->request->params['named']['clinic_id'];
+			}
+		// calendar page appointment list
+        if ((!empty($this->request->params['named']['type']) && $this->request->params['named']['type'] == 'timeslot') || !empty($this->request->data))
+		{
+			$year = $month = null;
+			$data = array();
+			
+			if(!empty($this->request->data)) {
+				$year = $this->request->data['DoctorAvailability']['years'];
+				$month = $this->request->data['DoctorAvailability']['months'];
+				$select_month = $month;
+				$select_year = $year;
+				$this->request->params['named']['show'] = 'monthly';
+			} else {
+				if (!empty($this->request->params['pass']['0'])) {
+					$year = $this->request->params['pass']['0'];
+				}
+				if (!empty($this->request->params['pass']['1'])) {
+					$month = $this->request->params['pass']['1'];
+				}
+				if ($year == '' || $month == '' || $day == '') {
+					$year = date('Y');
+					$monthInNumber = $month = date('m');
+				}
+				$select_month = date('m');
+				$select_year = date('Y');
+			}
+			$day = date('d');
+            $flag = 0;
+            $month_list = array(
+                'january',
+                'february',
+                'march',
+                'april',
+                'may',
+                'june',
+                'july',
+                'august',
+                'september',
+                'october',
+                'november',
+                'december'
+            );
+			$month = date("F", mktime(0, 0, 0, $month, 10));
+            for ($i = 0; $i < 12; $i++) {
+                if (strtolower($month) == $month_list[$i]) {
+                    if (intval($year) != 0) {
+                        $flag = 1;
+                        $monthInNumber = $i+1;
+                        break;
+                    }
+                }
+            }
+            if ($flag == 0) {
+                $year = date('Y');
+                $month = date('F');
+                $monthInNumber = date('m');
+                $day = date('d');
+            }
+            $this->set('year', $year);
+            $this->set('month', $month);
+            $this->set('day', $day);
+            $current_day = date('N', strtotime(date($monthInNumber . '/' . $day . '/' . $year))) -1;
+            if (!empty($this->request->params['named']['show']) && $this->request->params['named']['show'] == 'weekly') {
+                $current_week = date('Y-m-d', strtotime(date($monthInNumber . '/' . $day . '/' . $year) . '-' . $current_day . ' days'));
+                $week_arr = explode('-', $current_week);
+                $end_week = date('Y-m-d', strtotime(date($week_arr[1] . '/' . $week_arr[2] . '/' . $week_arr[0]) . '+6 days'));
+            } elseif (!empty($this->request->params['named']['show']) && $this->request->params['named']['show'] == 'daily') {
+                $current_day = date('Y-m-d',strtotime($year . '-' . $monthInNumber . '-' . $day));
+            } else {
+                $current_week = date('Y-m-d', strtotime(date($monthInNumber . '/' . $day . '/' . $year) . '-' . $current_day . ' days'));
+                $week_arr = explode('-', $current_week);
+                $end_week = date('Y-m-d', strtotime(date($week_arr[1] . '/' . $week_arr[2] . '/' . $week_arr[0]) . '+27 days'));
+            }
+		    if(!empty($username)) {
+				$user = $this->DoctorAvailability->User->find('first', array(
+					'conditions' => array(
+						'User.username = ' => $username
+					),
+					'fields' => array(
+						'User.id' 
+					),
+					'recursive' => 0,
+				));
+				$user_id = $user['User']['id'];	
+			} else {
+				$user_id = $this->Auth->user('id');
+			}
+			$this->set('user_id', $user_id);
+			$doctorAvailability = $this->DoctorAvailability->find('first', array(
+				'conditions' => array(
+					'DoctorAvailability.user_id = ' => $user_id
+				),
+				'recursive' => 0,
+			));	
+   	        $cnd['DoctorAvailabilityTiming.doctor_availability_id'] = $doctorAvailability['DoctorAvailability']['id'];
+			if(!empty($clinic_id))
+			{	
+			$cnd['DoctorAvailabilityTiming.clinic_id'] = $clinic_id;
+			}
+    	    $appointments = array();
+            $appointments = $this->DoctorAvailability->DoctorAvailabilityTiming->find('all', array(
+                'conditions' => $cnd,
+                'contain' => array(
+					'Appointment' => array(
+						'AppointmentStatus' => array(
+							'fields' => array(
+								'AppointmentStatus.id',
+								'AppointmentStatus.name'
+							)	
+						),
+					'fields' => array(
+						'Appointment.id',
+						'Appointment.user_id',
+						'Appointment.doctor_user_id',
+						'Appointment.appointment_date',
+						'Appointment.appointment_time',
+						'Appointment.first_name',
+						'Appointment.last_name',
+						'Appointment.is_guest_appointment',
+						'Appointment.guest_first_name',
+						'Appointment.guest_last_name',
+						'Appointment.appointment_status_id',
+						'Appointment.doctor_availability_timing_id'
+					)
+				   ),
+				),	
+				'fields' => array(
+                    'DoctorAvailabilityTiming.id',
+                    'DoctorAvailabilityTiming.availability_date',
+                    'DoctorAvailabilityTiming.timings',
+					'DoctorAvailabilityTiming.clinic_id',
+                ) ,
+                'recursive' => 2
+       		)); 
+			if ($this->RequestHandler->prefers('json')) {
+				$this->view = 'Json';
+				$this->set('json', $data);
+			} else {
+				$this->set('data', $appointments);
+			}
+
+
+		
+
+       }
+	App::import('Model', 'ClinicsUser');
+		$ClinicsUser = new ClinicsUser;
+		$clinicUsers = $ClinicsUser->find('all', array(
+			'conditions' => array(
+				'ClinicsUser.user_id' => $user_id,
+			) ,
+			'recursive' => -1
+        ));
+		$user_clinic_ids = array();
+		foreach($clinicUsers as $clinicUser) {
+			$user_clinic_ids[] = $clinicUser['ClinicsUser']['clinic_id'];
+		}
+		$cnd=array();
+		$cnd['Clinic.id'] = $user_clinic_ids;
+		$cnd['Clinic.is_active'] = 1;
+		App::import('Model', 'Clinic');
+		$Clinic = new Clinic;
+		$clinics = $Clinic->find('all', array(
+	            'conditions' =>$cnd,
+				'fields' => array(
+					'Clinic.name',
+					'Clinic.id'
+				),
+				'order' => array(
+					'Clinic.id' => 'asc'
+				),
+				'recursive' => -1
+        ));
+		$months = $this->DoctorAvailability->monthLists;
+		$years = $this->DoctorAvailability->yearLists;
+		$this->set('select_month', $select_month);
+        $this->set('select_year', $select_year);
+		$this->set(compact('months', 'years','doctorAvailability'));
+		$this->DoctorAvailability->recursive = 0;
+		$this->set('doctorAvailabilities', $this->paginate('DoctorAvailability'));
+		
+*/
+        $this->loadModel('Appointment');
+       $alreadyBookedData=$this->Appointment->find('all',array('conditions'=>array('Appointment.doctor_user_id'=>$user['User']['id'],'Appointment.appointment_date>='.date('Y-m-d').''),'fields'=>array('Appointment.appointment_date','Appointment.appointment_time')));
+	  //$this->set('AlreadyBooked',$alreadyBookedData);
+	  $bookedDates=array();
+	  $bookedTimes=array();
+	  foreach($alreadyBookedData as $op){
+		  $bookedDates[]=$op['Appointment']['appointment_date'];
+		   $bookedTimes[]=$op['Appointment']['appointment_time'];
+	  }
+	  //$bookedDates =implode(',',$bookedDates); 
+	  //$bookedTimes =implode(',',$bookedTimes); 
+	  $this->set('bookedDates',$bookedDates);
+	  $this->set('bookedTimes',$bookedTimes);
+	 //echo '<pre/>'; print_r($bookedDates); die;echo '<pre/>'; print_r($bookedTimes); die;
+		
+       
     }   
     public function admin_send_mail()
     {
@@ -3646,7 +3951,8 @@ class UsersController extends AppController
 				'specialty_disease_id',
 				'doctor_name',
 				'language_id',
-				'gender_id'
+				'gender_id',
+				
 		));
 		$this->pageTitle = __l('Reviews & Ratings');
 		$conditions = array();
@@ -3656,7 +3962,7 @@ class UsersController extends AppController
 		$conditions['User.role_id'] = ConstUserTypes::Doctor;
 	
 		$alluserids = array();
-	
+	   if(!empty($city_id)  ||  !empty($doctor_specialty_id)  ||  !empty($hospital_id)) {
 		if(!empty($city_id)) {
 				
 			
@@ -3673,34 +3979,32 @@ class UsersController extends AppController
 				
 			}else{
 				$zipcode_conditions['UserProfile.city_id'] = $city_id;
-			
-				$zipcodes = $this->User->UserProfile->find('all', array(
+			    $zipcodes = $this->User->UserProfile->find('all', array(
 					'conditions' => $zipcode_conditions,
 					'fields'=>array(
 						'UserProfile.user_id',
 					),
 				));
 			}
-				
 			
-			if(!empty($zipcodes)) {
-				$i=1;
-				foreach($zipcodes as $zipcode) {
-							if(!in_array($zipcode['UserProfile']['user_id'],$alluserids)) {
-									$user_ids[] = $zipcode['UserProfile']['user_id'];
-									$alluserids[] = $zipcode['UserProfile']['user_id'];
+			
+				if(!empty($zipcodes)) {
+					$i=1;
+					foreach($zipcodes as $zipcode) {
+								if(!in_array($zipcode['UserProfile']['user_id'],$alluserids)) {
+										$user_ids[] = $zipcode['UserProfile']['user_id'];
+										$alluserids[] = $zipcode['UserProfile']['user_id'];
+								}
+								
 							}
-							
-						}
-				
-				
-			}
+					
+					
+				}
+			
 			//$conditions['User.id'] = $user_ids;
 		}
-
-
-		
-		if(!empty($doctor_specialty_id)) {
+        
+	if(!empty($doctor_specialty_id)) {
 			
 		 
 		$specialties_users = $this->User->SpecialtiesUser->find('all', array(
@@ -3710,8 +4014,7 @@ class UsersController extends AppController
 			'recursive' => -1
 		));	
 		$specialty_user_ids = array();
-		$old_all_user_ids = $alluserids;
-		$alluserids = array();
+		
 		foreach($specialties_users as $specialties_user) {
 			if(!in_array($specialties_user['SpecialtiesUser']['user_id'],$alluserids)) {
 				$specialty_user_ids[] = $specialties_user['SpecialtiesUser']['user_id'];
@@ -3752,7 +4055,7 @@ class UsersController extends AppController
 				
 		// Search for Insurance Company
 		if(!empty($hospital_id)) {
-			
+			//print_r($alluserids); die;
 			$clinic_conditions['ClinicsUser.clinic_id'] = $hospital_id;
 				
 			
@@ -3781,7 +4084,31 @@ class UsersController extends AppController
 			//$conditions['User.id'] = $clinic_user_ids;
 			
 		} else {
-			$doctor_insurance_id ='';
+			$clinic_conditions['ClinicsUser.clinic_id !='] = '';
+				
+			
+			$clinic_users = $this->User->ClinicsUser->find('all', array(
+				'conditions' => $clinic_conditions,
+				'fields'=>array(
+					'ClinicsUser.user_id'
+				),
+       		));
+			$clinic_user_ids = array();
+			$old_all_user_ids = $alluserids;
+			$alluserids = array();
+			foreach($clinic_users as $clinic_user) {
+				if(!in_array($clinic_user['ClinicsUser']['user_id'],$alluserids)) {
+					$clinic_user_ids[] = $clinic_user['ClinicsUser']['user_id'];
+					
+					if(in_array($clinic_user['ClinicsUser']['user_id'], $old_all_user_ids)) {
+						$alluserids[] = $clinic_user['ClinicsUser']['user_id'];
+					}
+					//$alluserids = $clinic_user['ClinicsUser']['user_id'];
+				}
+			}	
+			
+		}
+		$doctor_insurance_id ='';
 			$insurance_plans = $this->User->InsuranceCompany->InsurancePlan->find('list', array(
 				'conditions' => array(
 					'InsurancePlan.is_active' => 1,
@@ -3794,8 +4121,102 @@ class UsersController extends AppController
 			$search_options = $this->User->InsurancePlan->searchOptions;
 			$insuranceplans = $search_options + $insurance_plans;
 			$this->set('doctor_insurance_id',$doctor_insurance_id);
+		}else{
+			
+			/*---  All Doctors['start']-----*/
+			$zipcode_conditions = array('');
+			
+				$zipcodes = $this->User->UserProfile->find('all', array(
+					'conditions' => $zipcode_conditions,
+					'fields'=>array(
+						'UserProfile.user_id',
+					),
+				));
+				if(!empty($zipcodes)) {
+				$i=1;
+				foreach($zipcodes as $zipcode) {
+							if(!in_array($zipcode['UserProfile']['user_id'],$alluserids)) {
+									$user_ids[] = $zipcode['UserProfile']['user_id'];
+									$alluserids[] = $zipcode['UserProfile']['user_id'];
+							}
+							
+						}
+				
+				
+			}
+			 
+			 
+			 /* doc speciality  */
+			 $specialties_users = $this->User->SpecialtiesUser->find('all', array(
+			'conditions' => array(
+				'SpecialtiesUser.specialty_id !=' => ''
+			) ,
+			'recursive' => -1
+		));	
+		$specialty_user_ids = array();
+		foreach($specialties_users as $specialties_user) {
+			if(!in_array($specialties_user['SpecialtiesUser']['user_id'],$alluserids)) {
+				$specialty_user_ids[] = $specialties_user['SpecialtiesUser']['user_id'];
+				//$alluserids[] = $specialties_user['SpecialtiesUser']['user_id'];
+				
+				if(in_array($specialties_user['SpecialtiesUser']['user_id'], $old_all_user_ids)) {
+						$alluserids[] = $specialties_user['SpecialtiesUser']['user_id'];
+					}
+			}
 		}
-		//}
+		//$conditions['User.id'] = $specialty_user_ids;
+		$specialty_diseases = $this->User->Specialty->SpecialtyDisease->find('list', array(
+            'conditions' => array(
+                'SpecialtyDisease.is_active' => 1,
+				'SpecialtyDisease.specialty_id !=' =>''
+            ),
+			'fields'=>array(
+				'SpecialtyDisease.id',
+				'SpecialtyDisease.name'
+			),
+			'recursive' => -1
+        ));
+		if(empty($specialty_diseases)) {
+			$specialties = $this->User->Specialty->find('list', array(
+				'conditions' => array(
+					'Specialty.is_active' => 1,
+					'Specialty.id !=' => ''
+				),
+        	));
+			$specialty_diseases = array(
+				$doctor_specialty_id => $specialties[$doctor_specialty_id]
+			);
+		}
+		$this->set('doctor_specialty_id',$doctor_specialty_id);
+		
+		
+		/*   Hospitals */
+		$clinic_conditions['ClinicsUser.clinic_id !='] = '';
+				
+			
+			$clinic_users = $this->User->ClinicsUser->find('all', array(
+				'conditions' => $clinic_conditions,
+				'fields'=>array(
+					'ClinicsUser.user_id'
+				),
+       		));
+			$clinic_user_ids = array();
+			$old_all_user_ids = $alluserids;
+			$alluserids = array();
+			foreach($clinic_users as $clinic_user) {
+				if(!in_array($clinic_user['ClinicsUser']['user_id'],$alluserids)) {
+					$clinic_user_ids[] = $clinic_user['ClinicsUser']['user_id'];
+					
+					if(in_array($clinic_user['ClinicsUser']['user_id'], $old_all_user_ids)) {
+						$alluserids[] = $clinic_user['ClinicsUser']['user_id'];
+					}
+					//$alluserids = $clinic_user['ClinicsUser']['user_id'];
+				}
+			}
+			
+			/*---  All Doctors['end']-----*/	
+		
+		}
 		//print_r($conditions);
 		$conditions['User.id'] = $alluserids;
 			
@@ -3813,6 +4234,12 @@ class UsersController extends AppController
 						)	
 					)
 				), 
+				 
+					'UserRating' => array(
+					 
+                        'fields' => array(
+                            'UserRating.rate_1','UserRating.rate_2','UserRating.rate_3','UserRating.status' )
+                    ),
 				'DoctorAvailability' => array(
 				  'fields' => array(
                         'DoctorAvailability.consultation_fees'
@@ -3872,8 +4299,11 @@ class UsersController extends AppController
             ) ,
             'recursive' => 3
         );
-		
+		//$this->User->recursive='2';
 		$this->set('users',$this->paginate());
+		
+		
+		
 		$specialties = $this->User->Specialty->find('list', array(
             'conditions' => array(
                 'Specialty.is_active' => 1
@@ -3967,11 +4397,12 @@ class UsersController extends AppController
 		$current_week = date('d').'-'.date('m').'-'.date('Y');
 		$this->set('current_week', $current_week);
 		$this->set(compact('specialties','insuranceplans','insurances','specialty_diseases','languages','gender_lists','search_specialties','cities','search_insurance_companies'));
-	
-		$this->render('search');		
+	  
+		$this->render('search');
+				
 	}
 	
-	public function get_specialities($city_id="") {
+	public function get_specialities($city_id=null) {
 		if ( !empty($city_id) ) {
 			
 			$this->loadModel('UserProfile');
@@ -4046,37 +4477,32 @@ class UsersController extends AppController
 												'conditions' => array('ClinicUser.clinic_id = Clinic.id')												
 											)
 										),
-										'conditions' => array('UserProfile.specialty_id' => $spc_id),
+										'conditions' => array('UserProfile.specialty_id' => $spc_id,'UserProfile.city_id' => $city_id),
 										'order' => array('Clinic.name' => 'ASC')
 									));
 									
-			$this->Clinic->recursive = -1;						
-			$clinics = $this->Clinic->find('all', array(
+									
+									
+			//$this->Clinic->recursive = -1;						
+			/*$clinics = $this->Clinic->find('all', array(
 										'conditions' => array(
 											'Clinic.city_id' => $city_id
 										),
 										'order' => array(
 											'Clinic.name' => 'asc'
 										)
-									));						
+									));	*/					
 			
 			$allclinics = array();
 			$already  = array();
 			foreach($data as $dat) {
-				if ( !in_array($dat['Clinic']['id'], $already) )
-					$allclinics[] = $dat['Clinic'];
+				$allclinics[][$dat['Clinic']['id']] = $dat['Clinic']['name'];
 			}
 			
-			foreach($clinics as $cl) {
-				if ( !in_array($cl['Clinic']['id'], $already) )
-					$allclinics[] = $cl['Clinic'];
-			}
-			
+		
 			
 			
 			if(!empty($allclinics)) {
-			
-				uasort( $allclinics, 'cmp' );
 				echo json_encode($allclinics); 	
 			}				
 								
@@ -4084,8 +4510,6 @@ class UsersController extends AppController
 		}
 		die;
 	}
-
-
 
 	public function admin_get_new_data(){
 		
@@ -4126,6 +4550,71 @@ class UsersController extends AppController
 		}
 		
 		die;
+		
+	}
+        
+        function write_review_as($ssnValue=null,$uname=null){
+		if($ssnValue){
+			$this->Session->write('ReviewAs',$ssnValue);
+		}
+		if($uname){
+			$this->Session->write('uname',$uname);
+		}
+		if($ssnValue=='Registered User'){
+			$this->redirect('/users/login?f=user_ratings/add_ratings/'.$this->Session->read('uname').'');
+			$this->Session->delete('uname');
+		}else if($ssnValue=='Guest User'){
+			$this->redirect('/user_ratings/add_ratings/'.$this->Session->read('uname').'');
+		}
+		$this->render('write_review_as'); 
+	}
+	
+	public function testsms() {
+		
+		//---------------------------------
+			$username="Tatkalcare";
+			$api_password="4123drb53rl6c4200";
+			$sender="TTKLCR";
+			$domain="sms1.bcozindia.in";
+			$priority="11";// 1 - Normal , 2 - Priority , 4 - Promotional , 8 - Transaction , 11 - Enterprise
+			$method="0";
+			
+
+				$mobile="7697871285";
+
+				$message="Hello test message";
+
+				$username=urlencode($username);
+				$password=urlencode($password);
+				$sender=urlencode($sender);
+				$message=urlencode($message);
+
+				$parameters="username=$username&api_password=$api_password&sender=$sender&to=$mobile&message=$message&priority=$priority";
+
+				$url="http://$domain/pushsms.php";
+
+				$ch = curl_init($url);
+
+				if($method=="POST")
+				{
+					curl_setopt($ch, CURLOPT_POST,1);
+					curl_setopt($ch, CURLOPT_POSTFIELDS,$parameters);
+				}
+				else
+				{
+					$get_url=$url."?".$parameters;
+
+					curl_setopt($ch, CURLOPT_POST,0);
+					curl_setopt($ch, CURLOPT_URL, $get_url);
+				}
+
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1); 
+				curl_setopt($ch, CURLOPT_HEADER,0);  // DO NOT RETURN HTTP HEADERS 
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);  // RETURN THE CONTENTS OF THE CALL
+				$return_val = curl_exec($ch);
+
+
+				echo '<pre>'; print_r($return_val); die;
 		
 	}
 	

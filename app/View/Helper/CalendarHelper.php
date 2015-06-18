@@ -1122,6 +1122,9 @@ class CalendarHelper extends Helper
 
 		return array_filter($split_time);
 	}
+	
+	
+	
 	function getSearchDoctorAppointTimings($setup_date = '', $appointment_data = array())
 	{
 		$split_time = '';
@@ -1515,6 +1518,7 @@ class CalendarHelper extends Helper
 										'type' => 'hidden',
 										'value' => ($day+$i-$offset.'-'.$month_num.'-'.$year)
 					)) ;
+					
 			} else {
 				if(!empty($set_timings)) {
 					$str.= '<td colspan="2">';
@@ -1525,8 +1529,12 @@ class CalendarHelper extends Helper
 				} else {
 					$str.= '<td colspan="2">' . __l('No available time') . '</td>';
 				}	
-			}	
-			$str.= '</tr>';
+			}
+			if(strtotime($today) <= strtotime($next_day)){	
+			$str.= '<td><a class="add_btn" href="javascript:void(0)"  onclick="getTimeFields('.$i.')">Add</a></td></tr>';
+			$str.='<tr id="dropDn'.$i.'" style="display:none"><td style="width:35%">Start Time<select  id="timeDDn1'.$i.'"  onchange="add_values('.$i.',this.value)"></select></td><td style="width:35%">End Time<select  id="timeDDn2'.$i.'"  onchange="add_values('.$i.',this.value)"></select></td></tr>';
+			
+			}
         }
      
         $str.= '</thead>';
@@ -1576,14 +1584,18 @@ class CalendarHelper extends Helper
         $str.= $this->Form->end();
         return $str;
     }
+	
+	
+	
+	
 	function getAppointmentTimeSlots()
 	{
 		 $time = '00:00'; // start
 		 $times = array();
-		 for ($i = 0; $i <= 287; $i++)
+		 for ($i = 0; $i <= 3600; $i++)
 		 {
 			 $prev = date('H:i A', strtotime($time)); // format the start time
-			 $next = strtotime('+5mins', strtotime($time)); // add 30 mins
+			 $next = strtotime('+60mins', strtotime($time)); // add 30 mins
 			 $time = date('h:i a', $next); // format the next time
 			 $times[$prev] = $prev;
 		 }
